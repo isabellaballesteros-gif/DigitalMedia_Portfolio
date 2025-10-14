@@ -1,0 +1,150 @@
+/* Isabella Ballesteros Portfolio Styles */
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 20px;
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+h1 {
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+h2 {
+    color: #34495e;
+    margin-top: 30px;
+    margin-bottom: 15px;
+}
+
+h3 {
+    color: #7f8c8d;
+    margin-top: 25px;
+    margin-bottom: 10px;
+}
+
+h4 {
+    color: #95a5a6;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+p {
+    margin-bottom: 15px;
+    text-align: justify;
+}
+
+a {
+    color: #3498db;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:hover {
+    color: #2980b9;
+    text-decoration: underline;
+}
+
+ul {
+    margin-bottom: 20px;
+    padding-left: 20px;
+}
+
+li {
+    margin-bottom: 8px;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin: 10px 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Navigation styles */
+nav {
+    background-color: #34495e;
+    padding: 10px 0;
+    margin: -20px -20px 20px -20px;
+    border-radius: 10px 10px 0 0;
+}
+
+nav a {
+    color: white;
+    margin-right: 20px;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+nav a:hover {
+    background-color: #3498db;
+    text-decoration: none;
+}
+
+/* Home page specific */
+.home-container {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.home-container h1 {
+    font-size: 2.5em;
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+.home-container h2 {
+    font-size: 1.8em;
+    color: #7f8c8d;
+    margin-bottom: 30px;
+}
+
+.home-container a {
+    font-size: 1.2em;
+    padding: 15px 30px;
+    background-color: #3498db;
+    color: white;
+    border-radius: 25px;
+    transition: background-color 0.3s;
+    display: inline-block;
+}
+
+.home-container a:hover {
+    background-color: #2980b9;
+    text-decoration: none;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+    
+    .container {
+        padding: 20px;
+    }
+    
+    .home-container h1 {
+        font-size: 2em;
+    }
+    
+    .home-container h2 {
+        font-size: 1.5em;
+    }
+}
