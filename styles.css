@@ -206,7 +206,7 @@ body.home-page {
 /* Background image for about page */
 body.about-page {
     background-image: url('https://i.postimg.cc/CMtT5HNh/Background.png');
-    background-size: 110%;
+    background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -770,6 +770,20 @@ button:focus-visible,
     }
     .container h1 {
         margin-top: 100px;
+    }
+    
+    /* Fix about page background in landscape mobile view */
+    body.about-page {
+        background-size: cover !important;
+        background-position: center center !important;
+        background-attachment: scroll !important;
+    }
+    
+    /* Fix grayscale about page background in landscape mobile view */
+    body.grayscale-mode.about-page::before {
+        background-size: cover !important;
+        background-position: center center !important;
+        background-attachment: scroll !important;
     }
 }
 
