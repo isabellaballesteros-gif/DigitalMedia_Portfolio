@@ -682,26 +682,23 @@ button:focus-visible,
         margin: 8px;
     }
     
-    /* Make text containers fit content exactly on mobile */
+    /* Make text containers transparent on mobile to show background */
     .home-text {
-        padding: 8px 12px;
+        background-color: transparent !important;
+        padding: 8px;
         margin: 8px;
-        display: inline-block;
-        max-width: fit-content;
     }
     
     .about-text {
-        padding: 8px 12px;
+        background-color: transparent !important;
+        padding: 8px;
         margin: 8px;
-        display: inline-block;
-        max-width: fit-content;
     }
     
     .credits-text {
-        padding: 8px 12px;
+        background-color: transparent !important;
+        padding: 8px;
         margin: 8px;
-        display: inline-block;
-        max-width: fit-content;
     }
 
     /* Image cycle panel scales with viewport */
