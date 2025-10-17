@@ -6,13 +6,47 @@
     <title>Sticker Design Project - Isabella Ballesteros Portfolio</title>
     <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body class="art74-page">
     <div class="container">
-        <p><a href="page1.html">← Back to Home</a></p>
+    <div class="house-link">
+        <a href="page1.html#art74"><img src="https://i.postimg.cc/3Jxc7ypj/House-1.png" alt="Back to Home"></a>
+    </div>
     <h1> Sticker Design Project</h1>
     <img src="https://i.postimg.cc/ZRzxRxMV/Sticker.png">
     <h3> About the Project</h3>
-        <p> The purpose of this project was to create a sticker deisgn based off of an inanimate object we have of our choice. I chose my ceramic, gold cat figurine that was on my desk. I could have done an easier object, but I used the ceramic figurine because it was reflective which made it challenging. I wanted to see if I can accomplish a difficult task of making a sticker design with a glass-like object. Using Adobe Illustrator and picture reference, I made a geometric illustration of my figurine. The color blending was more minimal to add style. I recreated the glass reflection effects by using more variety of colored shapes and lowering opacity. I even made the color of the gold cat more yellow since the real figurine was more greenish and dull. Because the figurine was reflective since it is ceramic, the illustration relfects my dorm room which was very challenging to keep minimal. This project was actually very time consuming as I constantly revised and refined my piece by using the pen tool. I got as much feedback as I could from my peers and my professor. I made the colors warmer and brighter, more geometric shapes for a better blend, softer edges, and lowered opacity as a result for my final piece.</p>
+    <p> The purpose of this project was to create a sticker deisgn based off of an inanimate object we have of our choice. I chose my ceramic, gold cat figurine that was on my desk. I could have done an easier object, but I used the ceramic figurine because it was reflective which made it challenging. I wanted to see if I can accomplish a difficult task of making a sticker design with a glass-like object. Using Adobe Illustrator and picture reference, I made a geometric illustration of my figurine. The color blending was more minimal to add style. I recreated the glass reflection effects by using more variety of colored shapes and lowering opacity. I even made the color of the gold cat more yellow since the real figurine was more greenish and dull. Because the figurine was reflective since it is ceramic, the illustration relfects my dorm room which was very challenging to keep minimal. This project was actually very time consuming as I constantly revised and refined my piece by using the pen tool. I got as much feedback as I could from my peers and my professor. I made the colors warmer and brighter, more geometric shapes for a better blend, softer edges, and lowered opacity as a result for my final piece.</p>
     </div>
+    
+    <script>
+        // Color/Grayscale Toggle Functionality
+        const colorToggle = document.getElementById('colorToggle');
+        const body = document.body;
+        
+        // Check localStorage for saved preference
+        const isGrayscale = localStorage.getItem('grayscaleMode') === 'true';
+        
+        function toggleGrayscale() {
+            if (body.classList.contains('grayscale-mode')) {
+                body.classList.remove('grayscale-mode');
+                colorToggle.textContent = '🎨 Color Mode';
+                colorToggle.classList.remove('grayscale-active');
+                localStorage.setItem('grayscaleMode', 'false');
+            } else {
+                body.classList.add('grayscale-mode');
+                colorToggle.textContent = '⚫ Grayscale Mode';
+                colorToggle.classList.add('grayscale-active');
+                localStorage.setItem('grayscaleMode', 'true');
+            }
+        }
+        
+        // Apply saved preference on page load
+        if (isGrayscale) {
+            body.classList.add('grayscale-mode');
+            colorToggle.textContent = '⚫ Grayscale Mode';
+            colorToggle.classList.add('grayscale-active');
+        }
+        
+        colorToggle.addEventListener('click', toggleGrayscale);
+    </script>
 </body>
 </html>

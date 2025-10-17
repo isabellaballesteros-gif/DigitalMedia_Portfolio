@@ -6,13 +6,47 @@
     <title>GIF Blog Project - Isabella Ballesteros Portfolio</title>
     <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body class="art74-page">
     <div class="container">
-        <p><a href="page1.html">← Back to Home</a></p>
+        <div class="house-link">
+            <a href="page1.html#art74"><img src="https://i.postimg.cc/3Jxc7ypj/House-1.png" alt="Back to Home"></a>
+        </div>
     <h1> GIF Blog Project</h1>
-    <img src='https://i.postimg.cc/Cx4ymBsP/gif.gif'>
+    <img src='https://i.postimg.cc/50jbX8QQ/image.png'>
     <h2> About the Project</h2>
         <p> <a href="https://codepen.io/Isabella-Ballesteros/full/EaaKRKp">CLICK HERE</a> to view my GIF Project in Codepen. This project was to create a blog informing the history of GIFs. I researched about the origin of GIFs, learning about their creator and the reason for the creation. I then discovered the popularity and surprising lawsuits in the history of GIFS. This blog was coded from scratch just like this portfolio. I have had prior knowledge to coding a website in Chilton middle school because I took a very short computer science class. I recall I made my own hot-pink website all about me and the things I love. It was a very long time ago so all of the basic coding that I learning then was all lost. This class has helped me get back into website coding. Though there were primer projects to help us get used to website coding, this is the first project where I coded a blog with information and designs entirely from scratch. Meaning that there was not much specific information I had to include, I had to do research on my own to create an original blog. This project especially helped me learn how to use classes, ids, and bulletpoints which were all very new to me. The project even gave me creative freedom to stylize the blog so I added a pixel-like title font and CSS code to add color. This project also contains GIFs I created, in which I will explain below as separate pieces.</p>
     </div>
+    
+    <script>
+        // Color/Grayscale Toggle Functionality
+        const colorToggle = document.getElementById('colorToggle');
+        const body = document.body;
+        
+        // Check localStorage for saved preference
+        const isGrayscale = localStorage.getItem('grayscaleMode') === 'true';
+        
+        function toggleGrayscale() {
+            if (body.classList.contains('grayscale-mode')) {
+                body.classList.remove('grayscale-mode');
+                colorToggle.textContent = '🎨 Color Mode';
+                colorToggle.classList.remove('grayscale-active');
+                localStorage.setItem('grayscaleMode', 'false');
+            } else {
+                body.classList.add('grayscale-mode');
+                colorToggle.textContent = '⚫ Grayscale Mode';
+                colorToggle.classList.add('grayscale-active');
+                localStorage.setItem('grayscaleMode', 'true');
+            }
+        }
+        
+        // Apply saved preference on page load
+        if (isGrayscale) {
+            body.classList.add('grayscale-mode');
+            colorToggle.textContent = '⚫ Grayscale Mode';
+            colorToggle.classList.add('grayscale-active');
+        }
+        
+        colorToggle.addEventListener('click', toggleGrayscale);
+    </script>
 </body>
 </html>

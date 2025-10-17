@@ -6,13 +6,47 @@
     <title>Camera Shot Video Project - Isabella Ballesteros Portfolio</title>
     <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body class="art75-page">
     <div class="container">
-        <p><a href="page1.html">← Back to Home</a></p>
+        <div class="house-link">
+            <a href="page1.html#art75"><img src="https://i.postimg.cc/3Jxc7ypj/House-1.png" alt="Back to Home"></a>
+        </div>
         <h1> Camera Shot Video Project</h1>
     <img width="1000"src="https://i.postimg.cc/8CLkqcyf/image.png">
     <h3> About the Project</h3>
         <p> <a href="https://youtu.be/ldO79cq6o58">CLICK HERE</a> to view the video. The video is a group project with a purpose to create a short story using a variety of camera shots we just learned. For example, there was a close up shot of one of my team member's eyes to show shock. Another axemple is the wide shot of the spooky dorm hallway which was a video my other teammate took. We decided to make a short horror film of a haunted bear who hunts down college students and everyone was able to escape except one. I acted in the scenes (I am the girl who fell down), provided the teddy bear, and edited the whole video together and added sounds using iMovie. This is the first assignment we completed and Adobe Premiere Pro was still very new to me so I used iMovie because I have used that editing app often prior to enrolling in SJSU. additionally, our class was online so all of the backgrounds were inconsistent but we tried our best to make it look like one location.</p>
     </div>
+    
+    <script>
+        // Color/Grayscale Toggle Functionality
+        const colorToggle = document.getElementById('colorToggle');
+        const body = document.body;
+        
+        // Check localStorage for saved preference
+        const isGrayscale = localStorage.getItem('grayscaleMode') === 'true';
+        
+        function toggleGrayscale() {
+            if (body.classList.contains('grayscale-mode')) {
+                body.classList.remove('grayscale-mode');
+                colorToggle.textContent = '🎨 Color Mode';
+                colorToggle.classList.remove('grayscale-active');
+                localStorage.setItem('grayscaleMode', 'false');
+            } else {
+                body.classList.add('grayscale-mode');
+                colorToggle.textContent = '⚫ Grayscale Mode';
+                colorToggle.classList.add('grayscale-active');
+                localStorage.setItem('grayscaleMode', 'true');
+            }
+        }
+        
+        // Apply saved preference on page load
+        if (isGrayscale) {
+            body.classList.add('grayscale-mode');
+            colorToggle.textContent = '⚫ Grayscale Mode';
+            colorToggle.classList.add('grayscale-active');
+        }
+        
+        colorToggle.addEventListener('click', toggleGrayscale);
+    </script>
 </body>
 </html>

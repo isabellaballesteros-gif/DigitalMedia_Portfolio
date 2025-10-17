@@ -6,14 +6,48 @@
     <title>Final Video Project - Isabella Ballesteros Portfolio</title>
     <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body class="art75-page">
     <div class="container">
-        <p><a href="page1.html">← Back to Home</a></p>
+        <div class="house-link">
+            <a href="page1.html#art75"><img src="https://i.postimg.cc/3Jxc7ypj/House-1.png" alt="Back to Home"></a>
+        </div>
     <h1> Final Project Video</h1>
     <img src="https://i.postimg.cc/Bv580jj1/image.png">
     <h3> About the Project</h3>
         <p> <a href="https://youtu.be/soDkZu0JyCs">CLICK HERE</a> to view my final video. For the final, we were allowed to make a new two minute story or revise and add onto our midterm. I chose to revise my midterm video above of <em>Flavors of Home</em>. I added an extra minute of animation in between the video and revised the background sound effects and music from feedback. I want to highlight both versions as separate pieces to show my improvement and determination to grow as an artist and storyteller in that short amount of time. The added minute of animation was actually a concept I had for my midterm but I did not have a lot of time. It is the colorful, abstract montage of happy memories with Filipino food and culture. Some examples include the dress the character wears, a baro't saya. Every memory includes different Filipino foods that I have strong memories with. The montage ends with the character being accepted into a far away college with the colors and music becoming sadder as she becomes more alone. My video is heavily inspired by <em> La La Land</em> and showing emotions through color. The brighter the colors, the happier the character is and the duller the colors, the more sad the character feels.
         </p>
     </div>
+    
+    <script>
+        // Color/Grayscale Toggle Functionality
+        const colorToggle = document.getElementById('colorToggle');
+        const body = document.body;
+        
+        // Check localStorage for saved preference
+        const isGrayscale = localStorage.getItem('grayscaleMode') === 'true';
+        
+        function toggleGrayscale() {
+            if (body.classList.contains('grayscale-mode')) {
+                body.classList.remove('grayscale-mode');
+                colorToggle.textContent = '🎨 Color Mode';
+                colorToggle.classList.remove('grayscale-active');
+                localStorage.setItem('grayscaleMode', 'false');
+            } else {
+                body.classList.add('grayscale-mode');
+                colorToggle.textContent = '⚫ Grayscale Mode';
+                colorToggle.classList.add('grayscale-active');
+                localStorage.setItem('grayscaleMode', 'true');
+            }
+        }
+        
+        // Apply saved preference on page load
+        if (isGrayscale) {
+            body.classList.add('grayscale-mode');
+            colorToggle.textContent = '⚫ Grayscale Mode';
+            colorToggle.classList.add('grayscale-active');
+        }
+        
+        colorToggle.addEventListener('click', toggleGrayscale);
+    </script>
 </body>
 </html>

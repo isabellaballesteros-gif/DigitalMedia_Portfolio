@@ -6,42 +6,124 @@
     <title>About Me - Isabella Ballesteros Portfolio</title>
     <link rel="stylesheet" href="styles.css">
 </head>
-<body>
-    <div class="container">
-        <p><a href="index.html">← Back to Home</a></p>
-    <h1> About me</h1>
-    <p> My name is Isabella Ballesteros and I am an undergraduate at San Jose State University for Digital Media Art. I consider myself a proficient traditional and digital artist. I have two years of graphic design and Adobe Suite experience in West Park high school. I passed AP Studio Art my senior year and achieved a score of 5 on my portfolio. I even had prior experience to basic video game and HTML coding in Chilton middle school. I love to do commission work and personal projects outside of school. I believe I am an opportunist that seeks ways to improve my creativity and art skills, whether it is traditional or digital. My favorite project in Art 74 was actually the Creative Coding Robot. It was very difficult to complete because I had no prior knowledge in Javascript coding, but I learned fairly quickly and made a piece that I am proud of. My favorite artwork in Art 75 was my Final video project, <em> Flavors of Home </em>. I loved the create freedom to create my own short film with the knowledge I have gained from the class.</p>
-   <img src="https://i.postimg.cc/KjvwTpsq/Me1.png" alt="Isabella Ballesteros">
-   <img src="https://i.postimg.cc/tC0ywpfz/me10.png" alt="Isabella Ballesteros">
-   <img src="https://i.postimg.cc/brnPrBGn/Me2.png" alt="Isabella Ballesteros">
-   <img src="https://i.postimg.cc/cC3WCbKf/Me3.png" alt="Isabella Ballesteros">
-   <img src="https://i.postimg.cc/jqntML82/Me4.png" alt="Isabella Ballesteros">
-   <img src="https://i.postimg.cc/3NGhNcyL/Me5.png" alt="Isabella Ballesteros">
-   <img src="https://i.postimg.cc/yxRKxbJ2/Me6.png" alt="Isabella Ballesteros">
-   <img src="https://i.postimg.cc/VvtwvVrw/Me7.png" alt="Isabella Ballesteros">
-   <img src="https://i.postimg.cc/2jLr0VHZ/Me8.png" alt="Isabella Ballesteros">
-    <h2> Art 74</h2>
-<ul>
-    <li><a href="page2.html">GIF Blog Project</a></li>
-    <li><a href="page3.html">GIFs from GIF Blog Project</a></li>
-    <li><a href="page4.html">Glitch Album Cover and Glitch Images</a></li>
-    <li><a href="page5.html">Sticker Design Project</a></li>
-    <li><a href="page6.html">Creative Coding Robot Project</a></li>
-</ul>
-
-<h3> Art 75</h3>
-<ul>
-    <li><a href="page7.html">Midterm Video Story</a></li>
-    <li><a href="page8.html">Final Video Project</a></li>
-    <li><a href="page9.html">Adobe Aero GIF in Space Project</a></li>
-    <li><a href="page10.html">Adobe Character Animator Group Project</a></li>
-    <li><a href="page11.html">Camera Shot Video Project</a></li>
-</ul>
-
-<h4>Credits</h4>
-<ul>
-<li> This portfolio was originally coded using Codepen. This is a revised version of the original portfolio using Cursor.</li>
-<li> All videos linked are uploaded through YouTube.</li>
+<body class="about-page">
+        <div id="buttonContainer" style="position: fixed; bottom: 20px; left: 20px; z-index: 999999; width: 180px; height: 48px; pointer-events: none;">
+            <button id="colorToggle" class="color-toggle" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: auto;">⚫ Grayscale Mode</button>
+        </div>
+    <div class="corner-image">
+        <img src="https://i.postimg.cc/3Jxc7ypj/House-1.png" alt="Corner Artwork">
     </div>
+    <a href="index.html" class="back-link" aria-label="Back to Front Page">← <span>Back to Front Page</span></a>
+
+    <h1>Welcome to the Home Page!</h1>
+    <div class="home-text">
+        <p1> <strong> READ THIS FIRST!</strong> The home page has an illustration of a house in the top right corner. When you access the pieces on different pages, click the moving house illustration on the art piece pages to go back to the home page! If you want to switch between color and grayscale mode, click the button in the bottom left corner of the front page and home page. This portfolio is accessible on mobile devices and desktop browsers, though its original format is desktop. Scroll down to view the rest of this page to see the about me, list of pieces, and credits. To view my pieces, click the moving thumbnail illustrations above the piece titles and it will take you to a page about the piece.</p1>
+    </div>
+    
+        <h1> About Me</h1>
+    <div class="about-content">
+        <div class="about-text">
+            <p1> My name is Isabella Ballesteros and I am an undergraduate at San Jose State University for Digital Media Art. I am from Roseville, California and I currently live on campus at SJSU. I consider myself a proficient traditional and digital artist. I have two years of graphic design and Adobe Suite experience in West Park high school. I passed AP Studio Art my senior year and achieved a score of 5 on my portfolio. I even had prior experience to basic video game and HTML coding in Chilton middle school. I love to do commission work and personal projects outside of school. I believe I am an opportunist that seeks ways to improve my creativity and art skills, whether it is traditional or digital. My favorite project in Art 74 was actually the Creative Coding Robot. It was very difficult to complete because I had little prior knowledge in Javascript coding from scratch, but I learned fairly quickly and made a piece that I am proud of. My favorite artwork in Art 75 was my Final video project, <em> Flavors of Home </em>. I loved the creative freedom to make my own short film with the knowledge I have gained from the class.</p1>
+        </div>
+        <div class="image-cycle">
+            <img src="https://i.postimg.cc/T14Vcspn/Me1.png" alt="Isabella Ballesteros" class="cycle-image active">
+            <img src="https://i.postimg.cc/PqQ17JCN/me10.png" alt="Isabella Ballesteros" class="cycle-image">
+            <img src="https://i.postimg.cc/Zn2NNyMM/Me2.png" alt="Isabella Ballesteros" class="cycle-image">
+            <img src="https://i.postimg.cc/Zq4d6mV7/Me3.png" alt="Isabella Ballesteros" class="cycle-image">
+            <img src="https://i.postimg.cc/j5knV7K9/Me4.png" alt="Isabella Ballesteros" class="cycle-image">
+            <img src="https://i.postimg.cc/28WbJyJ3/Me5.png" alt="Isabella Ballesteros" class="cycle-image">
+            <img src="https://i.postimg.cc/JhpGJky4/Me6.png" alt="Isabella Ballesteros" class="cycle-image">
+            <img src="https://i.postimg.cc/23N6mdtM/Me7.png" alt="Isabella Ballesteros" class="cycle-image">
+            <img src="https://i.postimg.cc/PfgQVPyv/Me8.png" alt="Isabella Ballesteros" class="cycle-image">
+        </div>
+    </div>
+    <h2 id="art74"> Art 74</h2>
+<div class="project-grid">
+    <div class="project-item">
+        <a href="page6.html"><img src="https://i.postimg.cc/Kjs3KVW3/boba.png" alt="Boba" style="width: 300px; height: 300px; display: block; margin: 0 auto;"></a>
+        <p class="project-title">Creative Coding Robot Project</p>
+    </div>
+    <div class="project-item">
+        <a href="page5.html"><img src="https://i.postimg.cc/qqB262vp/goldcat.png" alt="Gold Cat" style="width: 300px; height: 300px; display: block; margin: 0 auto;"></a>
+        <p class="project-title">Sticker Design Project</p>
+    </div>
+    <div class="project-item">
+        <a href="page4.html"><img src="https://i.postimg.cc/g2749tkH/music.png" alt="Music" style="width: 300px; height: 300px; display: block; margin: 0 auto;"></a>
+        <p class="project-title">Glitch Album Cover and Glitch Images</p>
+    </div>
+    <div class="project-item">
+        <a href="page2.html"><img src="https://i.postimg.cc/d3c0ZFQw/laptop.png" alt="Laptop" style="width: 300px; height: 300px; display: block; margin: 0 auto;"></a>
+        <p class="project-title">GIF Blog Project</p>
+    </div>
+    <div class="project-item">
+        <a href="page3.html"><img src="https://i.postimg.cc/sxCpjbtQ/water.png" alt="Water" style="width: 300px; height: 300px; display: block; margin: 0 auto;"></a>
+        <p class="project-title">GIFs from GIF Blog Project</p>
+    </div>
+</div>
+
+<h3 id="art75"> Art 75</h3>
+<div class="project-grid">
+    <div class="project-item">
+        <a href="page7.html"><img src="https://i.postimg.cc/mD7G1F6Q/reddoor-1.png" alt="Red Door" style="width: 300px; height: 300px; display: block; margin: 0 auto;"></a>
+        <p class="project-title">Midterm Video Story</p>
+    </div>
+    <div class="project-item">
+        <a href="page8.html"><img src="https://i.postimg.cc/Bnjk1KjP/ubecookie.png" alt="Ube Cookie" style="width: 300px; height: 300px; display: block; margin: 0 auto;"></a>
+        <p class="project-title">Final Video Project</p>
+    </div>
+    <div class="project-item">
+        <a href="page10.html"><img src="https://i.postimg.cc/tgHkCZPK/jellyfish.png" alt="Jellyfish" style="width: 300px; height: 300px; display: block; margin: 0 auto;"></a>
+        <p class="project-title">Adobe Character Animator Group Project</p>
+    </div>
+    <div class="project-item">
+        <a href="page9.html"><img src="https://i.postimg.cc/26170QfK/book.png" alt="Book" style="width: 300px; height: 300px; display: block; margin: 0 auto;"></a>
+        <p class="project-title">Adobe Aero GIF in Space Project</p>
+    </div>
+    <div class="project-item">
+        <a href="page11.html"><img src="https://i.postimg.cc/XqQNXCrS/teddybear.png" alt="Teddy Bear" style="width: 300px; height: 300px; display: block; margin: 0 auto;"></a>
+        <p class="project-title">Camera Shot Video Project</p>
+    </div>
+</div>
+
+<h3>Credits</h3>
+<div class="credits-text">
+<ul>
+<li> This portfolio was originally coded using Codepen. This is a revised version of the <a href="https://isabellaballesteros-gif.github.io/IBDigitalMediaArtPortfolio/">original portfolio</a> using Cursor.</li>
+<li> All videos linked are uploaded through YouTube.</li>
+<li> All image links are uploaded through Postimg.</li>
+<li> The front cover images and the piece icons were made using Procreate. The edited images of myself on this page are made using Adobe Photoshop.</li>
+    </div>
+    
+    <script>
+        // Color/Grayscale Toggle Functionality
+        const colorToggle = document.getElementById('colorToggle');
+        const body = document.body;
+        
+        // Check localStorage for saved preference
+        const isGrayscale = localStorage.getItem('grayscaleMode') === 'true';
+        
+        function toggleGrayscale() {
+            if (body.classList.contains('grayscale-mode')) {
+                body.classList.remove('grayscale-mode');
+                colorToggle.textContent = '⚫ Grayscale Mode';
+                colorToggle.classList.remove('grayscale-active');
+                localStorage.setItem('grayscaleMode', 'false');
+            } else {
+                body.classList.add('grayscale-mode');
+                colorToggle.textContent = '🎨 Color Mode';
+                colorToggle.classList.add('grayscale-active');
+                localStorage.setItem('grayscaleMode', 'true');
+            }
+        }
+        
+        // Apply saved preference on page load
+        if (isGrayscale) {
+            body.classList.add('grayscale-mode');
+            colorToggle.textContent = '🎨 Color Mode';
+            colorToggle.classList.add('grayscale-active');
+        }
+        
+        colorToggle.addEventListener('click', toggleGrayscale);
+    </script>
 </body>
 </html>

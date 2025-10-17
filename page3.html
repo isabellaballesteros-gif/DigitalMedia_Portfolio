@@ -6,14 +6,48 @@
     <title>GIFs from GIF Blog Project - Isabella Ballesteros Portfolio</title>
     <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body class="art74-page">
     <div class="container">
-        <p><a href="page1.html">← Back to Home</a></p>
+        <div class="house-link">
+            <a href="page1.html#art74"><img src="https://i.postimg.cc/3Jxc7ypj/House-1.png" alt="Back to Home"></a>
+        </div>
     <h1> GIFs from GIF Blog Project</h1>
     <img src='https://i.postimg.cc/Cx4ymBsP/gif.gif'>
     <img src="https://i.postimg.cc/FKvqSrty/Japan-2.gif"> 
     <h3> About the Project</h3>
         <p>The blog contains two GIFs that I created using Adobe Photoshop. I consider both of them one big piece since they are fairly simple to make and they are two variations, an animation and a real video. I decided to shine light on them, separate from the blog project, because I consider them separate art pieces in one big project. The blog itself is an artwork of its own with the graphic design and code and the GIFS are different visual pieces. The first GIF is a hand drawn animation of a sketched figure doing a magic form called water-bending from the show <em> Avatar the Last Airbender</em>. I spent most of the project time on this GIF because it was a time consuming, full body and effect animation. I only have basic animation knowledge and I needed a reference video for the GIF but it was all hand drawn, hard work that I am very proud of. The second GIF is a is a video of myself on a family trip. I chose the video because it was comedic and my family member's camera work was perfect for an infinite loop GIF. I had prior experience to making GIFs using Adobe Photoshop so I decided to challenge mself with making an animated GIF which took many hours to complete. I am very interested in animation which is why I wanted to make a hand-drawn GIF.</p>
     </div>
+    
+    <script>
+        // Color/Grayscale Toggle Functionality
+        const colorToggle = document.getElementById('colorToggle');
+        const body = document.body;
+        
+        // Check localStorage for saved preference
+        const isGrayscale = localStorage.getItem('grayscaleMode') === 'true';
+        
+        function toggleGrayscale() {
+            if (body.classList.contains('grayscale-mode')) {
+                body.classList.remove('grayscale-mode');
+                colorToggle.textContent = '🎨 Color Mode';
+                colorToggle.classList.remove('grayscale-active');
+                localStorage.setItem('grayscaleMode', 'false');
+            } else {
+                body.classList.add('grayscale-mode');
+                colorToggle.textContent = '⚫ Grayscale Mode';
+                colorToggle.classList.add('grayscale-active');
+                localStorage.setItem('grayscaleMode', 'true');
+            }
+        }
+        
+        // Apply saved preference on page load
+        if (isGrayscale) {
+            body.classList.add('grayscale-mode');
+            colorToggle.textContent = '⚫ Grayscale Mode';
+            colorToggle.classList.add('grayscale-active');
+        }
+        
+        colorToggle.addEventListener('click', toggleGrayscale);
+    </script>
 </body>
 </html>
