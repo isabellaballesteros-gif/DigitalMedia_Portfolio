@@ -682,23 +682,34 @@ button:focus-visible,
         margin: 8px;
     }
     
-    /* Make text containers transparent on mobile to show background */
+    /* Remove all white backgrounds on mobile for page 1 */
     .home-text {
         background-color: transparent !important;
-        padding: 8px;
-        margin: 8px;
+        padding: 0;
+        margin: 0;
+        border-radius: 0;
     }
     
     .about-text {
         background-color: transparent !important;
-        padding: 8px;
-        margin: 8px;
+        padding: 0;
+        margin: 0;
+        border-radius: 0;
     }
     
     .credits-text {
         background-color: transparent !important;
-        padding: 8px;
-        margin: 8px;
+        padding: 0;
+        margin: 0;
+        border-radius: 0;
+    }
+    
+    /* Remove container background on mobile */
+    .container {
+        background-color: transparent !important;
+        padding: 0;
+        margin: 0;
+        border-radius: 0;
     }
 
     /* Image cycle panel scales with viewport */
