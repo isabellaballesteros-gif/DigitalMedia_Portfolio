@@ -35,6 +35,16 @@
                     colorToggle.classList.add('grayscale-active');
                     localStorage.setItem('grayscaleMode', 'true');
                 }
+                
+                // Force re-render on mobile devices
+                if (window.innerWidth <= 768) {
+                    const images = document.querySelectorAll('img');
+                    images.forEach(img => {
+                        img.style.display = 'none';
+                        img.offsetHeight; // Trigger reflow
+                        img.style.display = '';
+                    });
+                }
             }
             
             // Apply saved preference on page load

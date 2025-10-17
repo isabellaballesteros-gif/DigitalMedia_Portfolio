@@ -584,24 +584,24 @@ button:focus-visible,
     filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.8)) !important;
 }
 
-/* Force color mode to remove grayscale filters - higher specificity */
-body:not(.grayscale-mode) img,
-body:not(.grayscale-mode) .cycle-image,
-body:not(.grayscale-mode) .project-item a img,
-body:not(.grayscale-mode) .corner-image img {
-    filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.8)) !important;
-}
-
-/* Ensure all images in color mode are not grayscale */
-body:not(.grayscale-mode) * {
-    filter: none !important;
-}
-
-body:not(.grayscale-mode) img,
-body:not(.grayscale-mode) .cycle-image,
-body:not(.grayscale-mode) .project-item a img,
-body:not(.grayscale-mode) .corner-image img {
-    filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.8)) !important;
+/* Mobile-specific grayscale fixes */
+@media (max-width: 768px) {
+    /* Force color mode on mobile */
+    body:not(.grayscale-mode) img {
+        filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.8)) !important;
+    }
+    
+    body:not(.grayscale-mode) .cycle-image {
+        filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.8)) !important;
+    }
+    
+    body:not(.grayscale-mode) .project-item a img {
+        filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.8)) !important;
+    }
+    
+    body:not(.grayscale-mode) .corner-image img {
+        filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.8)) !important;
+    }
 }
 
 /* Reduce motion for users who prefer it (keep essential image cycle) */
