@@ -212,14 +212,6 @@ body.about-page {
     background-attachment: scroll;
 }
 
-/* Debug: Force mobile color mode to match grayscale behavior */
-@media (max-width: 768px) {
-    body.about-page:not(.grayscale-mode) {
-        background-size: contain !important;
-        background-position: center center !important;
-        background-attachment: scroll !important;
-    }
-}
 
 /* Background colors for project pages */
 body.art74-page {
@@ -663,16 +655,10 @@ body.grayscale-mode .cycle-image {
         margin: 0;
     }
     
-    /* Mobile about page background - show full image without cropping */
-    body.about-page {
-        background-size: contain !important;
-        background-position: center center !important;
-        background-attachment: scroll !important;
-        background-repeat: no-repeat !important;
-    }
-    
-    /* Force consistent mobile background for color mode */
-    body.about-page:not(.grayscale-mode) {
+    /* Mobile about page background - show full image without cropping - OVERRIDE ALL DESKTOP RULES */
+    body.about-page,
+    body.about-page:not(.grayscale-mode),
+    body.about-page.grayscale-mode {
         background-size: contain !important;
         background-position: center center !important;
         background-attachment: scroll !important;
@@ -797,7 +783,9 @@ body.grayscale-mode .cycle-image {
     
     /* Fix about page background in landscape mobile view - only for mobile screens */
     @media (max-width: 768px) {
-        body.about-page {
+        body.about-page,
+        body.about-page:not(.grayscale-mode),
+        body.about-page.grayscale-mode {
             background-size: contain !important;
             background-position: center center !important;
             background-attachment: scroll !important;
