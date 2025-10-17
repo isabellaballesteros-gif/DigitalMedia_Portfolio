@@ -1,4 +1,4 @@
-/* Basic Reset and Clean Styles */
+/* Basic Reset and Clean Styles - Updated: 2024-12-19 Mobile Background Fix */
 
 body {
     font-family: Arial, sans-serif;
@@ -210,6 +210,15 @@ body.about-page {
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
+}
+
+/* Debug: Force mobile color mode to match grayscale behavior */
+@media (max-width: 768px) {
+    body.about-page:not(.grayscale-mode) {
+        background-size: cover !important;
+        background-position: center center !important;
+        background-attachment: scroll !important;
+    }
 }
 
 /* Background colors for project pages */
@@ -656,6 +665,13 @@ body.grayscale-mode .cycle-image {
     
     /* Mobile about page background - ensure full image visibility */
     body.about-page {
+        background-size: cover !important;
+        background-position: center center !important;
+        background-attachment: scroll !important;
+    }
+    
+    /* Force consistent mobile background for color mode */
+    body.about-page:not(.grayscale-mode) {
         background-size: cover !important;
         background-position: center center !important;
         background-attachment: scroll !important;
