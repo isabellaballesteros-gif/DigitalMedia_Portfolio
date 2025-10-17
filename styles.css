@@ -630,7 +630,12 @@ button:focus-visible,
 
 @media (max-width: 768px) {
     body {
-        padding: 16px;
+        padding: 0;
+    }
+    
+    /* Remove padding specifically for home page on mobile */
+    body.home-page {
+        padding: 0;
     }
 
     h1 { font-size: 36px; font-family: fantasy; }
