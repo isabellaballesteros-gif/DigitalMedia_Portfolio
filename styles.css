@@ -796,8 +796,8 @@ button:focus-visible,
 
     .project-item a img {
         /* Ensure tappable size without overflow */
-        width: 70vw !important;
-        height: auto !important;
+        max-width: 90vw;
+        height: auto;
     }
 
     #buttonContainer {
