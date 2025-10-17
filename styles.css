@@ -156,7 +156,7 @@ body.grayscale-mode.about-page::before {
 /* Mobile grayscale background for about-page */
 @media (max-width: 768px) {
     body.grayscale-mode.about-page::before {
-        background-size: contain !important;
+        background-size: cover !important;
         background-position: center center !important;
         background-attachment: scroll !important;
     }
@@ -655,14 +655,15 @@ body.grayscale-mode .cycle-image {
         margin: 0;
     }
     
-    /* Mobile about page background - show full image without cropping - OVERRIDE ALL DESKTOP RULES */
+    /* Mobile about page background - cover entire page and scroll with content */
     body.about-page,
     body.about-page:not(.grayscale-mode),
     body.about-page.grayscale-mode {
-        background-size: contain !important;
+        background-size: cover !important;
         background-position: center center !important;
         background-attachment: scroll !important;
         background-repeat: no-repeat !important;
+        min-height: 100vh !important;
     }
 
     h1 { font-size: 36px; font-family: fantasy; }
@@ -786,15 +787,16 @@ body.grayscale-mode .cycle-image {
         body.about-page,
         body.about-page:not(.grayscale-mode),
         body.about-page.grayscale-mode {
-            background-size: contain !important;
+            background-size: cover !important;
             background-position: center center !important;
             background-attachment: scroll !important;
             background-repeat: no-repeat !important;
+            min-height: 100vh !important;
         }
         
         /* Fix grayscale about page background in landscape mobile view */
         body.grayscale-mode.about-page::before {
-            background-size: contain !important;
+            background-size: cover !important;
             background-position: center center !important;
             background-attachment: scroll !important;
         }
