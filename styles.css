@@ -353,6 +353,12 @@ p1{
     margin-bottom: 15px;
 }
 
+p3{
+    font-family: 'Lucida Console', 'Monaco', 'monospace';
+    font-size: 20px;
+    margin-bottom: 15px;
+    color:#0066cc
+}
 a {
     color: #0066cc;
     text-decoration: underline;
@@ -551,3 +557,150 @@ body.about-page h1 {
 .cycle-image:nth-child(7) { animation: cycleImages 27s infinite 18s; }
 .cycle-image:nth-child(8) { animation: cycleImages 27s infinite 21s; }
 .cycle-image:nth-child(9) { animation: cycleImages 27s infinite 24s; }
+
+/* Accessibility: visible focus outlines */
+a:focus-visible,
+button:focus-visible,
+.back-link:focus-visible {
+    outline: 3px solid #667eea;
+    outline-offset: 3px;
+}
+
+/* Make the large title image on the home page responsive even with inline width */
+.title-block img {
+    width: min(90vw, 900px) !important;
+    height: auto !important;
+}
+
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation: none !important;
+        transition: none !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+    .about-content {
+        gap: 24px;
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        padding: 16px;
+    }
+
+    h1 { font-size: 36px; }
+    h2, h3 { font-size: 32px; }
+    h4 { font-size: 32px; }
+    p { font-size: 20px; }
+    p1, p3, li { font-size: 18px; }
+
+    /* Avoid parallax issues on mobile */
+    body.home-page,
+    body.about-page {
+        background-attachment: scroll;
+        background-size: cover; /* ensure full coverage on small screens */
+    }
+
+    /* Positioning adjustments for the home title */
+    .title-block {
+        position: static;
+        transform: none;
+        text-align: center;
+        margin-top: 24px;
+    }
+
+    /* Corner and house images scale down on mobile */
+    .corner-image {
+        top: 8px;
+        right: 8px;
+        width: 150px;
+        height: 150px;
+    }
+    .house-link img {
+        width: 120px;
+        height: 120px;
+    }
+
+    /* Container breathing space */
+    .container {
+        padding: 16px;
+    }
+
+    /* Stack about section */
+    .about-content {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+    .about-text {
+        flex: 0 1 auto;
+        max-width: 100%;
+        margin-top: 0;
+        text-align: left; /* keep body text left-aligned for readability */
+    }
+
+    /* Image cycle panel scales with viewport */
+    .image-cycle {
+        width: min(90vw, 420px);
+        height: min(90vw, 420px);
+    }
+
+    /* Projects grid: 1 column on narrow screens */
+    .project-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    /* Back link remains tappable but compact */
+    .back-link {
+        padding: 10px 14px;
+        font-size: 14px;
+    }
+
+    /* Toggle button container stays usable but smaller */
+    #buttonContainer {
+        width: 160px !important;
+        height: 44px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 { font-size: 30px; }
+    h2, h3 { font-size: 26px; }
+    h4 { font-size: 26px; }
+    p { font-size: 18px; }
+    p1, p3, li { font-size: 16px; }
+
+    .corner-image {
+        width: 120px;
+        height: 120px;
+    }
+    .house-link img {
+        width: 100px;
+        height: 100px;
+    }
+
+    .image-cycle {
+        width: min(92vw, 360px);
+        height: min(92vw, 360px);
+    }
+
+    .project-item a img {
+        /* Ensure tappable size without overflow */
+        width: 70vw !important;
+        height: auto !important;
+    }
+
+    #buttonContainer {
+        width: 150px !important;
+        height: 44px !important;
+        left: 16px !important;
+        bottom: 16px !important;
+    }
+}
