@@ -579,7 +579,15 @@ button:focus-visible,
 
 /* Ensure non-grayscale filters in color mode for key visuals */
 .home-page:not(.grayscale-mode) .cycle-image,
-.home-page:not(.grayscale-mode) .project-item a img {
+.home-page:not(.grayscale-mode) .project-item a img,
+.home-page:not(.grayscale-mode) img {
+    filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.8)) !important;
+}
+
+/* Force color mode to remove grayscale filters */
+body:not(.grayscale-mode) img,
+body:not(.grayscale-mode) .cycle-image,
+body:not(.grayscale-mode) .project-item a img {
     filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.8)) !important;
 }
 
@@ -622,11 +630,13 @@ button:focus-visible,
     body.home-page {
         background-attachment: fixed;
         background-size: cover;
-        background-position: center right;
+        background-position: center;
+        background-repeat: no-repeat;
     }
     body.grayscale-mode.home-page::before {
         background-size: cover;
-        background-position: center right;
+        background-position: center;
+        background-repeat: no-repeat;
     }
 
     /* Positioning adjustments for the home title */
@@ -699,12 +709,14 @@ button:focus-visible,
     /* Ensure full-bleed background in landscape */
     body.home-page {
         background-size: cover;
-        background-position: center right;
+        background-position: center;
         background-attachment: fixed;
+        background-repeat: no-repeat;
     }
     body.grayscale-mode.home-page::before {
         background-size: cover;
-        background-position: center right;
+        background-position: center;
+        background-repeat: no-repeat;
     }
 
     /* Prevent house icon from covering titles */
