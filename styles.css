@@ -644,11 +644,16 @@ button:focus-visible,
     
     /* Remove padding specifically for home page on mobile */
     body.home-page {
-        padding: 0;
+        padding: 0 !important;
+        margin: 0 !important;
+        background-color: black !important;
+        background-image: url('https://i.postimg.cc/MKN4m0FS/Selfportraitdma.png') !important;
         background-size: cover !important;
         background-position: center !important;
+        background-repeat: no-repeat !important;
         background-attachment: scroll !important;
-        min-height: 100vh;
+        min-height: 100vh !important;
+        width: 100vw !important;
     }
 
     h1 { font-size: 36px; font-family: fantasy; }
