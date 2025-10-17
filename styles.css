@@ -159,6 +159,8 @@ body.grayscale-mode.about-page::before {
         background-size: cover !important;
         background-position: center center !important;
         background-attachment: scroll !important;
+        width: 100vw !important;
+        height: 100vh !important;
     }
 }
 
@@ -655,9 +657,25 @@ body.grayscale-mode .cycle-image {
         margin: 0;
     }
     
-    /* Mobile about page background - cover entire page and scroll with content */
-    body.about-page,
-    body.about-page:not(.grayscale-mode),
+    /* Mobile about page background - cover entire page and scroll with content - FORCE OVERRIDE */
+    body.about-page {
+        background-size: cover !important;
+        background-position: center center !important;
+        background-attachment: scroll !important;
+        background-repeat: no-repeat !important;
+        min-height: 100vh !important;
+    }
+    
+    /* Force color mode to match grayscale behavior */
+    body.about-page:not(.grayscale-mode) {
+        background-size: cover !important;
+        background-position: center center !important;
+        background-attachment: scroll !important;
+        background-repeat: no-repeat !important;
+        min-height: 100vh !important;
+    }
+    
+    /* Force grayscale mode to match */
     body.about-page.grayscale-mode {
         background-size: cover !important;
         background-position: center center !important;
@@ -784,8 +802,22 @@ body.grayscale-mode .cycle-image {
     
     /* Fix about page background in landscape mobile view - only for mobile screens */
     @media (max-width: 768px) {
-        body.about-page,
-        body.about-page:not(.grayscale-mode),
+        body.about-page {
+            background-size: cover !important;
+            background-position: center center !important;
+            background-attachment: scroll !important;
+            background-repeat: no-repeat !important;
+            min-height: 100vh !important;
+        }
+        
+        body.about-page:not(.grayscale-mode) {
+            background-size: cover !important;
+            background-position: center center !important;
+            background-attachment: scroll !important;
+            background-repeat: no-repeat !important;
+            min-height: 100vh !important;
+        }
+        
         body.about-page.grayscale-mode {
             background-size: cover !important;
             background-position: center center !important;
@@ -799,6 +831,8 @@ body.grayscale-mode .cycle-image {
             background-size: cover !important;
             background-position: center center !important;
             background-attachment: scroll !important;
+            width: 100vw !important;
+            height: 100vh !important;
         }
     }
     
