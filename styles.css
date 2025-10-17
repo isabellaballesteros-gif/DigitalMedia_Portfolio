@@ -215,7 +215,7 @@ body.about-page {
 /* Debug: Force mobile color mode to match grayscale behavior */
 @media (max-width: 768px) {
     body.about-page:not(.grayscale-mode) {
-        background-size: 110% !important;
+        background-size: contain !important;
         background-position: center center !important;
         background-attachment: scroll !important;
     }
@@ -668,6 +668,7 @@ body.grayscale-mode .cycle-image {
         background-size: contain !important;
         background-position: center center !important;
         background-attachment: scroll !important;
+        background-repeat: no-repeat !important;
     }
     
     /* Force consistent mobile background for color mode */
@@ -675,6 +676,7 @@ body.grayscale-mode .cycle-image {
         background-size: contain !important;
         background-position: center center !important;
         background-attachment: scroll !important;
+        background-repeat: no-repeat !important;
     }
 
     h1 { font-size: 36px; font-family: fantasy; }
@@ -799,6 +801,7 @@ body.grayscale-mode .cycle-image {
             background-size: contain !important;
             background-position: center center !important;
             background-attachment: scroll !important;
+            background-repeat: no-repeat !important;
         }
         
         /* Fix grayscale about page background in landscape mobile view */
