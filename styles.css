@@ -156,17 +156,8 @@ body.grayscale-mode.about-page::before {
 /* Mobile grayscale background for about-page */
 @media (max-width: 768px) {
     body.grayscale-mode.about-page::before {
-        background-size: 110% !important;
-        background-position: center center !important;
-        background-attachment: scroll !important;
-    }
-}
-
-/* Mobile grayscale background for home-page */
-@media (max-width: 768px) {
-    body.grayscale-mode.home-page::before {
         background-size: contain !important;
-        background-position: right center !important;
+        background-position: center center !important;
         background-attachment: scroll !important;
     }
 }
@@ -666,25 +657,22 @@ body.grayscale-mode .cycle-image {
         padding: 0;
     }
     
-    /* Mobile home page background - ensure full image visibility */
+    /* Mobile home page background - use desktop settings but ensure it works */
     body.home-page {
         padding: 0;
         margin: 0;
-        background-size: contain !important;
-        background-position: right center !important;
-        background-attachment: scroll !important;
     }
     
-    /* Mobile about page background - ensure full image visibility */
+    /* Mobile about page background - show full image without cropping */
     body.about-page {
-        background-size: 110% !important;
+        background-size: contain !important;
         background-position: center center !important;
         background-attachment: scroll !important;
     }
     
     /* Force consistent mobile background for color mode */
     body.about-page:not(.grayscale-mode) {
-        background-size: 110% !important;
+        background-size: contain !important;
         background-position: center center !important;
         background-attachment: scroll !important;
     }
@@ -808,14 +796,14 @@ body.grayscale-mode .cycle-image {
     /* Fix about page background in landscape mobile view - only for mobile screens */
     @media (max-width: 768px) {
         body.about-page {
-            background-size: 110% !important;
+            background-size: contain !important;
             background-position: center center !important;
             background-attachment: scroll !important;
         }
         
         /* Fix grayscale about page background in landscape mobile view */
         body.grayscale-mode.about-page::before {
-            background-size: 110% !important;
+            background-size: contain !important;
             background-position: center center !important;
             background-attachment: scroll !important;
         }
