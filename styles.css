@@ -584,10 +584,23 @@ button:focus-visible,
     filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.8)) !important;
 }
 
-/* Force color mode to remove grayscale filters */
+/* Force color mode to remove grayscale filters - higher specificity */
 body:not(.grayscale-mode) img,
 body:not(.grayscale-mode) .cycle-image,
-body:not(.grayscale-mode) .project-item a img {
+body:not(.grayscale-mode) .project-item a img,
+body:not(.grayscale-mode) .corner-image img {
+    filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.8)) !important;
+}
+
+/* Ensure all images in color mode are not grayscale */
+body:not(.grayscale-mode) * {
+    filter: none !important;
+}
+
+body:not(.grayscale-mode) img,
+body:not(.grayscale-mode) .cycle-image,
+body:not(.grayscale-mode) .project-item a img,
+body:not(.grayscale-mode) .corner-image img {
     filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.8)) !important;
 }
 
