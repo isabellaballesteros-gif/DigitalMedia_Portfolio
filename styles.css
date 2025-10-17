@@ -124,14 +124,6 @@ body.grayscale-mode.home-page::before {
     pointer-events: none;
 }
 
-/* Mobile-specific grayscale background */
-@media (max-width: 768px) {
-    body.grayscale-mode.home-page::before {
-        background-size: cover !important;
-        background-position: center !important;
-        background-attachment: scroll !important;
-    }
-}
 
 /* Hide original background when in grayscale mode */
 body.grayscale-mode.home-page {
@@ -642,18 +634,10 @@ button:focus-visible,
         padding: 0;
     }
     
-    /* Remove padding specifically for home page on mobile */
+    /* Mobile home page background - use desktop settings but ensure it works */
     body.home-page {
-        padding: 0 !important;
-        margin: 0 !important;
-        background-color: #667eea !important;
-        background-image: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
-        background-size: cover !important;
-        background-position: center !important;
-        background-repeat: no-repeat !important;
-        background-attachment: scroll !important;
-        min-height: 100vh !important;
-        width: 100vw !important;
+        padding: 0;
+        margin: 0;
     }
 
     h1 { font-size: 36px; font-family: fantasy; }
