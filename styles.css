@@ -153,6 +153,15 @@ body.grayscale-mode.about-page::before {
     pointer-events: none;
 }
 
+/* Mobile grayscale background for about-page */
+@media (max-width: 768px) {
+    body.grayscale-mode.about-page::before {
+        background-size: cover !important;
+        background-position: center center !important;
+        background-attachment: scroll !important;
+    }
+}
+
 /* Hide original background when in grayscale mode */
 body.grayscale-mode.about-page {
     background-image: none !important;
@@ -638,6 +647,13 @@ button:focus-visible,
     body.home-page {
         padding: 0;
         margin: 0;
+    }
+    
+    /* Mobile about page background - ensure full image visibility */
+    body.about-page {
+        background-size: cover !important;
+        background-position: center center !important;
+        background-attachment: scroll !important;
     }
 
     h1 { font-size: 36px; font-family: fantasy; }
