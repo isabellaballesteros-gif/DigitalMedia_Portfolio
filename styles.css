@@ -115,18 +115,18 @@ body.grayscale-mode.home-page::before {
     width: 100vw;
     height: 100vh;
     background-image: url('https://i.postimg.cc/MKN4m0FS/Selfportraitdma.png');
-    background-size: contain;
+    background-size: cover; /* ensure full coverage in grayscale */
     background-position: right center;
     background-repeat: no-repeat;
     background-attachment: fixed;
     filter: grayscale(100%);
-    z-index: -1;
+    z-index: -1; /* ensure it's behind content and doesn't affect stacking */
     pointer-events: none;
 }
 
 /* Hide original background when in grayscale mode */
 body.grayscale-mode.home-page {
-    background-image: none !important;
+    background-image: none !important; /* rely on ::before image */
 }
 
 /* Ensure button container is not affected by grayscale filter */
@@ -299,8 +299,8 @@ body.art75-page img {
 }
 
 .house-link img {
-    width: 300px;
-    height: 300px;
+    width: 500px;
+    height: 500px;
     transition: transform 0.3s ease;
     animation: shaky 3s ease-in-out infinite;
 }
@@ -445,6 +445,11 @@ body.grayscale-mode .back-link {
     animation: shaky 3s ease-in-out infinite;
 }
 
+/* Ensure shaky animation is not overridden by later rules */
+.project-item a img {
+    animation: shaky 3s ease-in-out infinite !important;
+}
+
 .project-item a:hover img {
     transform: scale(1.05) rotate(2deg) !important;
     filter: drop-shadow(0 12px 24px rgba(0, 0, 0, 0.9)) !important;
@@ -572,13 +577,27 @@ button:focus-visible,
     height: auto !important;
 }
 
-/* Reduce motion for users who prefer it */
+/* Ensure non-grayscale filters in color mode for key visuals */
+.home-page:not(.grayscale-mode) .cycle-image,
+.home-page:not(.grayscale-mode) .project-item a img {
+    filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.8)) !important;
+}
+
+/* Reduce motion for users who prefer it (keep essential image cycle) */
 @media (prefers-reduced-motion: reduce) {
-    * {
+    .house-link img,
+    .corner-image img,
+    .back-link,
+    .color-toggle {
         animation: none !important;
         transition: none !important;
-        scroll-behavior: auto !important;
     }
+    html { scroll-behavior: auto !important; }
+}
+
+/* Ensure shaky animation works on project thumbnails */
+.project-item a img {
+    animation: shaky 3s ease-in-out infinite !important;
 }
 
 /* Responsive adjustments */
@@ -593,25 +612,30 @@ button:focus-visible,
         padding: 16px;
     }
 
-    h1 { font-size: 36px; }
-    h2, h3 { font-size: 32px; }
-    h4 { font-size: 32px; }
+    h1 { font-size: 36px; font-family: fantasy; }
+    h2, h3 { font-size: 32px; font-family: fantasy; }
+    h4 { font-size: 32px; font-family: fantasy; }
     p { font-size: 20px; }
     p1, p3, li { font-size: 18px; }
 
-    /* Avoid parallax issues on mobile */
-    body.home-page,
-    body.about-page {
-        background-attachment: scroll;
-        background-size: cover; /* ensure full coverage on small screens */
+    /* Keep home background stable and full on mobile */
+    body.home-page {
+        background-attachment: fixed;
+        background-size: cover;
+        background-position: center right;
+    }
+    body.grayscale-mode.home-page::before {
+        background-size: cover;
+        background-position: center right;
     }
 
     /* Positioning adjustments for the home title */
     .title-block {
-        position: static;
+        position: relative;
         transform: none;
         text-align: center;
         margin-top: 24px;
+        z-index: 1;
     }
 
     /* Corner and house images scale down on mobile */
@@ -622,8 +646,8 @@ button:focus-visible,
         height: 150px;
     }
     .house-link img {
-        width: 120px;
-        height: 120px;
+        width: 180px;
+        height: 180px;
     }
 
     /* Container breathing space */
@@ -670,6 +694,29 @@ button:focus-visible,
     }
 }
 
+/* Landscape-specific adjustments */
+@media (orientation: landscape) {
+    /* Ensure full-bleed background in landscape */
+    body.home-page {
+        background-size: cover;
+        background-position: center right;
+        background-attachment: fixed;
+    }
+    body.grayscale-mode.home-page::before {
+        background-size: cover;
+        background-position: center right;
+    }
+
+    /* Prevent house icon from covering titles */
+    .house-link img {
+        width: 200px;
+        height: 200px;
+    }
+    .container h1 {
+        margin-top: 100px;
+    }
+}
+
 @media (max-width: 480px) {
     h1 { font-size: 30px; }
     h2, h3 { font-size: 26px; }
@@ -682,8 +729,8 @@ button:focus-visible,
         height: 120px;
     }
     .house-link img {
-        width: 100px;
-        height: 100px;
+        width: 150px;
+        height: 150px;
     }
 
     .image-cycle {
