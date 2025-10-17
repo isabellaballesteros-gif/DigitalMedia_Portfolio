@@ -1,4 +1,4 @@
-/* Basic Reset and Clean Styles - Updated: 2024-12-19 Mobile Background Fix */
+/* Basic Reset and Clean Styles - Updated: 2024-12-19 Mobile Background Fix v2 - Cache Buster: 20241219123456 */
 
 body {
     font-family: Arial, sans-serif;
@@ -144,7 +144,7 @@ body.grayscale-mode.about-page::before {
     width: 100vw;
     height: 100vh;
     background-image: url('https://i.postimg.cc/CMtT5HNh/Background.png');
-    background-size: cover;
+    background-size: 110%;
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -156,7 +156,7 @@ body.grayscale-mode.about-page::before {
 /* Mobile grayscale background for about-page */
 @media (max-width: 768px) {
     body.grayscale-mode.about-page::before {
-        background-size: cover !important;
+        background-size: 110% !important;
         background-position: center center !important;
         background-attachment: scroll !important;
     }
@@ -206,7 +206,7 @@ body.home-page {
 /* Background image for about page */
 body.about-page {
     background-image: url('https://i.postimg.cc/CMtT5HNh/Background.png');
-    background-size: cover;
+    background-size: 110%;
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -218,6 +218,14 @@ body.about-page {
         background-size: cover !important;
         background-position: center center !important;
         background-attachment: scroll !important;
+    }
+    
+    /* ULTRA SPECIFIC: Force mobile color mode background */
+    html body.about-page:not(.grayscale-mode) {
+        background-size: 110% !important;
+        background-position: center center !important;
+        background-attachment: scroll !important;
+        background-repeat: no-repeat !important;
     }
 }
 
@@ -665,14 +673,14 @@ body.grayscale-mode .cycle-image {
     
     /* Mobile about page background - ensure full image visibility */
     body.about-page {
-        background-size: cover !important;
+        background-size: 110% !important;
         background-position: center center !important;
         background-attachment: scroll !important;
     }
     
     /* Force consistent mobile background for color mode */
     body.about-page:not(.grayscale-mode) {
-        background-size: cover !important;
+        background-size: 110% !important;
         background-position: center center !important;
         background-attachment: scroll !important;
     }
@@ -796,14 +804,14 @@ body.grayscale-mode .cycle-image {
     /* Fix about page background in landscape mobile view - only for mobile screens */
     @media (max-width: 768px) {
         body.about-page {
-            background-size: cover !important;
+            background-size: 110% !important;
             background-position: center center !important;
             background-attachment: scroll !important;
         }
         
         /* Fix grayscale about page background in landscape mobile view */
         body.grayscale-mode.about-page::before {
-            background-size: cover !important;
+            background-size: 110% !important;
             background-position: center center !important;
             background-attachment: scroll !important;
         }
