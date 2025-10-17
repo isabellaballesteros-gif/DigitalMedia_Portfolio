@@ -678,6 +678,19 @@ button:focus-visible,
         max-width: 100%;
         margin-top: 0;
         text-align: left; /* keep body text left-aligned for readability */
+        padding: 12px;
+        margin: 8px;
+    }
+    
+    /* Make text containers more compact on mobile */
+    .home-text {
+        padding: 12px;
+        margin: 8px;
+    }
+    
+    .credits-text {
+        padding: 12px;
+        margin: 8px;
     }
 
     /* Image cycle panel scales with viewport */
