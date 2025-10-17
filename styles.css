@@ -103,7 +103,12 @@ body.grayscale-mode .corner-image img {
 }
 
 body.grayscale-mode .cycle-image {
-    filter: grayscale(100%) drop-shadow(0 8px 16px rgba(0, 0, 0, 0.8));
+    filter: grayscale(100%) drop-shadow(0 8px 16px rgba(0, 0, 0, 0.8)) !important;
+}
+
+/* Ensure about-page cycle images work in grayscale mode */
+body.grayscale-mode.about-page .cycle-image {
+    filter: grayscale(100%) drop-shadow(0 8px 16px rgba(0, 0, 0, 0.8)) !important;
 }
 
 /* Apply grayscale to home-page background using pseudo-element */
@@ -206,7 +211,7 @@ body.home-page {
 /* Background image for about page */
 body.about-page {
     background-image: url('https://i.postimg.cc/CMtT5HNh/Background.png');
-    background-size: cover;
+    background-size: 110%;
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -772,18 +777,37 @@ button:focus-visible,
         margin-top: 100px;
     }
     
-    /* Fix about page background in landscape mobile view */
-    body.about-page {
-        background-size: cover !important;
-        background-position: center center !important;
-        background-attachment: scroll !important;
+    /* Fix about page background in landscape mobile view - only for mobile screens */
+    @media (max-width: 768px) {
+        body.about-page {
+            background-size: cover !important;
+            background-position: center center !important;
+            background-attachment: scroll !important;
+        }
+        
+        /* Fix grayscale about page background in landscape mobile view */
+        body.grayscale-mode.about-page::before {
+            background-size: cover !important;
+            background-position: center center !important;
+            background-attachment: scroll !important;
+        }
     }
     
-    /* Fix grayscale about page background in landscape mobile view */
-    body.grayscale-mode.about-page::before {
-        background-size: cover !important;
-        background-position: center center !important;
-        background-attachment: scroll !important;
+    /* Ensure images work properly in landscape mode */
+    .image-cycle {
+        width: min(40vw, 500px);
+        height: min(40vw, 500px);
+    }
+    
+    .project-item a img {
+        max-width: 100%;
+        height: auto;
+        filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.8)) !important;
+    }
+    
+    /* Ensure image cycle works in landscape */
+    .cycle-image {
+        filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.8)) !important;
     }
 }
 
