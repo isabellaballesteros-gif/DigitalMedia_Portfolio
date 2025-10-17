@@ -135,36 +135,23 @@ body.grayscale-mode.home-page #buttonContainer {
     filter: none !important;
 }
 
-/* Apply grayscale to about-page background using pseudo-element */
-body.grayscale-mode.about-page::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background-image: url('https://i.postimg.cc/CMtT5HNh/Background.png');
-    background-size: 110%;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: scroll;
+/* Apply grayscale to about-page background directly on body */
+body.grayscale-mode.about-page {
+    background-image: url('https://i.postimg.cc/CMtT5HNh/Background.png') !important;
+    background-size: 110% !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    background-attachment: scroll !important;
     filter: grayscale(100%);
-    z-index: -1;
-    pointer-events: none;
 }
 
 /* Mobile grayscale background for about-page */
 @media (max-width: 768px) {
-    body.grayscale-mode.about-page::before {
+    body.grayscale-mode.about-page {
         background-size: 110% !important;
         background-position: center center !important;
         background-attachment: scroll !important;
     }
-}
-
-/* Hide original background when in grayscale mode */
-body.grayscale-mode.about-page {
-    background-image: none !important;
 }
 
 /* Ensure button container is not affected by grayscale filter */
@@ -215,17 +202,9 @@ body.about-page {
 /* Debug: Force mobile color mode to match grayscale behavior */
 @media (max-width: 768px) {
     body.about-page:not(.grayscale-mode) {
-        background-size: cover !important;
-        background-position: center center !important;
-        background-attachment: scroll !important;
-    }
-    
-    /* ULTRA SPECIFIC: Force mobile color mode background */
-    html body.about-page:not(.grayscale-mode) {
         background-size: 110% !important;
         background-position: center center !important;
         background-attachment: scroll !important;
-        background-repeat: no-repeat !important;
     }
 }
 
@@ -810,7 +789,7 @@ body.grayscale-mode .cycle-image {
         }
         
         /* Fix grayscale about page background in landscape mobile view */
-        body.grayscale-mode.about-page::before {
+        body.grayscale-mode.about-page {
             background-size: 110% !important;
             background-position: center center !important;
             background-attachment: scroll !important;
