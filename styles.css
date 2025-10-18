@@ -623,7 +623,7 @@ body.grayscale-mode .cycle-image {
 
 /* Mobile-specific grayscale fixes */
 @media (max-width: 768px) {
-    /* Force color mode on mobile */
+    /* Force color mode on mobile - ensure images are NOT grayscale in color mode */
     body:not(.grayscale-mode) img {
         filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.8)) !important;
     }
@@ -638,6 +638,15 @@ body.grayscale-mode .cycle-image {
     
     body:not(.grayscale-mode) .corner-image img {
         filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.8)) !important;
+    }
+    
+    /* Mobile home page background - make color mode behave like grayscale mode */
+    body.home-page:not(.grayscale-mode) {
+        background-size: cover !important;
+        background-position: center center !important;
+        background-attachment: scroll !important;
+        background-repeat: no-repeat !important;
+        min-height: 100vh !important;
     }
 }
 
@@ -852,6 +861,57 @@ body.grayscale-mode .cycle-image {
             background-attachment: scroll !important;
             width: 100vw !important;
             height: 100vh !important;
+        }
+        
+        /* Fix home page background in landscape mobile view */
+        body.home-page {
+            background-size: cover !important;
+            background-position: center center !important;
+            background-attachment: scroll !important;
+            background-repeat: no-repeat !important;
+            min-height: 100vh !important;
+        }
+        
+        body.home-page:not(.grayscale-mode) {
+            background-size: cover !important;
+            background-position: center center !important;
+            background-attachment: scroll !important;
+            background-repeat: no-repeat !important;
+            min-height: 100vh !important;
+        }
+        
+        body.home-page.grayscale-mode {
+            background-size: cover !important;
+            background-position: center center !important;
+            background-attachment: scroll !important;
+            background-repeat: no-repeat !important;
+            min-height: 100vh !important;
+        }
+        
+        /* Fix grayscale home page background in landscape mobile view */
+        body.grayscale-mode.home-page::before {
+            background-size: cover !important;
+            background-position: center center !important;
+            background-attachment: scroll !important;
+            width: 100vw !important;
+            height: 100vh !important;
+        }
+        
+        /* Force color mode images in landscape mobile - prevent grayscale stickiness */
+        body:not(.grayscale-mode) img {
+            filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.8)) !important;
+        }
+        
+        body:not(.grayscale-mode) .cycle-image {
+            filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.8)) !important;
+        }
+        
+        body:not(.grayscale-mode) .project-item a img {
+            filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.8)) !important;
+        }
+        
+        body:not(.grayscale-mode) .corner-image img {
+            filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.8)) !important;
         }
     }
     
