@@ -214,7 +214,7 @@ body.about-page {
     background-attachment: scroll;
 }
 
-/* MOBILE OVERRIDE - Force mobile background behavior */
+/* MOBILE: Make background work like grayscale mode */
 @media (max-width: 768px) {
     body.about-page {
         background-size: cover !important;
