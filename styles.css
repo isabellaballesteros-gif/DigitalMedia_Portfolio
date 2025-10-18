@@ -916,26 +916,18 @@ body.grayscale-mode .cycle-image {
         position: relative;
     }
     
-    /* Mobile Grayscale Mode - Page1 */
+    /* Mobile Grayscale Mode - Page1 - Match Color Mode */
     body.grayscale-mode.home-page {
-        background-image: none !important;
-    }
-    
-    body.grayscale-mode.home-page::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
         background-image: url('https://i.postimg.cc/MKN4m0FS/Selfportraitdma.png');
         background-size: contain !important;
         background-position: center center !important;
         background-repeat: no-repeat !important;
         background-attachment: scroll !important;
         filter: grayscale(100%);
-        z-index: -1;
-        pointer-events: none;
+    }
+    
+    body.grayscale-mode.home-page::before {
+        display: none !important;
     }
     
     /* Mobile About Page Background */
@@ -979,9 +971,14 @@ body.grayscale-mode .cycle-image {
         filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.8));
     }
     
+    /* Mobile Color Mode Images - Force Color */
+    body:not(.grayscale-mode) img {
+        filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.8)) !important;
+    }
+    
     /* Mobile Grayscale Images */
     body.grayscale-mode img {
-        filter: grayscale(100%) drop-shadow(0 8px 16px rgba(0, 0, 0, 0.8));
+        filter: grayscale(100%) drop-shadow(0 8px 16px rgba(0, 0, 0, 0.8)) !important;
     }
     
     /* Mobile Cycle Images */
@@ -997,8 +994,14 @@ body.grayscale-mode .cycle-image {
         filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.8));
     }
     
+    /* Mobile Color Mode Cycle Images */
+    body:not(.grayscale-mode) .cycle-image {
+        filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.8)) !important;
+    }
+    
+    /* Mobile Grayscale Cycle Images */
     body.grayscale-mode .cycle-image {
-        filter: grayscale(100%) drop-shadow(0 8px 16px rgba(0, 0, 0, 0.8));
+        filter: grayscale(100%) drop-shadow(0 8px 16px rgba(0, 0, 0, 0.8)) !important;
     }
     
     /* Mobile Project Images */
@@ -1008,8 +1011,14 @@ body.grayscale-mode .cycle-image {
         filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.8));
     }
     
+    /* Mobile Color Mode Project Images */
+    body:not(.grayscale-mode) .project-item a img {
+        filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.8)) !important;
+    }
+    
+    /* Mobile Grayscale Project Images */
     body.grayscale-mode .project-item a img {
-        filter: grayscale(100%) drop-shadow(0 8px 16px rgba(0, 0, 0, 0.8));
+        filter: grayscale(100%) drop-shadow(0 8px 16px rgba(0, 0, 0, 0.8)) !important;
     }
     
     .project-item a:hover img {
@@ -1040,8 +1049,14 @@ body.grayscale-mode .cycle-image {
         filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.8));
     }
     
+    /* Mobile Color Mode Corner Image */
+    body:not(.grayscale-mode) .corner-image img {
+        filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.8)) !important;
+    }
+    
+    /* Mobile Grayscale Corner Image */
     body.grayscale-mode .corner-image img {
-        filter: grayscale(100%) drop-shadow(0 8px 16px rgba(0, 0, 0, 0.8));
+        filter: grayscale(100%) drop-shadow(0 8px 16px rgba(0, 0, 0, 0.8)) !important;
     }
     
     /* Mobile House Link */
@@ -1060,8 +1075,14 @@ body.grayscale-mode .cycle-image {
         filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.8));
     }
     
+    /* Mobile Color Mode House Link */
+    body:not(.grayscale-mode) .house-link img {
+        filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.8)) !important;
+    }
+    
+    /* Mobile Grayscale House Link */
     body.grayscale-mode .house-link img {
-        filter: grayscale(100%) drop-shadow(0 8px 16px rgba(0, 0, 0, 0.8));
+        filter: grayscale(100%) drop-shadow(0 8px 16px rgba(0, 0, 0, 0.8)) !important;
     }
     
     .house-link:hover img {
@@ -1156,6 +1177,14 @@ body.grayscale-mode .cycle-image {
         padding: 0;
         margin: 0;
         border-radius: 0;
+    }
+    
+    /* Mobile Home Text - White Container */
+    .home-text {
+        background-color: rgba(255, 255, 255, 0.9) !important;
+        padding: 20px;
+        margin: 20px;
+        border-radius: 12px;
     }
     
     /* Mobile Image Cycle */
