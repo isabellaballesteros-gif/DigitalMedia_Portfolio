@@ -916,10 +916,10 @@ body.grayscale-mode .cycle-image {
         position: relative;
     }
     
-    /* Mobile Grayscale Mode - Page1 - Zoom to Fit Entire Page */
+    /* Mobile Grayscale Mode - Page1 - Match Color Mode Exactly */
     body.grayscale-mode.home-page {
         background-image: url('https://i.postimg.cc/MKN4m0FS/Selfportraitdma.png');
-        background-size: cover !important;
+        background-size: contain !important;
         background-position: center center !important;
         background-repeat: no-repeat !important;
         background-attachment: scroll !important;
@@ -1095,7 +1095,8 @@ body.grayscale-mode .cycle-image {
         font-size: 36px; 
         font-family: fantasy; 
         margin-top: 200px;
-        margin-bottom: 15px;
+        margin-bottom: 30px;
+        line-height: 2.0;
     }
     
     h2, h3 { 
@@ -1103,14 +1104,16 @@ body.grayscale-mode .cycle-image {
         font-family: fantasy; 
         text-align: center;
         margin-top: 200px;
-        margin-bottom: 15px;
+        margin-bottom: 30px;
+        line-height: 2.0;
     }
     
     h4 { 
         font-size: 32px; 
         font-family: fantasy; 
         margin-top: 200px;
-        margin-bottom: 15px;
+        margin-bottom: 30px;
+        line-height: 2.0;
     }
     
     p { 
@@ -1142,7 +1145,7 @@ body.grayscale-mode .cycle-image {
         position: relative;
         transform: none;
         text-align: center;
-        margin-top: 24px;
+        margin-top: 250px;
         z-index: 1;
     }
     
@@ -1234,11 +1237,15 @@ body.grayscale-mode .cycle-image {
 
 /* Small Mobile Devices */
 @media (max-width: 480px) {
-    h1 { font-size: 30px; margin-top: 180px; }
-    h2, h3 { font-size: 26px; margin-top: 180px; }
-    h4 { font-size: 26px; margin-top: 180px; }
+    h1 { font-size: 30px; margin-top: 180px; line-height: 2.0; }
+    h2, h3 { font-size: 26px; margin-top: 180px; line-height: 2.0; }
+    h4 { font-size: 26px; margin-top: 180px; line-height: 2.0; }
     p { font-size: 18px; }
     p1, p3, li { font-size: 16px; }
+    
+    .title-block {
+        margin-top: 220px;
+    }
 
     .corner-image {
         width: 120px;
