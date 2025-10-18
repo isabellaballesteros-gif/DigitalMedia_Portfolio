@@ -164,16 +164,6 @@ body.grayscale-mode.about-page::before {
     }
 }
 
-/* Mobile grayscale background for home-page */
-@media (max-width: 768px) {
-    body.grayscale-mode.home-page::before {
-        background-size: cover !important;
-        background-position: center center !important;
-        background-attachment: scroll !important;
-        width: 100vw !important;
-        height: 100vh !important;
-    }
-}
 
 /* Hide original background when in grayscale mode */
 body.grayscale-mode.about-page {
@@ -243,13 +233,6 @@ body.about-page {
         height: 100vh !important;
     }
     
-    /* Mobile home page - make color mode work like grayscale mode */
-    body.home-page {
-        background-size: cover !important;
-        background-position: center center !important;
-        background-attachment: scroll !important;
-        background-repeat: no-repeat !important;
-    }
 }
 
 
