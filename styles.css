@@ -640,14 +640,6 @@ body.grayscale-mode .cycle-image {
         filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.8)) !important;
     }
     
-    /* Mobile home page background - make color mode behave like grayscale mode */
-    body.home-page:not(.grayscale-mode) {
-        background-size: cover !important;
-        background-position: center center !important;
-        background-attachment: scroll !important;
-        background-repeat: no-repeat !important;
-        min-height: 100vh !important;
-    }
 }
 
 /* Reduce motion for users who prefer it (keep essential image cycle) */
@@ -679,10 +671,42 @@ body.grayscale-mode .cycle-image {
         padding: 0;
     }
     
-    /* Mobile home page background - use desktop settings but ensure it works */
+    /* Mobile home page background - make it full view, not zoomed, and scroll with content */
     body.home-page {
         padding: 0;
         margin: 0;
+        background-size: cover !important;
+        background-position: center center !important;
+        background-attachment: scroll !important;
+        background-repeat: no-repeat !important;
+        min-height: 100vh !important;
+    }
+    
+    /* Ensure color mode behaves the same as grayscale mode on mobile */
+    body.home-page:not(.grayscale-mode) {
+        background-size: cover !important;
+        background-position: center center !important;
+        background-attachment: scroll !important;
+        background-repeat: no-repeat !important;
+        min-height: 100vh !important;
+    }
+    
+    /* Ensure grayscale mode also uses cover on mobile */
+    body.home-page.grayscale-mode {
+        background-size: cover !important;
+        background-position: center center !important;
+        background-attachment: scroll !important;
+        background-repeat: no-repeat !important;
+        min-height: 100vh !important;
+    }
+    
+    /* Mobile grayscale home page background - use pseudo-element with cover */
+    body.grayscale-mode.home-page::before {
+        background-size: cover !important;
+        background-position: center center !important;
+        background-attachment: scroll !important;
+        width: 100vw !important;
+        height: 100vh !important;
     }
     
     /* Mobile about page background - cover entire page and scroll with content - FORCE OVERRIDE */
@@ -694,23 +718,6 @@ body.grayscale-mode .cycle-image {
         min-height: 100vh !important;
     }
     
-    /* Force color mode to match grayscale behavior */
-    body.about-page:not(.grayscale-mode) {
-        background-size: cover !important;
-        background-position: center center !important;
-        background-attachment: scroll !important;
-        background-repeat: no-repeat !important;
-        min-height: 100vh !important;
-    }
-    
-    /* Force grayscale mode to match */
-    body.about-page.grayscale-mode {
-        background-size: cover !important;
-        background-position: center center !important;
-        background-attachment: scroll !important;
-        background-repeat: no-repeat !important;
-        min-height: 100vh !important;
-    }
 
     h1 { font-size: 36px; font-family: fantasy; }
     h2, h3 { font-size: 32px; font-family: fantasy; }
@@ -897,22 +904,6 @@ body.grayscale-mode .cycle-image {
             height: 100vh !important;
         }
         
-        /* Force color mode images in landscape mobile - prevent grayscale stickiness */
-        body:not(.grayscale-mode) img {
-            filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.8)) !important;
-        }
-        
-        body:not(.grayscale-mode) .cycle-image {
-            filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.8)) !important;
-        }
-        
-        body:not(.grayscale-mode) .project-item a img {
-            filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.8)) !important;
-        }
-        
-        body:not(.grayscale-mode) .corner-image img {
-            filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.8)) !important;
-        }
     }
     
     /* Ensure images work properly in landscape mode */
