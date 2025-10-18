@@ -916,18 +916,26 @@ body.grayscale-mode .cycle-image {
         position: relative;
     }
     
-    /* Mobile Grayscale Mode - Page1 - Match Color Mode Exactly */
+    /* Mobile Grayscale Mode - Page1 - Zoom to Fit Entire Page */
     body.grayscale-mode.home-page {
+        background-image: none !important;
+    }
+    
+    body.grayscale-mode.home-page::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
         background-image: url('https://i.postimg.cc/MKN4m0FS/Selfportraitdma.png');
-        background-size: contain !important;
+        background-size: cover !important;
         background-position: center center !important;
         background-repeat: no-repeat !important;
         background-attachment: scroll !important;
         filter: grayscale(100%);
-    }
-    
-    body.grayscale-mode.home-page::before {
-        display: none !important;
+        z-index: -1;
+        pointer-events: none;
     }
     
     /* Mobile About Page Background */
@@ -1145,7 +1153,7 @@ body.grayscale-mode .cycle-image {
         position: relative;
         transform: none;
         text-align: center;
-        margin-top: 250px;
+        margin-top: 300px;
         z-index: 1;
     }
     
@@ -1244,7 +1252,7 @@ body.grayscale-mode .cycle-image {
     p1, p3, li { font-size: 16px; }
     
     .title-block {
-        margin-top: 220px;
+        margin-top: 280px;
     }
 
     .corner-image {
