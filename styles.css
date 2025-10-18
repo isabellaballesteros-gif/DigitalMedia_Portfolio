@@ -1,4 +1,4 @@
-/* Basic Reset and Clean Styles - Updated: 2024-12-19 Mobile Background Fix v2 - Cache Buster: 20241219123456 */
+/* Basic Reset and Clean Styles - Mobile-First Responsive System - Updated: 2024-12-19 - Cache Buster: 20241219123456 */
 
 body {
     font-family: Arial, sans-serif;
@@ -893,5 +893,354 @@ body.grayscale-mode .cycle-image {
         height: 44px !important;
         left: 16px !important;
         bottom: 16px !important;
+    }
+}
+
+/* ========================================
+   MOBILE-FIRST RESPONSIVE SYSTEM
+   ======================================== */
+
+/* Mobile Base Styles - Default for all devices */
+@media (max-width: 1024px) {
+    
+    /* MOBILE BACKGROUND SYSTEM - Page1 Background Fix */
+    body.home-page {
+        background-image: url('https://i.postimg.cc/MKN4m0FS/Selfportraitdma.png');
+        background-size: contain !important;
+        background-position: center center !important;
+        background-repeat: no-repeat !important;
+        background-attachment: scroll !important;
+        background-color: black;
+        color: white;
+        min-height: 100vh;
+        position: relative;
+    }
+    
+    /* Mobile Grayscale Mode - Page1 */
+    body.grayscale-mode.home-page {
+        background-image: none !important;
+    }
+    
+    body.grayscale-mode.home-page::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url('https://i.postimg.cc/MKN4m0FS/Selfportraitdma.png');
+        background-size: contain !important;
+        background-position: center center !important;
+        background-repeat: no-repeat !important;
+        background-attachment: scroll !important;
+        filter: grayscale(100%);
+        z-index: -1;
+        pointer-events: none;
+    }
+    
+    /* Mobile About Page Background */
+    body.about-page {
+        background-image: url('https://i.postimg.cc/CMtT5HNh/Background.png');
+        background-size: cover !important;
+        background-position: center center !important;
+        background-repeat: no-repeat !important;
+        background-attachment: scroll !important;
+        min-height: 100vh;
+    }
+    
+    /* Mobile About Page Grayscale */
+    body.grayscale-mode.about-page {
+        background-image: none !important;
+    }
+    
+    body.grayscale-mode.about-page::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url('https://i.postimg.cc/CMtT5HNh/Background.png');
+        background-size: cover !important;
+        background-position: center center !important;
+        background-repeat: no-repeat !important;
+        background-attachment: scroll !important;
+        filter: grayscale(100%);
+        z-index: -1;
+        pointer-events: none;
+    }
+    
+    /* Mobile Image Consistency */
+    img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+        margin: 10px auto;
+        filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.8));
+    }
+    
+    /* Mobile Grayscale Images */
+    body.grayscale-mode img {
+        filter: grayscale(100%) drop-shadow(0 8px 16px rgba(0, 0, 0, 0.8));
+    }
+    
+    /* Mobile Cycle Images */
+    .cycle-image {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        transition: opacity 0.2s;
+        object-fit: contain;
+        filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.8));
+    }
+    
+    body.grayscale-mode .cycle-image {
+        filter: grayscale(100%) drop-shadow(0 8px 16px rgba(0, 0, 0, 0.8));
+    }
+    
+    /* Mobile Project Images */
+    .project-item a img {
+        transition: transform 0.3s ease, filter 0.3s ease !important;
+        animation: shaky 3s ease-in-out infinite;
+        filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.8));
+    }
+    
+    body.grayscale-mode .project-item a img {
+        filter: grayscale(100%) drop-shadow(0 8px 16px rgba(0, 0, 0, 0.8));
+    }
+    
+    .project-item a:hover img {
+        transform: scale(1.05) rotate(2deg) !important;
+        filter: drop-shadow(0 12px 24px rgba(0, 0, 0, 0.9)) !important;
+        animation: none !important;
+    }
+    
+    body.grayscale-mode .project-item a:hover img {
+        filter: grayscale(100%) drop-shadow(0 12px 24px rgba(0, 0, 0, 0.9)) !important;
+    }
+    
+    /* Mobile Corner Image */
+    .corner-image {
+        position: absolute;
+        top: 8px;
+        right: 8px;
+        width: 150px;
+        height: 150px;
+        z-index: 10;
+    }
+    
+    .corner-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.8));
+    }
+    
+    body.grayscale-mode .corner-image img {
+        filter: grayscale(100%) drop-shadow(0 8px 16px rgba(0, 0, 0, 0.8));
+    }
+    
+    /* Mobile House Link */
+    .house-link {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        z-index: 1000;
+    }
+    
+    .house-link img {
+        width: 180px;
+        height: 180px;
+        transition: transform 0.3s ease;
+        animation: shaky 3s ease-in-out infinite;
+        filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.8));
+    }
+    
+    body.grayscale-mode .house-link img {
+        filter: grayscale(100%) drop-shadow(0 8px 16px rgba(0, 0, 0, 0.8));
+    }
+    
+    .house-link:hover img {
+        transform: scale(1.1);
+        animation: none;
+    }
+    
+    /* Mobile Typography */
+    h1 { 
+        font-size: 36px; 
+        font-family: fantasy; 
+        margin-top: 0;
+        margin-bottom: 15px;
+    }
+    
+    h2, h3 { 
+        font-size: 32px; 
+        font-family: fantasy; 
+        text-align: center;
+        margin-top: 0;
+        margin-bottom: 15px;
+    }
+    
+    h4 { 
+        font-size: 32px; 
+        font-family: fantasy; 
+        margin-top: 0;
+        margin-bottom: 15px;
+    }
+    
+    p { 
+        font-size: 20px; 
+        font-family: 'Lucida Console', 'Monaco', 'monospace';
+        margin-bottom: 15px;
+    }
+    
+    p1, p3, li { 
+        font-size: 18px; 
+        font-family: 'Lucida Console', 'Monaco', 'monospace';
+        margin-bottom: 15px;
+    }
+    
+    /* Mobile Layout Adjustments */
+    body {
+        padding: 0;
+        margin: 0;
+    }
+    
+    .container {
+        background-color: transparent !important;
+        padding: 16px;
+        margin: 0;
+        border-radius: 0;
+    }
+    
+    .title-block {
+        position: relative;
+        transform: none;
+        text-align: center;
+        margin-top: 24px;
+        z-index: 1;
+    }
+    
+    .about-content {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        gap: 20px;
+    }
+    
+    .about-text {
+        flex: 0 1 auto;
+        max-width: 100%;
+        margin-top: 0;
+        text-align: left;
+        padding: 12px;
+        margin: 8px;
+        background-color: transparent;
+        border-radius: 0;
+    }
+    
+    .home-text {
+        background-color: transparent !important;
+        padding: 0;
+        margin: 0;
+        border-radius: 0;
+    }
+    
+    .credits-text {
+        background-color: transparent !important;
+        padding: 0;
+        margin: 0;
+        border-radius: 0;
+    }
+    
+    /* Mobile Image Cycle */
+    .image-cycle {
+        width: min(90vw, 420px);
+        height: min(90vw, 420px);
+        position: relative;
+        flex-shrink: 0;
+    }
+    
+    /* Mobile Project Grid */
+    .project-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    /* Mobile Button Container */
+    #buttonContainer {
+        width: 160px !important;
+        height: 44px !important;
+        left: 16px !important;
+        bottom: 16px !important;
+    }
+    
+    /* Mobile Back Link */
+    .back-link {
+        padding: 10px 14px;
+        font-size: 14px;
+    }
+}
+
+/* Small Mobile Devices */
+@media (max-width: 480px) {
+    h1 { font-size: 30px; }
+    h2, h3 { font-size: 26px; }
+    h4 { font-size: 26px; }
+    p { font-size: 18px; }
+    p1, p3, li { font-size: 16px; }
+
+    .corner-image {
+        width: 120px;
+        height: 120px;
+    }
+    
+    .house-link img {
+        width: 150px;
+        height: 150px;
+    }
+
+    .image-cycle {
+        width: min(92vw, 360px);
+        height: min(92vw, 360px);
+    }
+
+    .project-item a img {
+        max-width: 90vw;
+        height: auto;
+    }
+
+    #buttonContainer {
+        width: 150px !important;
+        height: 44px !important;
+        left: 16px !important;
+        bottom: 16px !important;
+    }
+}
+
+/* Landscape Mobile */
+@media (max-width: 1024px) and (orientation: landscape) {
+    .house-link img {
+        width: 200px;
+        height: 200px;
+    }
+    
+    .container h1 {
+        margin-top: 100px;
+    }
+    
+    .image-cycle {
+        width: min(40vw, 500px);
+        height: min(40vw, 500px);
+    }
+    
+    .project-item a img {
+        max-width: 100%;
+        height: auto;
     }
 }
