@@ -214,6 +214,25 @@ body.about-page {
     background-attachment: scroll;
 }
 
+/* MOBILE OVERRIDE - Force mobile background behavior */
+@media (max-width: 768px) {
+    body.about-page {
+        background-size: cover !important;
+        background-position: center center !important;
+        background-attachment: scroll !important;
+        background-repeat: no-repeat !important;
+    }
+    
+    /* Force grayscale mobile background */
+    body.grayscale-mode.about-page::before {
+        background-size: cover !important;
+        background-position: center center !important;
+        background-attachment: scroll !important;
+        width: 100vw !important;
+        height: 100vh !important;
+    }
+}
+
 
 /* Background colors for project pages */
 body.art74-page {
