@@ -164,6 +164,17 @@ body.grayscale-mode.about-page::before {
     }
 }
 
+/* Mobile grayscale background for home-page */
+@media (max-width: 768px) {
+    body.grayscale-mode.home-page::before {
+        background-size: cover !important;
+        background-position: center center !important;
+        background-attachment: scroll !important;
+        width: 100vw !important;
+        height: 100vh !important;
+    }
+}
+
 /* Hide original background when in grayscale mode */
 body.grayscale-mode.about-page {
     background-image: none !important;
@@ -230,6 +241,14 @@ body.about-page {
         background-attachment: scroll !important;
         width: 100vw !important;
         height: 100vh !important;
+    }
+    
+    /* Mobile home page - make color mode work like grayscale mode */
+    body.home-page {
+        background-size: cover !important;
+        background-position: center center !important;
+        background-attachment: scroll !important;
+        background-repeat: no-repeat !important;
     }
 }
 
@@ -671,42 +690,10 @@ body.grayscale-mode .cycle-image {
         padding: 0;
     }
     
-    /* Mobile home page background - make it full view, not zoomed, and scroll with content */
+    /* Mobile home page background - use desktop settings but ensure it works */
     body.home-page {
         padding: 0;
         margin: 0;
-        background-size: cover !important;
-        background-position: center center !important;
-        background-attachment: scroll !important;
-        background-repeat: no-repeat !important;
-        min-height: 100vh !important;
-    }
-    
-    /* Ensure color mode behaves the same as grayscale mode on mobile */
-    body.home-page:not(.grayscale-mode) {
-        background-size: cover !important;
-        background-position: center center !important;
-        background-attachment: scroll !important;
-        background-repeat: no-repeat !important;
-        min-height: 100vh !important;
-    }
-    
-    /* Ensure grayscale mode also uses cover on mobile */
-    body.home-page.grayscale-mode {
-        background-size: cover !important;
-        background-position: center center !important;
-        background-attachment: scroll !important;
-        background-repeat: no-repeat !important;
-        min-height: 100vh !important;
-    }
-    
-    /* Mobile grayscale home page background - use pseudo-element with cover */
-    body.grayscale-mode.home-page::before {
-        background-size: cover !important;
-        background-position: center center !important;
-        background-attachment: scroll !important;
-        width: 100vw !important;
-        height: 100vh !important;
     }
     
     /* Mobile about page background - cover entire page and scroll with content - FORCE OVERRIDE */
@@ -870,39 +857,6 @@ body.grayscale-mode .cycle-image {
             height: 100vh !important;
         }
         
-        /* Fix home page background in landscape mobile view */
-        body.home-page {
-            background-size: cover !important;
-            background-position: center center !important;
-            background-attachment: scroll !important;
-            background-repeat: no-repeat !important;
-            min-height: 100vh !important;
-        }
-        
-        body.home-page:not(.grayscale-mode) {
-            background-size: cover !important;
-            background-position: center center !important;
-            background-attachment: scroll !important;
-            background-repeat: no-repeat !important;
-            min-height: 100vh !important;
-        }
-        
-        body.home-page.grayscale-mode {
-            background-size: cover !important;
-            background-position: center center !important;
-            background-attachment: scroll !important;
-            background-repeat: no-repeat !important;
-            min-height: 100vh !important;
-        }
-        
-        /* Fix grayscale home page background in landscape mobile view */
-        body.grayscale-mode.home-page::before {
-            background-size: cover !important;
-            background-position: center center !important;
-            background-attachment: scroll !important;
-            width: 100vw !important;
-            height: 100vh !important;
-        }
         
     }
     
