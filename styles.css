@@ -964,13 +964,15 @@ body.grayscale-mode .cycle-image {
         right: auto !important;
         left: 50% !important;
         transform: translateX(-50%) !important;
-        width: 60% !important;
+        width: 75% !important;
         height: auto !important;
         object-fit: contain !important;
         object-position: center center !important;
         z-index: 1 !important;
         pointer-events: none !important;
         margin-top: 30px !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
     }
     
     /* Mobile grayscale mode for self-portrait */
