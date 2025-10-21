@@ -714,26 +714,36 @@ body.grayscale-mode .cycle-image {
         max-width: 90vw !important;
     }
     
-    /* Mobile index page background positioning */
+    /* Mobile index page background positioning - below text */
     body.home-page {
-        background-position: center center !important;
-        background-size: 80% !important;
+        background-position: center bottom !important;
+        background-size: 70% !important;
         background-attachment: fixed !important;
         -webkit-background-attachment: fixed !important;
         -moz-background-attachment: fixed !important;
     }
     
-    /* Ensure background stays fixed in both color modes */
+    /* Ensure background stays fixed in both color modes - no movement */
     body.home-page:not(.grayscale-mode) {
         background-attachment: fixed !important;
         -webkit-background-attachment: fixed !important;
         -moz-background-attachment: fixed !important;
+        background-position: center bottom !important;
+        background-size: 70% !important;
     }
     
     body.grayscale-mode.home-page {
         background-attachment: fixed !important;
         -webkit-background-attachment: fixed !important;
         -moz-background-attachment: fixed !important;
+        background-position: center bottom !important;
+        background-size: 70% !important;
+    }
+    
+    /* Ensure text doesn't overlap background */
+    .title-block {
+        margin-bottom: 60px !important;
+        padding-bottom: 40px !important;
     }
 
     /* Corner and house images scale down on mobile */
@@ -1134,26 +1144,36 @@ body.grayscale-mode .cycle-image {
         max-width: 90vw !important;
     }
     
-    /* Mobile index page background positioning */
+    /* Mobile index page background positioning - below text */
     body.home-page {
-        background-position: center center !important;
-        background-size: 80% !important;
+        background-position: center bottom !important;
+        background-size: 70% !important;
         background-attachment: fixed !important;
         -webkit-background-attachment: fixed !important;
         -moz-background-attachment: fixed !important;
     }
     
-    /* Ensure background stays fixed in both color modes */
+    /* Ensure background stays fixed in both color modes - no movement */
     body.home-page:not(.grayscale-mode) {
         background-attachment: fixed !important;
         -webkit-background-attachment: fixed !important;
         -moz-background-attachment: fixed !important;
+        background-position: center bottom !important;
+        background-size: 70% !important;
     }
     
     body.grayscale-mode.home-page {
         background-attachment: fixed !important;
         -webkit-background-attachment: fixed !important;
         -moz-background-attachment: fixed !important;
+        background-position: center bottom !important;
+        background-size: 70% !important;
+    }
+    
+    /* Ensure text doesn't overlap background */
+    .title-block {
+        margin-bottom: 60px !important;
+        padding-bottom: 40px !important;
     }
     
     /* About Content - Stacked Layout */
@@ -1328,10 +1348,10 @@ body.grayscale-mode .cycle-image {
         max-width: 90vw !important;
     }
     
-    /* Landscape mobile background positioning */
+    /* Landscape mobile background positioning - below text */
     body.home-page {
-        background-position: center center !important;
-        background-size: 60% !important;
+        background-position: center bottom !important;
+        background-size: 50% !important;
         background-attachment: fixed !important;
         -webkit-background-attachment: fixed !important;
         -moz-background-attachment: fixed !important;
@@ -1339,8 +1359,8 @@ body.grayscale-mode .cycle-image {
     
     /* Landscape mobile - ensure text doesn't overlap background */
     .title-block {
-        margin-bottom: 40px !important;
-        padding-bottom: 20px !important;
+        margin-bottom: 50px !important;
+        padding-bottom: 30px !important;
     }
     
     /* Landscape mobile - ensure background stays fixed in both modes */
@@ -1348,11 +1368,15 @@ body.grayscale-mode .cycle-image {
         background-attachment: fixed !important;
         -webkit-background-attachment: fixed !important;
         -moz-background-attachment: fixed !important;
+        background-position: center bottom !important;
+        background-size: 50% !important;
     }
     
     body.grayscale-mode.home-page {
         background-attachment: fixed !important;
         -webkit-background-attachment: fixed !important;
         -moz-background-attachment: fixed !important;
+        background-position: center bottom !important;
+        background-size: 50% !important;
     }
 }
