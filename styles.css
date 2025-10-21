@@ -1283,7 +1283,7 @@ body.grayscale-mode .cycle-image {
         position: fixed !important;
         top: 0 !important;
         right: 0 !important;
-        width: 50% !important;
+        width: 40% !important;
         height: 100vh !important;
         object-fit: cover !important;
         object-position: right center !important;
@@ -1298,7 +1298,7 @@ body.grayscale-mode .cycle-image {
         left: 20px !important;
         transform: translateY(-50%) !important;
         text-align: left !important;
-        width: 45% !important;
+        width: 55% !important;
         margin: 0 !important;
         padding: 0 !important;
     }
