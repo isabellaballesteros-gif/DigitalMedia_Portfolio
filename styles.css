@@ -980,6 +980,38 @@ body.grayscale-mode .cycle-image {
         filter: none !important;
     }
     
+    /* Landscape mobile layout for index page */
+    @media (max-width: 1024px) and (orientation: landscape) {
+        /* Make self-portrait smaller and center it below h5 */
+        .self-portrait-image {
+            position: relative !important;
+            top: auto !important;
+            right: auto !important;
+            left: 50% !important;
+            transform: translateX(-50%) !important;
+            width: 40% !important;
+            height: auto !important;
+            object-fit: contain !important;
+            object-position: center center !important;
+            z-index: 1 !important;
+            pointer-events: none !important;
+            margin-top: 20px !important;
+        }
+        
+        /* Make title image smaller in landscape */
+        .title-block img {
+            width: min(60vw, 400px) !important;
+            height: auto !important;
+        }
+        
+        /* Make h5 text smaller in landscape */
+        h5 {
+            font-size: 14px !important;
+            margin-top: 10px !important;
+            margin-bottom: 10px !important;
+        }
+    }
+    
     /* Simplified Layout */
     body {
         padding: 10px;
