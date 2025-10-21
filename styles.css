@@ -324,8 +324,8 @@ body.art75-page img {
 }
 
 .house-link img {
-    width: 600px;
-    height: 600px;
+    width: 700px;
+    height: 700px;
     transition: transform 0.3s ease;
     animation: shaky 3s ease-in-out infinite;
 }
@@ -654,17 +654,7 @@ body.grayscale-mode .cycle-image {
     
 }
 
-/* Reduce motion for users who prefer it (keep essential image cycle) */
-@media (prefers-reduced-motion: reduce) {
-    .house-link img,
-    .corner-image img,
-    .back-link,
-    .color-toggle {
-        animation: none !important;
-        transition: none !important;
-    }
-    html { scroll-behavior: auto !important; }
-}
+/* Animations enabled for all users */
 
 /* Ensure shaky animation works on project thumbnails */
 .project-item a img {
@@ -733,8 +723,8 @@ body.grayscale-mode .cycle-image {
         height: 200px;
     }
     .house-link img {
-        width: 250px;
-        height: 250px;
+        width: 300px;
+        height: 300px;
     }
 
     /* Container breathing space */
@@ -818,8 +808,8 @@ body.grayscale-mode .cycle-image {
 
     /* Prevent house icon from covering titles */
     .house-link img {
-        width: 200px;
-        height: 200px;
+        width: 250px;
+        height: 250px;
     }
     .container h1 {
         margin-top: 100px;
@@ -1101,10 +1091,10 @@ body.grayscale-mode .cycle-image {
     }
     
     .house-link img {
-        width: 150px;
-        height: 150px;
+        width: 180px;
+        height: 180px;
         transition: transform 0.3s ease;
-        animation: none;
+        animation: shaky 3s ease-in-out infinite;
         filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
     }
     
@@ -1255,8 +1245,9 @@ body.grayscale-mode .cycle-image {
     p1, p3, li { font-size: 14px; }
     
     .house-link img {
-        width: 130px;
-        height: 130px;
+        width: 160px;
+        height: 160px;
+        animation: shaky 3s ease-in-out infinite;
     }
     
     .corner-image {
@@ -1293,8 +1284,9 @@ body.grayscale-mode .cycle-image {
 /* Landscape Mobile */
 @media (max-width: 1024px) and (orientation: landscape) {
     .house-link img {
-        width: 140px;
-        height: 140px;
+        width: 170px;
+        height: 170px;
+        animation: shaky 3s ease-in-out infinite;
     }
     
     .corner-image {
