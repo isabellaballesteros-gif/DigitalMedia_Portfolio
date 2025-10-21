@@ -106,28 +106,9 @@ body.grayscale-mode .cycle-image {
     filter: grayscale(100%) drop-shadow(0 8px 16px rgba(0, 0, 0, 0.8)) !important;
 }
 
-/* Apply grayscale to home-page background using pseudo-element */
-body.grayscale-mode.home-page::before {
-    content: '';
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background-image: url('https://i.postimg.cc/MKN4m0FS/Selfportraitdma.png');
-    background-size: 50%;
-    background-position: right center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
+/* Grayscale mode for home page - apply filter to background image */
+body.grayscale-mode.home-page .background-image {
     filter: grayscale(100%);
-    z-index: -1; /* ensure it's behind content and doesn't affect stacking */
-    pointer-events: none;
-}
-
-
-/* Hide original background when in grayscale mode */
-body.grayscale-mode.home-page {
-    background-image: none !important; /* rely on ::before image */
 }
 
 /* Ensure button container is not affected by grayscale filter */
@@ -191,24 +172,40 @@ body.grayscale-mode.about-page #buttonContainer {
 /* Background image for index page */
 body.home-page {
     background-color: black;
-    background-image: url('https://i.postimg.cc/MKN4m0FS/Selfportraitdma.png');
-    background-size: 50%;
-    background-position: right center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
     color: white;
+}
+
+/* Background image as regular img element */
+.background-image {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 50%;
+    height: 100vh;
+    object-fit: cover;
+    object-position: right center;
+    z-index: -1;
+    pointer-events: none;
 }
 
 
 /* Background for about page - with new background image */
 body.about-page {
     background-color: black;
-    background-image: url('https://i.postimg.cc/Gt0w22yr/Background.png');
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
     color: white;
+}
+
+/* Background image as regular img element for about page */
+body.about-page .background-image {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+    object-position: center center;
+    z-index: -1;
+    pointer-events: none;
 }
 
 /* Make paragraph text black on about page for better readability */
@@ -714,30 +711,17 @@ body.grayscale-mode .cycle-image {
         max-width: 90vw !important;
     }
     
-    /* Mobile index page background positioning - below text */
-    body.home-page {
-        background-position: center bottom !important;
-        background-size: 70% !important;
-        background-attachment: fixed !important;
-        -webkit-background-attachment: fixed !important;
-        -moz-background-attachment: fixed !important;
-    }
-    
-    /* Ensure background stays fixed in both color modes - no movement */
-    body.home-page:not(.grayscale-mode) {
-        background-attachment: fixed !important;
-        -webkit-background-attachment: fixed !important;
-        -moz-background-attachment: fixed !important;
-        background-position: center bottom !important;
-        background-size: 70% !important;
-    }
-    
-    body.grayscale-mode.home-page {
-        background-attachment: fixed !important;
-        -webkit-background-attachment: fixed !important;
-        -moz-background-attachment: fixed !important;
-        background-position: center bottom !important;
-        background-size: 70% !important;
+    /* Mobile index page background image positioning */
+    .background-image {
+        position: fixed !important;
+        top: 0 !important;
+        right: 0 !important;
+        width: 50% !important;
+        height: 100vh !important;
+        object-fit: cover !important;
+        object-position: right center !important;
+        z-index: -1 !important;
+        pointer-events: none !important;
     }
     
     /* Ensure text doesn't overlap background */
@@ -926,81 +910,23 @@ body.grayscale-mode .cycle-image {
         color: white !important;
     }
     
-    /* Cover Page - With background image */
+    /* Cover Page - With background image as regular img element */
     body.about-page {
         background-color: rgb(0, 0, 0) !important;
-        background-image: url('https://i.postimg.cc/Gt0w22yr/Background.png') !important;
-        background-size: cover !important;
-        background-position: center center !important;
-        background-repeat: no-repeat !important;
-        background-attachment: fixed !important;
-        -webkit-background-attachment: fixed !important;
-        -moz-background-attachment: fixed !important;
         color: white !important;
     }
     
-    /* Force fixed background for mobile browsers */
-    @media (max-width: 1024px) {
-        body.about-page:not(.grayscale-mode) {
-            background-attachment: fixed !important;
-            -webkit-background-attachment: fixed !important;
-            -moz-background-attachment: fixed !important;
-            background-image: url('https://i.postimg.cc/Gt0w22yr/Background.png') !important;
-            background-size: cover !important;
-            background-position: center center !important;
-            background-repeat: no-repeat !important;
-        }
-    }
-    
-    /* Additional mobile fix for smaller screens */
-    @media (max-width: 768px) {
-        body.about-page:not(.grayscale-mode) {
-            background-attachment: fixed !important;
-            -webkit-background-attachment: fixed !important;
-            -moz-background-attachment: fixed !important;
-            background-image: url('https://i.postimg.cc/Gt0w22yr/Background.png') !important;
-            background-size: cover !important;
-            background-position: center center !important;
-            background-repeat: no-repeat !important;
-        }
-    }
-    
-    /* Comprehensive mobile fix for about page background */
-    @media (max-width: 1024px) {
-        body.about-page:not(.grayscale-mode) {
-            background-attachment: fixed !important;
-            -webkit-background-attachment: fixed !important;
-            -moz-background-attachment: fixed !important;
-            background-image: url('https://i.postimg.cc/Gt0w22yr/Background.png') !important;
-            background-size: cover !important;
-            background-position: center center !important;
-            background-repeat: no-repeat !important;
-        }
-        
-        body.grayscale-mode.about-page {
-            background-attachment: fixed !important;
-            -webkit-background-attachment: fixed !important;
-            -moz-background-attachment: fixed !important;
-        }
-    }
-    
-    /* Additional mobile fix for smaller screens */
-    @media (max-width: 768px) {
-        body.about-page:not(.grayscale-mode) {
-            background-attachment: fixed !important;
-            -webkit-background-attachment: fixed !important;
-            -moz-background-attachment: fixed !important;
-            background-image: url('https://i.postimg.cc/Gt0w22yr/Background.png') !important;
-            background-size: cover !important;
-            background-position: center center !important;
-            background-repeat: no-repeat !important;
-        }
-        
-        body.grayscale-mode.about-page {
-            background-attachment: fixed !important;
-            -webkit-background-attachment: fixed !important;
-            -moz-background-attachment: fixed !important;
-        }
+    /* Mobile background image positioning for about page */
+    body.about-page .background-image {
+        position: fixed !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: 100% !important;
+        height: 100vh !important;
+        object-fit: cover !important;
+        object-position: center center !important;
+        z-index: -1 !important;
+        pointer-events: none !important;
     }
     
     /* Make paragraph text black on about page for mobile */
@@ -1144,30 +1070,17 @@ body.grayscale-mode .cycle-image {
         max-width: 90vw !important;
     }
     
-    /* Mobile index page background positioning - below text */
-    body.home-page {
-        background-position: center bottom !important;
-        background-size: 70% !important;
-        background-attachment: fixed !important;
-        -webkit-background-attachment: fixed !important;
-        -moz-background-attachment: fixed !important;
-    }
-    
-    /* Ensure background stays fixed in both color modes - no movement */
-    body.home-page:not(.grayscale-mode) {
-        background-attachment: fixed !important;
-        -webkit-background-attachment: fixed !important;
-        -moz-background-attachment: fixed !important;
-        background-position: center bottom !important;
-        background-size: 70% !important;
-    }
-    
-    body.grayscale-mode.home-page {
-        background-attachment: fixed !important;
-        -webkit-background-attachment: fixed !important;
-        -moz-background-attachment: fixed !important;
-        background-position: center bottom !important;
-        background-size: 70% !important;
+    /* Mobile index page background image positioning */
+    .background-image {
+        position: fixed !important;
+        top: 0 !important;
+        right: 0 !important;
+        width: 50% !important;
+        height: 100vh !important;
+        object-fit: cover !important;
+        object-position: right center !important;
+        z-index: -1 !important;
+        pointer-events: none !important;
     }
     
     /* Ensure text doesn't overlap background */
@@ -1348,35 +1261,22 @@ body.grayscale-mode .cycle-image {
         max-width: 90vw !important;
     }
     
-    /* Landscape mobile background positioning - below text */
-    body.home-page {
-        background-position: center bottom !important;
-        background-size: 50% !important;
-        background-attachment: fixed !important;
-        -webkit-background-attachment: fixed !important;
-        -moz-background-attachment: fixed !important;
+    /* Landscape mobile background image positioning */
+    .background-image {
+        position: fixed !important;
+        top: 0 !important;
+        right: 0 !important;
+        width: 50% !important;
+        height: 100vh !important;
+        object-fit: cover !important;
+        object-position: right center !important;
+        z-index: -1 !important;
+        pointer-events: none !important;
     }
     
     /* Landscape mobile - ensure text doesn't overlap background */
     .title-block {
         margin-bottom: 50px !important;
         padding-bottom: 30px !important;
-    }
-    
-    /* Landscape mobile - ensure background stays fixed in both modes */
-    body.home-page:not(.grayscale-mode) {
-        background-attachment: fixed !important;
-        -webkit-background-attachment: fixed !important;
-        -moz-background-attachment: fixed !important;
-        background-position: center bottom !important;
-        background-size: 50% !important;
-    }
-    
-    body.grayscale-mode.home-page {
-        background-attachment: fixed !important;
-        -webkit-background-attachment: fixed !important;
-        -moz-background-attachment: fixed !important;
-        background-position: center bottom !important;
-        background-size: 50% !important;
     }
 }

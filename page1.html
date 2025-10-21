@@ -20,6 +20,9 @@
         <p1> <strong> READ THIS FIRST!</strong> The home page has an illustration of a house in the top right corner. When you access the pieces on different pages, click the moving house illustration on the art piece pages to go back to the home page! If you want to switch between color and grayscale mode, click the button in the bottom left corner of the front page and home page. This portfolio is accessible on mobile devices and desktop browsers, though its original format is desktop. Scroll down to view the rest of this page to see the about me, list of pieces, and credits. To view my pieces, click the moving thumbnail illustrations above the piece titles and it will take you to a page about the piece.</p1>
     </div>
     
+    <!-- Background image as regular img element -->
+    <img src="https://i.postimg.cc/Gt0w22yr/Background.png" alt="Background" class="background-image">
+    
         <h1> About Me</h1>
     <div class="about-content">
         <div class="about-text">
@@ -134,35 +137,6 @@
         }
         
         colorToggle.addEventListener('click', toggleGrayscale);
-        
-        // Mobile background fix - force fixed background on mobile browsers
-        function fixMobileBackground() {
-            if (window.innerWidth <= 1024) {
-                const body = document.body;
-                if (!body.classList.contains('grayscale-mode')) {
-                    // Force background-attachment: fixed on mobile
-                    body.style.backgroundAttachment = 'fixed';
-                    body.style.webkitBackgroundAttachment = 'fixed';
-                    body.style.mozBackgroundAttachment = 'fixed';
-                    body.style.backgroundImage = 'url("https://i.postimg.cc/Gt0w22yr/Background.png")';
-                    body.style.backgroundSize = 'cover';
-                    body.style.backgroundPosition = 'center center';
-                    body.style.backgroundRepeat = 'no-repeat';
-                }
-            }
-        }
-        
-        // Apply fix on load and resize
-        fixMobileBackground();
-        window.addEventListener('resize', fixMobileBackground);
-        window.addEventListener('orientationchange', fixMobileBackground);
-        
-        // Reapply fix when toggling grayscale mode
-        const originalToggleGrayscale = toggleGrayscale;
-        toggleGrayscale = function() {
-            originalToggleGrayscale();
-            setTimeout(fixMobileBackground, 100);
-        };
     </script>
 </body>
 </html>
