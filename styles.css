@@ -173,6 +173,7 @@ body.grayscale-mode.about-page #buttonContainer {
 body.home-page {
     background-color: black;
     color: white;
+    background-image: none !important;
 }
 
 /* Background image as regular img element */
@@ -711,23 +712,26 @@ body.grayscale-mode .cycle-image {
         max-width: 90vw !important;
     }
     
-    /* Mobile index page background image positioning */
+    /* Mobile index page background image positioning - portrait mode */
     .background-image {
-        position: fixed !important;
-        top: 0 !important;
-        right: 0 !important;
-        width: 50% !important;
-        height: 100vh !important;
-        object-fit: cover !important;
-        object-position: right center !important;
-        z-index: -1 !important;
+        position: relative !important;
+        top: auto !important;
+        right: auto !important;
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+        width: 80% !important;
+        height: auto !important;
+        object-fit: contain !important;
+        object-position: center !important;
+        z-index: 1 !important;
         pointer-events: none !important;
+        margin-top: 40px !important;
     }
     
     /* Ensure text doesn't overlap background */
     .title-block {
-        margin-bottom: 60px !important;
-        padding-bottom: 40px !important;
+        margin-bottom: 20px !important;
+        padding-bottom: 20px !important;
     }
 
     /* Corner and house images scale down on mobile */
@@ -906,7 +910,6 @@ body.grayscale-mode .cycle-image {
     body.grayscale-mode.home-page {
         background-color: black !important;
         background-image: none !important;
-        filter: grayscale(100%) !important;
         color: white !important;
     }
     
@@ -1070,23 +1073,26 @@ body.grayscale-mode .cycle-image {
         max-width: 90vw !important;
     }
     
-    /* Mobile index page background image positioning */
+    /* Mobile index page background image positioning - portrait mode */
     .background-image {
-        position: fixed !important;
-        top: 0 !important;
-        right: 0 !important;
-        width: 50% !important;
-        height: 100vh !important;
-        object-fit: cover !important;
-        object-position: right center !important;
-        z-index: -1 !important;
+        position: relative !important;
+        top: auto !important;
+        right: auto !important;
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+        width: 80% !important;
+        height: auto !important;
+        object-fit: contain !important;
+        object-position: center !important;
+        z-index: 1 !important;
         pointer-events: none !important;
+        margin-top: 40px !important;
     }
     
     /* Ensure text doesn't overlap background */
     .title-block {
-        margin-bottom: 60px !important;
-        padding-bottom: 40px !important;
+        margin-bottom: 20px !important;
+        padding-bottom: 20px !important;
     }
     
     /* About Content - Stacked Layout */
@@ -1274,9 +1280,15 @@ body.grayscale-mode .cycle-image {
         pointer-events: none !important;
     }
     
-    /* Landscape mobile - ensure text doesn't overlap background */
+    /* Landscape mobile - position text on left side */
     .title-block {
-        margin-bottom: 50px !important;
-        padding-bottom: 30px !important;
+        position: absolute !important;
+        top: 50% !important;
+        left: 20px !important;
+        transform: translateY(-50%) !important;
+        text-align: left !important;
+        width: 45% !important;
+        margin: 0 !important;
+        padding: 0 !important;
     }
 }
