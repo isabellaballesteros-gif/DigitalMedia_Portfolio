@@ -108,7 +108,12 @@ body.grayscale-mode .cycle-image {
 
 /* Grayscale mode for home page - apply filter to background image */
 body.grayscale-mode.home-page .background-image {
-    filter: grayscale(100%);
+    filter: grayscale(100%) !important;
+}
+
+/* Ensure color mode shows full color */
+body.home-page:not(.grayscale-mode) .background-image {
+    filter: none !important;
 }
 
 /* Ensure button container is not affected by grayscale filter */
@@ -174,6 +179,7 @@ body.home-page {
     background-color: black;
     color: white;
     background-image: none !important;
+    background: black !important;
 }
 
 /* Background image as regular img element */
@@ -910,7 +916,18 @@ body.grayscale-mode .cycle-image {
     body.grayscale-mode.home-page {
         background-color: black !important;
         background-image: none !important;
+        background: black !important;
         color: white !important;
+    }
+    
+    /* Mobile grayscale mode for background image */
+    body.grayscale-mode.home-page .background-image {
+        filter: grayscale(100%) !important;
+    }
+    
+    /* Mobile color mode for background image */
+    body.home-page:not(.grayscale-mode) .background-image {
+        filter: none !important;
     }
     
     /* Cover Page - With background image as regular img element */
@@ -1276,7 +1293,7 @@ body.grayscale-mode .cycle-image {
         height: 100vh !important;
         object-fit: cover !important;
         object-position: right center !important;
-        z-index: -1 !important;
+        z-index: 1 !important;
         pointer-events: none !important;
     }
     
