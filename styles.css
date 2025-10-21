@@ -682,13 +682,13 @@ body.grayscale-mode .cycle-image {
     body.home-page {
         padding: 0;
         margin: 0;
-        background-color: black !important;
+        background-color: rgb(0, 0, 0);
         background-image: url('https://i.postimg.cc/MKN4m0FS/Selfportraitdma.png') !important;
         background-size: 50% !important;
         background-position: right center !important;
         background-repeat: no-repeat !important;
         background-attachment: fixed !important;
-        color: white !important;
+        color: rgb(255, 255, 255) ;
     }
     
     /* Mobile about page - background image handled in mobile accessibility system */
@@ -701,29 +701,28 @@ body.grayscale-mode .cycle-image {
     p1, p3, li { font-size: 18px; }
 
 
-    /* Positioning adjustments for the home title */
+    /* Positioning adjustments for the home title - keep desktop layout */
     .title-block {
-        position: relative !important;
-        transform: none !important;
-        text-align: center !important;
-        margin-top: 80px !important;
-        margin-bottom: 40px !important;
+        position: absolute !important;
+        top: 50% !important;
+        left: 20px !important;
+        transform: translateY(-50%) !important;
+        text-align: left !important;
         z-index: 1 !important;
-        padding: 20px !important;
-        left: auto !important;
-        top: auto !important;
+        margin: 0 !important;
+        padding: 0 !important;
     }
 
     /* Corner and house images scale down on mobile */
     .corner-image {
         top: 8px;
         right: 8px;
-        width: 150px;
-        height: 150px;
+        width: 200px;
+        height: 200px;
     }
     .house-link img {
-        width: 180px;
-        height: 180px;
+        width: 250px;
+        height: 250px;
     }
 
     /* Container breathing space */
@@ -896,13 +895,31 @@ body.grayscale-mode .cycle-image {
     
     /* Cover Page - With background image */
     body.about-page {
-        background-color: black !important;
+        background-color: rgb(255, 155, 155) !important;
         background-image: url('https://i.postimg.cc/Gt0w22yr/Background.png') !important;
         background-size: cover !important;
         background-position: center center !important;
         background-repeat: no-repeat !important;
         background-attachment: fixed !important;
         color: white !important;
+    }
+    
+    /* Force fixed background on mobile for about page */
+    @media (max-width: 1024px) {
+        body.about-page {
+            background-attachment: fixed !important;
+            -webkit-background-attachment: fixed !important;
+            -moz-background-attachment: fixed !important;
+        }
+    }
+    
+    /* Additional mobile fix for background attachment */
+    @media (max-width: 768px) {
+        body.about-page {
+            background-attachment: fixed !important;
+            -webkit-background-attachment: fixed !important;
+            -moz-background-attachment: fixed !important;
+        }
     }
     
     /* Make paragraph text black on about page for mobile */
@@ -1033,17 +1050,16 @@ body.grayscale-mode .cycle-image {
         filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
     }
     
-    /* Title Block - Simplified */
+    /* Title Block - Keep desktop layout on mobile */
     .title-block {
-        position: relative !important;
-        transform: none !important;
-        text-align: center !important;
-        margin-top: 80px !important;
-        margin-bottom: 40px !important;
+        position: absolute !important;
+        top: 50% !important;
+        left: 20px !important;
+        transform: translateY(-50%) !important;
+        text-align: left !important;
         z-index: 1 !important;
-        padding: 20px !important;
-        left: auto !important;
-        top: auto !important;
+        margin: 0 !important;
+        padding: 0 !important;
     }
     
     /* About Content - Stacked Layout */
