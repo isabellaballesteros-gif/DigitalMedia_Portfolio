@@ -126,27 +126,29 @@ body.grayscale-mode.home-page #buttonContainer {
 /* No mobile grayscale background needed */
 
 
-/* Apply grayscale to about-page background using pseudo-element */
-body.grayscale-mode.about-page::before {
-    content: '';
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background-image: url('https://i.postimg.cc/Gt0w22yr/Background.png');
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    filter: grayscale(100%);
-    z-index: -1; /* ensure it's behind content and doesn't affect stacking */
-    pointer-events: none;
+/* No grayscale background for about-page */
+body.grayscale-mode.about-page {
+    background-image: none !important;
 }
 
-/* Hide original background when in grayscale mode */
-body.grayscale-mode.about-page {
-    background-image: none !important; /* rely on ::before image */
+/* Apply grayscale filter to background image in grayscale mode */
+body.grayscale-mode.about-page .background-image {
+    filter: grayscale(100%);
+}
+
+/* Ensure background image is in color mode */
+body.about-page:not(.grayscale-mode) .background-image {
+    filter: none;
+}
+
+/* Apply grayscale filter to self-portrait in grayscale mode */
+body.grayscale-mode.home-page .self-portrait-image {
+    filter: grayscale(100%);
+}
+
+/* Ensure self-portrait is in color mode */
+body.home-page:not(.grayscale-mode) .self-portrait-image {
+    filter: none;
 }
 
 /* Ensure button container is not affected by grayscale filter */
@@ -182,28 +184,35 @@ body.home-page {
     background: black !important;
 }
 
-/* Background image as regular img element */
+/* Background image as regular img element for about page */
 .background-image {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    object-position: center center;
+    z-index: -1;
+    pointer-events: none;
+}
+
+/* Self-portrait image for index page */
+.self-portrait-image {
     position: fixed;
     top: 0;
     right: 0;
     width: 50%;
     height: 100vh;
     object-fit: cover;
-    object-position: right top;
+    object-position: right center;
     z-index: 1;
     pointer-events: none;
 }
 
-
-/* Background for about page - with new background image */
+/* Background for about page - no background image */
 body.about-page {
     background-color: black;
-    background-image: url('https://i.postimg.cc/Gt0w22yr/Background.png');
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
     color: white;
 }
 
@@ -708,20 +717,7 @@ body.grayscale-mode .cycle-image {
     }
     
     /* Mobile index page background image positioning - portrait mode */
-    .background-image {
-        position: relative !important;
-        top: auto !important;
-        right: auto !important;
-        left: 50% !important;
-        transform: translateX(-50%) !important;
-        width: 80% !important;
-        height: auto !important;
-        object-fit: contain !important;
-        object-position: center !important;
-        z-index: 1 !important;
-        pointer-events: none !important;
-        margin-top: 40px !important;
-    }
+/* No background image element needed */
     
     /* Ensure text doesn't overlap background */
     .title-block {
@@ -916,14 +912,11 @@ body.grayscale-mode .cycle-image {
         filter: none !important;
     }
     
-    /* Cover Page - With background image */
+    /* Cover Page - no background image */
     body.about-page {
         background-color: black !important;
-        background-image: url('https://i.postimg.cc/Gt0w22yr/Background.png') !important;
-        background-size: cover !important;
-        background-position: center center !important;
-        background-repeat: no-repeat !important;
-        background-attachment: fixed !important;
+        background-image: none !important;
+        background: black !important;
         color: white !important;
     }
     
@@ -938,8 +931,53 @@ body.grayscale-mode .cycle-image {
     body.grayscale-mode.about-page {
         background-color: black !important;
         background-image: none !important;
-        filter: grayscale(100%) !important;
         color: white !important;
+    }
+    
+    /* Mobile background image positioning */
+    .background-image {
+        position: fixed !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: 100vw !important;
+        height: 100vh !important;
+        object-fit: cover !important;
+        object-position: center center !important;
+        z-index: -1 !important;
+        pointer-events: none !important;
+    }
+    
+    /* Mobile grayscale mode for background image */
+    body.grayscale-mode.about-page .background-image {
+        filter: grayscale(100%) !important;
+    }
+    
+    /* Mobile color mode for background image */
+    body.about-page:not(.grayscale-mode) .background-image {
+        filter: none !important;
+    }
+    
+    /* Mobile self-portrait image positioning */
+    .self-portrait-image {
+        position: fixed !important;
+        top: 0 !important;
+        right: 0 !important;
+        width: 50% !important;
+        height: 100vh !important;
+        object-fit: cover !important;
+        object-position: right center !important;
+        z-index: 1 !important;
+        pointer-events: none !important;
+    }
+    
+    /* Mobile grayscale mode for self-portrait */
+    body.grayscale-mode.home-page .self-portrait-image {
+        filter: grayscale(100%) !important;
+    }
+    
+    /* Mobile color mode for self-portrait */
+    body.home-page:not(.grayscale-mode) .self-portrait-image {
+        filter: none !important;
     }
     
     /* Simplified Layout */
@@ -1069,20 +1107,7 @@ body.grayscale-mode .cycle-image {
     }
     
     /* Mobile index page background image positioning - portrait mode */
-    .background-image {
-        position: relative !important;
-        top: auto !important;
-        right: auto !important;
-        left: 50% !important;
-        transform: translateX(-50%) !important;
-        width: 80% !important;
-        height: auto !important;
-        object-fit: contain !important;
-        object-position: center !important;
-        z-index: 1 !important;
-        pointer-events: none !important;
-        margin-top: 40px !important;
-    }
+/* No background image element needed */
     
     /* Ensure text doesn't overlap background */
     .title-block {
@@ -1262,18 +1287,7 @@ body.grayscale-mode .cycle-image {
         max-width: 90vw !important;
     }
     
-    /* Landscape mobile background image positioning */
-    .background-image {
-        position: fixed !important;
-        top: 0 !important;
-        left: 60% !important;
-        width: 40% !important;
-        height: 100vh !important;
-        object-fit: cover !important;
-        object-position: left top !important;
-        z-index: 1 !important;
-        pointer-events: none !important;
-    }
+    /* No background image element needed */
     
     /* Landscape mobile - position text on left side */
     .title-block {
