@@ -678,10 +678,17 @@ body.grayscale-mode .cycle-image {
         padding: 0;
     }
     
-    /* Mobile home page - no background image */
+    /* Mobile home page - keep background image */
     body.home-page {
         padding: 0;
         margin: 0;
+        background-color: black !important;
+        background-image: url('https://i.postimg.cc/MKN4m0FS/Selfportraitdma.png') !important;
+        background-size: 50% !important;
+        background-position: right center !important;
+        background-repeat: no-repeat !important;
+        background-attachment: fixed !important;
+        color: white !important;
     }
     
     /* Mobile about page - background image handled in mobile accessibility system */
@@ -696,13 +703,15 @@ body.grayscale-mode .cycle-image {
 
     /* Positioning adjustments for the home title */
     .title-block {
-        position: relative;
-        transform: none;
-        text-align: center;
-        margin-top: 80px;
-        margin-bottom: 40px;
-        z-index: 1;
-        padding: 20px;
+        position: relative !important;
+        transform: none !important;
+        text-align: center !important;
+        margin-top: 80px !important;
+        margin-bottom: 40px !important;
+        z-index: 1 !important;
+        padding: 20px !important;
+        left: auto !important;
+        top: auto !important;
     }
 
     /* Corner and house images scale down on mobile */
@@ -1026,13 +1035,15 @@ body.grayscale-mode .cycle-image {
     
     /* Title Block - Simplified */
     .title-block {
-        position: relative;
-        transform: none;
-        text-align: center;
-        margin-top: 80px;
-        margin-bottom: 40px;
-        z-index: 1;
-        padding: 20px;
+        position: relative !important;
+        transform: none !important;
+        text-align: center !important;
+        margin-top: 80px !important;
+        margin-bottom: 40px !important;
+        z-index: 1 !important;
+        padding: 20px !important;
+        left: auto !important;
+        top: auto !important;
     }
     
     /* About Content - Stacked Layout */
