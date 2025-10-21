@@ -319,8 +319,8 @@ body.art75-page img {
 }
 
 .house-link img {
-    width: 500px;
-    height: 500px;
+    width: 600px;
+    height: 600px;
     transition: transform 0.3s ease;
     animation: shaky 3s ease-in-out infinite;
 }
@@ -360,6 +360,16 @@ h5 {
     font-family: 'Lucida Console', 'Monaco', 'monospace';
     font-size: 20px;
     color: #ffffff;
+}
+
+/* Mobile h5 adjustments */
+@media (max-width: 768px) {
+    h5 {
+        font-size: 16px;
+        margin-top: 10px;
+        margin-bottom: 20px;
+        padding: 0 10px;
+    }
 }
 p {
     font-family: 'Lucida Console', 'Monaco', 'monospace';
@@ -597,6 +607,15 @@ button:focus-visible,
     height: auto !important;
 }
 
+/* Mobile title image adjustments */
+@media (max-width: 768px) {
+    .title-block img {
+        width: min(85vw, 400px) !important;
+        height: auto !important;
+        max-width: 400px;
+    }
+}
+
 /* Ensure non-grayscale filters in color mode for key visuals */
 .home-page:not(.grayscale-mode) .cycle-image,
 .home-page:not(.grayscale-mode) .project-item a img,
@@ -665,10 +684,7 @@ body.grayscale-mode .cycle-image {
         margin: 0;
     }
     
-    /* Mobile about page - no background image */
-    body.about-page {
-        background-color: white !important;
-    }
+    /* Mobile about page - background image handled in mobile accessibility system */
     
 
     h1 { font-size: 36px; font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; }
@@ -683,8 +699,10 @@ body.grayscale-mode .cycle-image {
         position: relative;
         transform: none;
         text-align: center;
-        margin-top: 24px;
+        margin-top: 80px;
+        margin-bottom: 40px;
         z-index: 1;
+        padding: 20px;
     }
 
     /* Corner and house images scale down on mobile */
@@ -977,8 +995,8 @@ body.grayscale-mode .cycle-image {
     }
     
     .house-link img {
-        width: 80px;
-        height: 80px;
+        width: 120px;
+        height: 120px;
         transition: transform 0.3s ease;
         animation: none;
         filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
@@ -1011,7 +1029,8 @@ body.grayscale-mode .cycle-image {
         position: relative;
         transform: none;
         text-align: center;
-        margin-top: 100px;
+        margin-top: 80px;
+        margin-bottom: 40px;
         z-index: 1;
         padding: 20px;
     }
@@ -1119,8 +1138,8 @@ body.grayscale-mode .cycle-image {
     p1, p3, li { font-size: 14px; }
     
     .house-link img {
-        width: 60px;
-        height: 60px;
+        width: 100px;
+        height: 100px;
     }
     
     .corner-image {
@@ -1157,8 +1176,8 @@ body.grayscale-mode .cycle-image {
 /* Landscape Mobile */
 @media (max-width: 1024px) and (orientation: landscape) {
     .house-link img {
-        width: 70px;
-        height: 70px;
+        width: 110px;
+        height: 110px;
     }
     
     .corner-image {
