@@ -135,6 +135,11 @@ body.grayscale-mode.home-page #buttonContainer {
     filter: none !important;
 }
 
+/* No background image for about page in grayscale mode */
+
+/* No mobile grayscale background needed */
+
+
 /* Apply grayscale to about-page background using pseudo-element */
 body.grayscale-mode.about-page::before {
     content: '';
@@ -143,31 +148,19 @@ body.grayscale-mode.about-page::before {
     left: 0;
     width: 100vw;
     height: 100vh;
-    background-image: url('https://i.postimg.cc/CMtT5HNh/Background.png');
-    background-size: 110%;
-    background-position: center;
+    background-image: url('https://i.postimg.cc/Gt0w22yr/Background.png');
+    background-size: cover;
+    background-position: center center;
     background-repeat: no-repeat;
     background-attachment: fixed;
     filter: grayscale(100%);
-    z-index: -1;
+    z-index: -1; /* ensure it's behind content and doesn't affect stacking */
     pointer-events: none;
 }
 
-/* Mobile grayscale background for about-page */
-@media (max-width: 768px) {
-    body.grayscale-mode.about-page::before {
-        background-size: cover !important;
-        background-position: center center !important;
-        background-attachment: scroll !important;
-        width: 100vw !important;
-        height: 100vh !important;
-    }
-}
-
-
 /* Hide original background when in grayscale mode */
 body.grayscale-mode.about-page {
-    background-image: none !important;
+    background-image: none !important; /* rely on ::before image */
 }
 
 /* Ensure button container is not affected by grayscale filter */
@@ -195,7 +188,7 @@ body.grayscale-mode.about-page #buttonContainer {
 
 
 
-/* Background image only for index page */
+/* Background image for index page */
 body.home-page {
     background-color: black;
     background-image: url('https://i.postimg.cc/MKN4m0FS/Selfportraitdma.png');
@@ -206,34 +199,27 @@ body.home-page {
     color: white;
 }
 
-/* Background image for about page */
+
+/* Background for about page - with new background image */
 body.about-page {
-    background-image: url('https://i.postimg.cc/CMtT5HNh/Background.png');
-    background-size: 110%;
-    background-position: center;
+    background-color: black;
+    background-image: url('https://i.postimg.cc/Gt0w22yr/Background.png');
+    background-size: cover;
+    background-position: center center;
     background-repeat: no-repeat;
-    background-attachment: scroll;
+    background-attachment: fixed;
+    color: white;
 }
 
-/* MOBILE: Make background work like grayscale mode */
-@media (max-width: 768px) {
-    body.about-page {
-        background-size: cover !important;
-        background-position: center center !important;
-        background-attachment: scroll !important;
-        background-repeat: no-repeat !important;
-    }
-    
-    /* Force grayscale mobile background */
-    body.grayscale-mode.about-page::before {
-        background-size: cover !important;
-        background-position: center center !important;
-        background-attachment: scroll !important;
-        width: 100vw !important;
-        height: 100vh !important;
-    }
-    
+/* Make paragraph text black on about page for better readability */
+body.about-page p,
+body.about-page p1,
+body.about-page p3,
+body.about-page li {
+    color: black !important;
 }
+
+/* No mobile background adjustments needed */
 
 
 /* Background colors for project pages */
@@ -673,19 +659,15 @@ body.grayscale-mode .cycle-image {
         padding: 0;
     }
     
-    /* Mobile home page background - use desktop settings but ensure it works */
+    /* Mobile home page - no background image */
     body.home-page {
         padding: 0;
         margin: 0;
     }
     
-    /* Mobile about page background - cover entire page and scroll with content - FORCE OVERRIDE */
+    /* Mobile about page - no background image */
     body.about-page {
-        background-size: cover !important;
-        background-position: center center !important;
-        background-attachment: scroll !important;
-        background-repeat: no-repeat !important;
-        min-height: 100vh !important;
+        background-color: white !important;
     }
     
 
@@ -805,43 +787,7 @@ body.grayscale-mode .cycle-image {
         margin-top: 100px;
     }
     
-    /* Fix about page background in landscape mobile view - only for mobile screens */
-    @media (max-width: 768px) {
-        body.about-page {
-            background-size: cover !important;
-            background-position: center center !important;
-            background-attachment: scroll !important;
-            background-repeat: no-repeat !important;
-            min-height: 100vh !important;
-        }
-        
-        body.about-page:not(.grayscale-mode) {
-            background-size: cover !important;
-            background-position: center center !important;
-            background-attachment: scroll !important;
-            background-repeat: no-repeat !important;
-            min-height: 100vh !important;
-        }
-        
-        body.about-page.grayscale-mode {
-            background-size: cover !important;
-            background-position: center center !important;
-            background-attachment: scroll !important;
-            background-repeat: no-repeat !important;
-            min-height: 100vh !important;
-        }
-        
-        /* Fix grayscale about page background in landscape mobile view */
-        body.grayscale-mode.about-page::before {
-            background-size: cover !important;
-            background-position: center center !important;
-            background-attachment: scroll !important;
-            width: 100vw !important;
-            height: 100vh !important;
-        }
-        
-        
-    }
+    /* No landscape mobile background adjustments needed */
     
     /* Ensure images work properly in landscape mode */
     .image-cycle {
@@ -903,32 +849,48 @@ body.grayscale-mode .cycle-image {
 /* Mobile and Tablet Base Styles */
 @media (max-width: 1024px) {
     
-    /* Page 1 - Pastel Pink Background */
+    /* Page 1 - Restore background image on mobile/tablet */
     body.home-page {
-        background-color: #FFB6C1 !important;
-        background-image: none !important;
-        color: #333 !important;
+        background-color: black !important;
+        background-image: url('https://i.postimg.cc/MKN4m0FS/Selfportraitdma.png') !important;
+        background-size: 50% !important;
+        background-position: right center !important;
+        background-repeat: no-repeat !important;
+        background-attachment: fixed !important;
+        color: white !important;
     }
     
     body.grayscale-mode.home-page {
-        background-color: #FFB6C1 !important;
+        background-color: black !important;
         background-image: none !important;
         filter: grayscale(100%) !important;
-        color: #333 !important;
+        color: white !important;
     }
     
-    /* Cover Page - Simplified Layout */
+    /* Cover Page - With background image */
     body.about-page {
-        background-color: white !important;
-        background-image: none !important;
-        color: #333 !important;
+        background-color: black !important;
+        background-image: url('https://i.postimg.cc/Gt0w22yr/Background.png') !important;
+        background-size: cover !important;
+        background-position: center center !important;
+        background-repeat: no-repeat !important;
+        background-attachment: fixed !important;
+        color: white !important;
+    }
+    
+    /* Make paragraph text black on about page for mobile */
+    body.about-page p,
+    body.about-page p1,
+    body.about-page p3,
+    body.about-page li {
+        color: black !important;
     }
     
     body.grayscale-mode.about-page {
-        background-color: white !important;
+        background-color: black !important;
         background-image: none !important;
         filter: grayscale(100%) !important;
-        color: #333 !important;
+        color: white !important;
     }
     
     /* Simplified Layout */
