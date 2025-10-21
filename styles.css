@@ -701,16 +701,23 @@ body.grayscale-mode .cycle-image {
     p1, p3, li { font-size: 18px; }
 
 
-    /* Positioning adjustments for the home title - keep desktop layout */
+    /* Mobile index page - structured layout */
     .title-block {
-        position: absolute !important;
-        top: 50% !important;
-        left: 20px !important;
-        transform: translateY(-50%) !important;
-        text-align: left !important;
+        position: relative !important;
+        top: auto !important;
+        left: auto !important;
+        transform: none !important;
+        text-align: center !important;
         z-index: 1 !important;
-        margin: 0 !important;
-        padding: 0 !important;
+        margin: 20px auto !important;
+        padding: 20px !important;
+        max-width: 90vw !important;
+    }
+    
+    /* Mobile index page background positioning */
+    body.home-page {
+        background-position: center bottom !important;
+        background-size: 60% !important;
     }
 
     /* Corner and house images scale down on mobile */
@@ -895,7 +902,7 @@ body.grayscale-mode .cycle-image {
     
     /* Cover Page - With background image */
     body.about-page {
-        background-color: rgb(255, 155, 155) !important;
+        background-color: rgb(0, 0, 0) !important;
         background-image: url('https://i.postimg.cc/Gt0w22yr/Background.png') !important;
         background-size: cover !important;
         background-position: center center !important;
@@ -919,6 +926,32 @@ body.grayscale-mode .cycle-image {
             background-attachment: fixed !important;
             -webkit-background-attachment: fixed !important;
             -moz-background-attachment: fixed !important;
+        }
+    }
+    
+    /* Force fixed background for mobile browsers that ignore background-attachment */
+    @media (max-width: 1024px) {
+        body.about-page:not(.grayscale-mode) {
+            background-attachment: fixed !important;
+            -webkit-background-attachment: fixed !important;
+            -moz-background-attachment: fixed !important;
+            background-image: url('https://i.postimg.cc/Gt0w22yr/Background.png') !important;
+            background-size: cover !important;
+            background-position: center center !important;
+            background-repeat: no-repeat !important;
+        }
+    }
+    
+    /* Extra mobile fix for color mode */
+    @media (max-width: 768px) {
+        body.about-page:not(.grayscale-mode) {
+            background-attachment: fixed !important;
+            -webkit-background-attachment: fixed !important;
+            -moz-background-attachment: fixed !important;
+            background-image: url('https://i.postimg.cc/Gt0w22yr/Background.png') !important;
+            background-size: cover !important;
+            background-position: center center !important;
+            background-repeat: no-repeat !important;
         }
     }
     
@@ -1050,16 +1083,23 @@ body.grayscale-mode .cycle-image {
         filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
     }
     
-    /* Title Block - Keep desktop layout on mobile */
+    /* Title Block - Mobile structured layout */
     .title-block {
-        position: absolute !important;
-        top: 50% !important;
-        left: 20px !important;
-        transform: translateY(-50%) !important;
-        text-align: left !important;
+        position: relative !important;
+        top: auto !important;
+        left: auto !important;
+        transform: none !important;
+        text-align: center !important;
         z-index: 1 !important;
-        margin: 0 !important;
-        padding: 0 !important;
+        margin: 20px auto !important;
+        padding: 20px !important;
+        max-width: 90vw !important;
+    }
+    
+    /* Mobile index page background positioning */
+    body.home-page {
+        background-position: center bottom !important;
+        background-size: 60% !important;
     }
     
     /* About Content - Stacked Layout */
@@ -1219,5 +1259,24 @@ body.grayscale-mode .cycle-image {
     
     h1, h2, h3, h4 {
         margin-top: 80px;
+    }
+    
+    /* Landscape mobile index page layout */
+    .title-block {
+        position: relative !important;
+        top: auto !important;
+        left: auto !important;
+        transform: none !important;
+        text-align: center !important;
+        z-index: 1 !important;
+        margin: 20px auto !important;
+        padding: 20px !important;
+        max-width: 90vw !important;
+    }
+    
+    /* Landscape mobile background positioning */
+    body.home-page {
+        background-position: center bottom !important;
+        background-size: 50% !important;
     }
 }
