@@ -1101,8 +1101,8 @@ body.grayscale-mode .cycle-image {
     }
     
     .house-link img {
-        width: 120px;
-        height: 120px;
+        width: 150px;
+        height: 150px;
         transition: transform 0.3s ease;
         animation: none;
         filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
@@ -1255,8 +1255,8 @@ body.grayscale-mode .cycle-image {
     p1, p3, li { font-size: 14px; }
     
     .house-link img {
-        width: 100px;
-        height: 100px;
+        width: 130px;
+        height: 130px;
     }
     
     .corner-image {
@@ -1293,8 +1293,8 @@ body.grayscale-mode .cycle-image {
 /* Landscape Mobile */
 @media (max-width: 1024px) and (orientation: landscape) {
     .house-link img {
-        width: 110px;
-        height: 110px;
+        width: 140px;
+        height: 140px;
     }
     
     .corner-image {
