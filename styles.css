@@ -957,17 +957,20 @@ body.grayscale-mode .cycle-image {
         filter: none !important;
     }
     
-    /* Mobile self-portrait image positioning */
+    /* Mobile self-portrait image positioning - portrait mode */
     .self-portrait-image {
-        position: fixed !important;
-        top: 0 !important;
-        right: 0 !important;
-        width: 50% !important;
-        height: 100vh !important;
-        object-fit: cover !important;
-        object-position: right center !important;
+        position: relative !important;
+        top: auto !important;
+        right: auto !important;
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+        width: 60% !important;
+        height: auto !important;
+        object-fit: contain !important;
+        object-position: center center !important;
         z-index: 1 !important;
         pointer-events: none !important;
+        margin-top: 30px !important;
     }
     
     /* Mobile grayscale mode for self-portrait */
