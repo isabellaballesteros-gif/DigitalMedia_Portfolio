@@ -191,7 +191,7 @@ body.home-page {
     height: 100vh;
     object-fit: cover;
     object-position: right center;
-    z-index: -1;
+    z-index: 1;
     pointer-events: none;
 }
 
@@ -682,17 +682,14 @@ body.grayscale-mode .cycle-image {
         padding: 0;
     }
     
-    /* Mobile home page - keep background image */
+    /* Mobile home page - no background image */
     body.home-page {
         padding: 0;
         margin: 0;
         background-color: rgb(0, 0, 0);
-        background-image: url('https://i.postimg.cc/MKN4m0FS/Selfportraitdma.png') !important;
-        background-size: 50% !important;
-        background-position: right center !important;
-        background-repeat: no-repeat !important;
-        background-attachment: fixed !important;
-        color: rgb(255, 255, 255) ;
+        background-image: none !important;
+        background: black !important;
+        color: rgb(255, 255, 255);
     }
     
     /* Mobile about page - background image handled in mobile accessibility system */
@@ -902,14 +899,11 @@ body.grayscale-mode .cycle-image {
 /* Mobile and Tablet Base Styles */
 @media (max-width: 1024px) {
     
-    /* Page 1 - Restore background image on mobile/tablet */
+    /* Page 1 - No background image on mobile/tablet */
     body.home-page {
         background-color: black !important;
-        background-image: url('https://i.postimg.cc/MKN4m0FS/Selfportraitdma.png') !important;
-        background-size: 50% !important;
-        background-position: right center !important;
-        background-repeat: no-repeat !important;
-        background-attachment: fixed !important;
+        background-image: none !important;
+        background: black !important;
         color: white !important;
     }
     
