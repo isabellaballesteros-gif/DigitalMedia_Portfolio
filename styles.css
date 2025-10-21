@@ -190,7 +190,7 @@ body.home-page {
     width: 50%;
     height: 100vh;
     object-fit: cover;
-    object-position: right center;
+    object-position: right top;
     z-index: 1;
     pointer-events: none;
 }
@@ -1286,7 +1286,7 @@ body.grayscale-mode .cycle-image {
         width: 40% !important;
         height: 100vh !important;
         object-fit: cover !important;
-        object-position: right center !important;
+        object-position: right top !important;
         z-index: 1 !important;
         pointer-events: none !important;
     }
