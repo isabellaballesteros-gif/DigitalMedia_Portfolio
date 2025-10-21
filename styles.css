@@ -300,6 +300,21 @@ body.page4 .small-images img {
     margin: 0;
 }
 
+/* Mobile layout for small images on page 4 */
+@media (max-width: 1024px) {
+    body.page4 .small-images {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+    
+    body.page4 .small-images img {
+        width: 100%;
+        max-width: 300px;
+        height: auto;
+    }
+}
+
 body.art74-page h2,
 body.art75-page h2,
 body.art74-page h3,
