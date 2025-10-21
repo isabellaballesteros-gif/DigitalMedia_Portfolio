@@ -134,6 +134,31 @@
         }
         
         colorToggle.addEventListener('click', toggleGrayscale);
+        
+        // Mobile background fix - force fixed background on mobile browsers
+        function fixMobileBackground() {
+            if (window.innerWidth <= 1024) {
+                const body = document.body;
+                if (!body.classList.contains('grayscale-mode')) {
+                    // Force background-attachment: fixed on mobile
+                    body.style.backgroundAttachment = 'fixed';
+                    body.style.webkitBackgroundAttachment = 'fixed';
+                    body.style.mozBackgroundAttachment = 'fixed';
+                }
+            }
+        }
+        
+        // Apply fix on load and resize
+        fixMobileBackground();
+        window.addEventListener('resize', fixMobileBackground);
+        window.addEventListener('orientationchange', fixMobileBackground);
+        
+        // Reapply fix when toggling grayscale mode
+        const originalToggleGrayscale = toggleGrayscale;
+        toggleGrayscale = function() {
+            originalToggleGrayscale();
+            setTimeout(fixMobileBackground, 100);
+        };
     </script>
 </body>
 </html>
