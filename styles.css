@@ -591,6 +591,19 @@ body.about-page h1 {
     padding: 20px;
 }
 
+.contact-text {
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 12px;
+    padding: 20px;
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.contact-text h3 {
+    margin-top: 40px;
+}
+
 /* Animation keyframes for cycling */
 @keyframes cycleImages {
     0% { opacity: 1; }
@@ -1253,7 +1266,7 @@ body.grayscale-mode .cycle-image {
     }
     
     /* Text Containers - White Background */
-    .home-text, .about-text, .credits-text {
+    .home-text, .about-text, .credits-text, .contact-text {
         background-color: rgba(255, 255, 255, 0.9) !important;
         padding: 15px;
         margin: 10px;
