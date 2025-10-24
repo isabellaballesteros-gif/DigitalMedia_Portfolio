@@ -478,7 +478,7 @@ body.art75-page img {
 
 /* Add margin between About Me and Art 74 sections */
 #art74 {
-    margin-top: 80px;
+    margin-top: 120px;
 }
 
 /* Add margin between Art 74 and Art 75 sections */
@@ -511,14 +511,14 @@ h1 {
     margin-bottom: 15px;
     font-family: 'Arial Black', Gadget, sans-serif;
     font-size: 50px;
-    color: #24133A;
+    color: #1f0640;
 }
 h2, h3{
     margin-top: 0;
     margin-bottom: 15px;
     font-family:  'Arial Black', Gadget, sans-serif;
-    font-size: 50px;
-    color: #280c4c;
+    font-size: 40px;
+    color: #280557;
     text-align: center;
 }
 
@@ -824,6 +824,8 @@ body.about-page h1 {
     background-color: rgba(255, 255, 255, 0.9);
     border-radius: 12px;
     padding: 20px;
+    max-width: 600px;
+    margin: 0 auto;
 }
 
 .contact-text {
@@ -1043,7 +1045,7 @@ body.grayscale-mode .cycle-image {
     
 
     h1 { font-size: 36px; font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; }
-    h2, h3 { font-size: 32px; font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; }
+    h2, h3 { font-size: 28px; font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; }
     h4 { font-size: 32px; font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; }
     p { font-size: 20px; }
     p1, p3, li { font-size: 18px; }
@@ -1193,7 +1195,7 @@ body.grayscale-mode .cycle-image {
 
 @media (max-width: 480px) {
     h1 { font-size: 30px; }
-    h2, h3 { font-size: 26px; }
+    h2, h3 { font-size: 22px; }
     h4 { font-size: 26px; }
     p { font-size: 18px; }
     p1, p3, li { font-size: 16px; }
@@ -1595,7 +1597,7 @@ body.grayscale-mode .cycle-image {
 /* Small Mobile Devices */
 @media (max-width: 480px) {
     h1 { font-size: 28px; margin-top: 100px; }
-    h2, h3 { font-size: 24px; margin-top: 100px; }
+    h2, h3 { font-size: 20px; margin-top: 100px; }
     h4 { font-size: 20px; margin-top: 100px; }
     p { font-size: 16px; }
     p1, p3, li { font-size: 14px; }
@@ -1634,6 +1636,60 @@ body.grayscale-mode .cycle-image {
         padding: 6px 10px;
         font-size: 12px;
         left: 80px;
+    }
+}
+
+/* Spotify Section Styles */
+.spotify-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin: 20px auto;
+    text-align: center;
+}
+
+/* Move About Me section higher */
+.about-page h1 {
+    margin-top: 0;
+}
+
+.spotify-text {
+    font-size: 32px;
+    font-family: 'Arial Black', Gadget, sans-serif;
+    color: #006400;
+    margin: 0;
+    flex-shrink: 0;
+}
+
+.spotify-image {
+    width: 200px;
+    height: 200px;
+    cursor: pointer;
+    animation: shaky 3s ease-in-out infinite;
+    transition: transform 0.3s ease;
+}
+
+.spotify-image:hover {
+    transform: scale(1.05);
+    animation: none;
+}
+
+/* Mobile responsive for Spotify section */
+@media (max-width: 768px) {
+    .spotify-section {
+        flex-direction: column;
+        gap: 10px;
+        margin: 15px auto;
+    }
+    
+    .spotify-text {
+        font-size: 24px;
+    }
+    
+    .spotify-image {
+        width: 150px;
+        height: 150px;
     }
 }
 
@@ -1686,3 +1742,4 @@ body.grayscale-mode .cycle-image {
         padding: 0 !important;
     }
 }
+
