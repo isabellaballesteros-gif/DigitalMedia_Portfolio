@@ -7,8 +7,11 @@
     <link rel="stylesheet" href="styles.css?v=20241219">
 </head>
 <body class="about-page">
-        <div id="buttonContainer" style="position: fixed; bottom: 20px; left: 20px; z-index: 999999; width: 180px; height: 48px; pointer-events: none;">
-            <button id="colorToggle" class="color-toggle" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: auto;">⚫ Grayscale Mode</button>
+        <div id="buttonContainer" style="position: fixed; bottom: 20px; left: 20px; z-index: 999999; width: 350px; height: 80px; pointer-events: none;">
+            <button id="colorToggle" class="color-toggle" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: auto; background: none; border: none; padding: 0;">
+                <img id="grayscaleButton" src="https://i.postimg.cc/XvMfptDB/grayscale.png" alt="Grayscale Mode" class="toggle-button-image" style="display: block;">
+                <img id="colorButton" src="https://i.postimg.cc/R0r7N2bW/colormode.png" alt="Color Mode" class="toggle-button-image" style="display: none;">
+            </button>
         </div>
         
         <!-- Background image as regular img element -->
@@ -17,7 +20,11 @@
     <div class="corner-image">
         <img src="https://i.postimg.cc/3Jxc7ypj/House-1.png" alt="Corner Artwork">
     </div>
-    <a href="index.html" class="back-link" aria-label="Back to Front Page">← <span>Back to Front Page</span></a>
+    
+    <!-- Back to index button -->
+    <a href="index.html" class="back-to-index-button">
+        <img src="https://i.postimg.cc/Qd2SGFQt/Frontpage.png" alt="Back to Front Page">
+    </a>
     
         <h1> About Me</h1>
     <div class="about-content">
@@ -114,15 +121,18 @@
         const isGrayscale = localStorage.getItem('grayscaleMode') === 'true';
         
         function toggleGrayscale() {
+            const grayscaleButton = document.getElementById('grayscaleButton');
+            const colorButton = document.getElementById('colorButton');
+            
             if (body.classList.contains('grayscale-mode')) {
                 body.classList.remove('grayscale-mode');
-                colorToggle.textContent = '⚫ Grayscale Mode';
-                colorToggle.classList.remove('grayscale-active');
+                grayscaleButton.style.display = 'block';
+                colorButton.style.display = 'none';
                 localStorage.setItem('grayscaleMode', 'false');
             } else {
                 body.classList.add('grayscale-mode');
-                colorToggle.textContent = '🎨 Color Mode';
-                colorToggle.classList.add('grayscale-active');
+                grayscaleButton.style.display = 'none';
+                colorButton.style.display = 'block';
                 localStorage.setItem('grayscaleMode', 'true');
             }
             
@@ -140,8 +150,8 @@
         // Apply saved preference on page load
         if (isGrayscale) {
             body.classList.add('grayscale-mode');
-            colorToggle.textContent = '🎨 Color Mode';
-            colorToggle.classList.add('grayscale-active');
+            document.getElementById('grayscaleButton').style.display = 'none';
+            document.getElementById('colorButton').style.display = 'block';
         }
         
         colorToggle.addEventListener('click', toggleGrayscale);

@@ -15,8 +15,11 @@ body {
     bottom: 20px !important;
     left: 20px !important;
     z-index: 999999 !important;
-    width: 180px !important;
-    height: 48px !important;
+    width: 350px !important;
+    height: 80px !important;
+    background: white !important;
+    border-radius: 25px !important;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2) !important;
     pointer-events: none !important;
     filter: none !important;
     transform: none !important;
@@ -29,7 +32,7 @@ body {
     left: 0 !important;
     width: 100% !important;
     height: 100% !important;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+    background: transparent !important;
     color: white !important;
     border: none !important;
     padding: 0 !important;
@@ -38,7 +41,7 @@ body {
     font-size: 14px !important;
     font-weight: bold !important;
     cursor: pointer !important;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2) !important;
+    box-shadow: none !important;
     transition: none !important;
     font-family: Arial, sans-serif !important;
     transform: none !important;
@@ -197,6 +200,45 @@ body.home-page {
     pointer-events: none;
 }
 
+/* Header section with title and self portrait side by side */
+.header-section {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    margin-bottom: 40px;
+    margin-top: 80px;
+    margin-left: 80px;
+    margin-right: 80px;
+    padding: 20px 0;
+}
+
+.title-container {
+    flex: 1;
+}
+
+.title-container h1 {
+    margin: 0 0 10px 0;
+}
+
+.welcome-text {
+    font-size: 18px;
+    color: #666;
+    margin: 0;
+    font-style: italic;
+}
+
+.self-portrait-container {
+    flex-shrink: 0;
+}
+
+.self-portrait {
+    max-width: 500px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
 /* Self-portrait image for index page */
 .self-portrait-image {
     position: fixed;
@@ -208,6 +250,110 @@ body.home-page {
     object-position: right center;
     z-index: 1;
     pointer-events: none;
+}
+
+/* Desktop responsive scaling - prevent content overlap */
+@media (max-width: 1800px) {
+    .self-portrait-image {
+        width: 45%;
+    }
+}
+
+@media (max-width: 1600px) {
+    .self-portrait-image {
+        width: 40%;
+    }
+}
+
+@media (max-width: 1400px) {
+    .self-portrait-image {
+        width: 35%;
+    }
+}
+
+@media (max-width: 1200px) {
+    .self-portrait-image {
+        width: 30%;
+    }
+}
+
+@media (max-width: 1000px) {
+    .self-portrait-image {
+        width: 25%;
+    }
+}
+
+@media (max-width: 900px) {
+    .self-portrait-image {
+        width: 20%;
+    }
+}
+
+@media (max-width: 800px) {
+    .self-portrait-image {
+        width: 12%;
+    }
+}
+
+@media (max-width: 700px) {
+    .self-portrait-image {
+        width: 8%;
+    }
+}
+
+@media (max-width: 600px) {
+    .self-portrait-image {
+        width: 5%;
+    }
+}
+
+@media (max-width: 500px) {
+    .self-portrait-image {
+        width: 3%;
+    }
+}
+
+/* Ensure title content has proper spacing */
+@media (max-width: 1200px) {
+    .title-block {
+        left: 30px !important;
+        max-width: calc(100% - 200px);
+    }
+}
+
+@media (max-width: 1000px) {
+    .title-block {
+        left: 40px !important;
+        max-width: calc(100% - 150px);
+    }
+}
+
+@media (max-width: 900px) {
+    .title-block {
+        left: 50px !important;
+        max-width: calc(100% - 100px);
+    }
+}
+
+@media (max-width: 800px) {
+    .title-block {
+        left: 60px !important;
+        max-width: calc(100% - 80px);
+    }
+}
+
+@media (max-width: 700px) {
+    .title-block {
+        left: 70px !important;
+        max-width: calc(100% - 60px);
+    }
+}
+
+@media (max-width: 600px) {
+    .title-block {
+        left: 80px !important;
+        max-width: calc(100% - 40px);
+    }
 }
 
 /* Background for about page - no background image */
@@ -462,14 +608,14 @@ img {
     top: 20px;
     left: 20px;
     z-index: 1000;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: transparent;
     color: #ffffff;
     text-decoration: none;
-    padding: 10px 16px;
-    border-radius: 9999px;
+    padding: 0;
+    border-radius: 0;
     font-family: Arial, sans-serif;
     font-weight: bold;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+    box-shadow: none;
     display: inline-flex;
     align-items: center;
     gap: 8px;
@@ -485,6 +631,95 @@ img {
 /* Keep legibility in grayscale mode */
 body.grayscale-mode .back-link {
     filter: grayscale(100%);
+}
+
+/* Back button image styling */
+.back-button-image {
+    max-width: 200px;
+    height: auto;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+    filter: none !important;
+    box-shadow: none !important;
+}
+
+.back-button-image:hover {
+    transform: scale(1.05);
+    filter: none !important;
+    box-shadow: none !important;
+}
+
+/* Override any global image rules for back button */
+.back-link .back-button-image {
+    filter: none !important;
+    box-shadow: none !important;
+}
+
+.back-link:hover .back-button-image {
+    filter: none !important;
+    box-shadow: none !important;
+}
+
+/* Override global body rules for back button image */
+body:not(.grayscale-mode) .back-link .back-button-image {
+    filter: none !important;
+}
+
+body.grayscale-mode .back-link .back-button-image {
+    filter: none !important;
+}
+
+/* Override mobile rules for back button image */
+@media (max-width: 768px) {
+    body:not(.grayscale-mode) .back-link .back-button-image {
+        filter: none !important;
+    }
+    
+    body.grayscale-mode .back-link .back-button-image {
+        filter: none !important;
+    }
+}
+
+/* Back to index button styling */
+.back-to-index-button {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 1000;
+    text-decoration: none;
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.back-to-index-button img {
+    max-width: 250px;
+    height: auto;
+    border-radius: 10px;
+    filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.8));
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.back-to-index-button:hover img {
+    transform: scale(1.05) rotate(2deg);
+    filter: drop-shadow(0 12px 24px rgba(0, 0, 0, 0.9));
+}
+
+/* Toggle button image styling */
+.toggle-button-image {
+    width: 300%;
+    height: 300%;
+    object-fit: contain;
+    border-radius: 25px;
+    filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.8));
+    transition: transform 0.3s ease, filter 0.3s ease;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.color-toggle:hover .toggle-button-image {
+    transform: translate(-50%, -50%) scale(1.05);
+    filter: drop-shadow(0 12px 24px rgba(0, 0, 0, 0.9));
 }
 
 /* Project grid layout */
@@ -648,6 +883,89 @@ button:focus-visible,
 .title-block img {
     width: min(90vw, 900px) !important;
     height: auto !important;
+    animation: titlePulse 3s ease-in-out infinite;
+}
+
+/* Pulsing animation for title */
+@keyframes titlePulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Responsive title scaling for smaller screens */
+@media (max-width: 1400px) {
+    .title-block img {
+        width: min(85vw, 800px) !important;
+    }
+}
+
+@media (max-width: 1200px) {
+    .title-block img {
+        width: min(80vw, 700px) !important;
+    }
+}
+
+@media (max-width: 1000px) {
+    .title-block img {
+        width: min(75vw, 600px) !important;
+    }
+}
+
+@media (max-width: 900px) {
+    .title-block img {
+        width: min(70vw, 500px) !important;
+    }
+}
+
+@media (max-width: 800px) {
+    .title-block img {
+        width: min(65vw, 450px) !important;
+    }
+}
+
+@media (max-width: 700px) {
+    .title-block img {
+        width: min(60vw, 400px) !important;
+    }
+}
+
+@media (max-width: 600px) {
+    .title-block img {
+        width: min(55vw, 350px) !important;
+    }
+}
+
+/* Mobile header section adjustments */
+@media (max-width: 768px) {
+    .header-section {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 20px;
+    }
+    
+    .header-section {
+        margin-top: 40px;
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+    
+    .title-container h1 img {
+        width: min(95vw, 600px) !important;
+        height: auto !important;
+        max-width: 600px;
+    }
+    
+    .self-portrait {
+        max-width: 350px;
+    }
 }
 
 /* Mobile title image adjustments */
