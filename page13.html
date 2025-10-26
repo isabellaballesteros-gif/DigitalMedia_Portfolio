@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Collaborative Art - Isabella Ballesteros Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="art74-page page13">
+    <div class="container">
+        <div class="house-link">
+            <a href="page1.html#collaborative"><img src="https://i.postimg.cc/3Jxc7ypj/House-1.png" alt="Back to Home"></a>
+        </div>
+    <h1> Sunrise in Japan</h1>
+    
+    <div class="project-grid">
+        <div class="project-item">
+        </div>
+    </div>
+
+    <h2> About the Project</h2>
+    <div class="credits-text">
+        <p>Coming soon...</p>
+    </div>
+    </div>
+    
+    <script>
+        // Color/Grayscale Toggle Functionality
+        const colorToggle = document.getElementById('colorToggle');
+        const body = document.body;
+        
+        // Check localStorage for saved preference
+        const isGrayscale = localStorage.getItem('grayscaleMode') === 'true';
+        
+        function toggleGrayscale() {
+            const grayscaleButton = document.getElementById('grayscaleButton');
+            const colorButton = document.getElementById('colorButton');
+            
+            if (body.classList.contains('grayscale-mode')) {
+                body.classList.remove('grayscale-mode');
+                grayscaleButton.style.display = 'block';
+                colorButton.style.display = 'none';
+                localStorage.setItem('grayscaleMode', 'false');
+            } else {
+                body.classList.add('grayscale-mode');
+                grayscaleButton.style.display = 'none';
+                colorButton.style.display = 'block';
+                localStorage.setItem('grayscaleMode', 'true');
+            }
+        }
+        
+        // Apply saved preference on page load
+        if (isGrayscale) {
+            body.classList.add('grayscale-mode');
+            const grayscaleButton = document.getElementById('grayscaleButton');
+            const colorButton = document.getElementById('colorButton');
+            if (grayscaleButton && colorButton) {
+                grayscaleButton.style.display = 'none';
+                colorButton.style.display = 'block';
+            }
+        }
+        
+        if (colorToggle) {
+            colorToggle.addEventListener('click', toggleGrayscale);
+        }
+    </script>
+</body>
+</html>

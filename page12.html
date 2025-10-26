@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avatar/Data Self Portrait Project - Isabella Ballesteros Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="art74-page page12">
+    <div class="container">
+        <div class="house-link">
+            <a href="page1.html#art101"><img src="https://i.postimg.cc/3Jxc7ypj/House-1.png" alt="Back to Home"></a>
+        </div>
+    <h1> Avatar/Data Self Portrait Project</h1>
+    
+    <img src="https://i.postimg.cc/C5Tm7YqQ/image.png" alt="Avatar/Data Self Portrait Project" style="width: 600px; height: 600px; display: block; margin: 0 auto 30px auto;">
+    <h2> About the Project</h2>
+    <div>
+        <p><a href="https://isabellaballesteros-gif.github.io/Filam_website/">CLICK HERE</a> to view the project. This is the second project we had to do for the class, as we were tasked to make a narrative around a data set that is real or fictional. My website narrative is about the identity struggles of being Filipino American. Like a lot of children born in the USA from immigrant parents, there's a struggle for a sense of identity to fit in but discover which culture we are accepted in. The pressures of society and racism questions us further, leading to inner turmoil. At the end, the viewer can explore real data about the Filipino population and their opinions. I also included a section for Filipino mythology, since it is an aspect many don't know because of assimilation. I was inspired by looking through older interactive websites and made my website like a short story. I drew the black and white character is both shots and coded it with the help of Cursor AI. My favorite part of the website was making the phrases and GIFS appear as the viewer moves their cursor around the screen. It was a time-consuming, technical but rewarding project. Looking back to my first coding projects in Art 74, I feel like I improved greatly on my website coding skills, especially in a very short amount of time. I learned basic coding at the beginning of this year, and now I can say I have created an interactive website with complex actions and animations. Of course, I do need Cursor AI to assist me with the more complicated designs, but I have learned further about how to make a website more personalized and a new medium to showcase my art</p>
+    </div>
+    
+    <script>
+        // Color/Grayscale Toggle Functionality
+        const colorToggle = document.getElementById('colorToggle');
+        const body = document.body;
+        
+        // Check localStorage for saved preference
+        const isGrayscale = localStorage.getItem('grayscaleMode') === 'true';
+        
+        function toggleGrayscale() {
+            const grayscaleButton = document.getElementById('grayscaleButton');
+            const colorButton = document.getElementById('colorButton');
+            
+            if (body.classList.contains('grayscale-mode')) {
+                body.classList.remove('grayscale-mode');
+                grayscaleButton.style.display = 'block';
+                colorButton.style.display = 'none';
+                localStorage.setItem('grayscaleMode', 'false');
+            } else {
+                body.classList.add('grayscale-mode');
+                grayscaleButton.style.display = 'none';
+                colorButton.style.display = 'block';
+                localStorage.setItem('grayscaleMode', 'true');
+            }
+        }
+        
+        // Apply saved preference on page load
+        if (isGrayscale) {
+            body.classList.add('grayscale-mode');
+            const grayscaleButton = document.getElementById('grayscaleButton');
+            const colorButton = document.getElementById('colorButton');
+            if (grayscaleButton && colorButton) {
+                grayscaleButton.style.display = 'none';
+                colorButton.style.display = 'block';
+            }
+        }
+        
+        if (colorToggle) {
+            colorToggle.addEventListener('click', toggleGrayscale);
+        }
+    </script>
+</body>
+</html>

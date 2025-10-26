@@ -382,6 +382,17 @@ body.art75-page {
     background-color: #D2FFC1; /* Pastel green*/
 }
 
+/* Art 101 pages background color */
+body.art74-page.page12,
+body.art74-page.page14 {
+    background-color: #FFE1F8;
+}
+
+/* Page 13 (Collaborative Art) background color */
+body.art74-page.page13 {
+    background-color: #FFF1E1;
+}
+
 /* Grayscale mode for project page backgrounds */
 body.grayscale-mode.art74-page {
     background-color: #E0E0E0; /* Light gray */
@@ -389,6 +400,17 @@ body.grayscale-mode.art74-page {
 
 body.grayscale-mode.art75-page {
     background-color: #E0E0E0; /* Light gray */
+}
+
+/* Grayscale mode for Art 101 pages */
+body.grayscale-mode.art74-page.page12,
+body.grayscale-mode.art74-page.page14 {
+    background-color: #E0E0E0;
+}
+
+/* Grayscale mode for page 13 */
+body.grayscale-mode.art74-page.page13 {
+    background-color: #E0E0E0;
 }
 
 .container {
@@ -484,6 +506,24 @@ body.art75-page img {
 /* Add margin between Art 74 and Art 75 sections */
 #art75 {
     margin-top: 80px;
+}
+
+/* Add 1 inch (96px) spacing between section headings */
+#art101 {
+    margin-top: 96px;
+}
+
+#collaborative {
+    margin-top: 96px;
+}
+
+h3 + .project-grid {
+    margin-top: 96px;
+}
+
+/* Add spacing before Credits section */
+h3:not(#art74):not(#art75):not(#art101):not(#collaborative):not(:first-of-type) {
+    margin-top: 96px;
 }
 
 /* House image link styling */

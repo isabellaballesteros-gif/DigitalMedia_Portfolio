@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Build an Interactive Web Narrative Project - Isabella Ballesteros Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="art74-page page14">
+    <div class="container">
+        <div class="house-link">
+            <a href="page1.html#art101"><img src="https://i.postimg.cc/3Jxc7ypj/House-1.png" alt="Back to Home"></a>
+        </div>
+    <h1> Build an Interactive Web Narrative Project</h1>
+    <img src="https://i.postimg.cc/KvQDkt0b/image.png" alt="Build an Interactive Web Narrative Project" style="width: 600px; height: 600px; display: block; margin: 0 auto 30px auto;">
+    <h2> About the Project</h2>
+    <div>
+        <p><a href="https://isabellaballesteros-gif.github.io/Interactivestory/">CLICK HERE</a> to view the project. This project was the first project we did in class. We were tasked with experimenting with coding and using Cursor AI to create an interactive website with creative freedom. I chose to make an illusion of a choose your own adventure story with the viewer at a dinner, indecisive about what to order. The choices are found to be both bad endings which leads to an explanation about how in modern day society, we judge others and ourselves based on one meal. I resonate with this as someone who loves to eat and is not as thin as society sees as perfect. The project was a great way to start the class and I learned a lot about coding and Cursor AI. The website is very simple in design, but it was a good a starting point and a piece to compare to my later projects.</p>
+    </div>
+    </div>
+    
+    <script>
+        // Color/Grayscale Toggle Functionality
+        const colorToggle = document.getElementById('colorToggle');
+        const body = document.body;
+        
+        // Check localStorage for saved preference
+        const isGrayscale = localStorage.getItem('grayscaleMode') === 'true';
+        
+        function toggleGrayscale() {
+            const grayscaleButton = document.getElementById('grayscaleButton');
+            const colorButton = document.getElementById('colorButton');
+            
+            if (body.classList.contains('grayscale-mode')) {
+                body.classList.remove('grayscale-mode');
+                grayscaleButton.style.display = 'block';
+                colorButton.style.display = 'none';
+                localStorage.setItem('grayscaleMode', 'false');
+            } else {
+                body.classList.add('grayscale-mode');
+                grayscaleButton.style.display = 'none';
+                colorButton.style.display = 'block';
+                localStorage.setItem('grayscaleMode', 'true');
+            }
+        }
+        
+        // Apply saved preference on page load
+        if (isGrayscale) {
+            body.classList.add('grayscale-mode');
+            const grayscaleButton = document.getElementById('grayscaleButton');
+            const colorButton = document.getElementById('colorButton');
+            if (grayscaleButton && colorButton) {
+                grayscaleButton.style.display = 'none';
+                colorButton.style.display = 'block';
+            }
+        }
+        
+        if (colorToggle) {
+            colorToggle.addEventListener('click', toggleGrayscale);
+        }
+    </script>
+</body>
+</html>
