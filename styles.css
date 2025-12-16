@@ -384,7 +384,9 @@ body.art75-page {
 
 /* Art 101 pages background color */
 body.art74-page.page12,
-body.art74-page.page14 {
+body.art74-page.page14,
+body.art74-page.page15,
+body.art74-page.page16 {
     background-color: #FFE1F8;
 }
 
@@ -404,7 +406,9 @@ body.grayscale-mode.art75-page {
 
 /* Grayscale mode for Art 101 pages */
 body.grayscale-mode.art74-page.page12,
-body.grayscale-mode.art74-page.page14 {
+body.grayscale-mode.art74-page.page14,
+body.grayscale-mode.art74-page.page15,
+body.grayscale-mode.art74-page.page16 {
     background-color: #E0E0E0;
 }
 

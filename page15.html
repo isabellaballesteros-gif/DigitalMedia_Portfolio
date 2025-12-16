@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Final Project - Isabella Ballesteros Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="art74-page page15">
+    <div id="buttonContainer" style="position: fixed; bottom: 20px; left: 20px; z-index: 999999; width: 350px; height: 80px; pointer-events: none;">
+        <button id="colorToggle" class="color-toggle" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: auto; background: none; border: none; padding: 0;">
+            <img id="grayscaleButton" src="https://i.postimg.cc/XvMfptDB/grayscale.png" alt="Grayscale Mode" class="toggle-button-image" style="display: block;">
+            <img id="colorButton" src="https://i.postimg.cc/R0r7N2bW/colormode.png" alt="Color Mode" class="toggle-button-image" style="display: none;">
+        </button>
+    </div>
+    <div class="container">
+        <div class="house-link">
+            <a href="page1.html#art101"><img src="https://i.postimg.cc/3Jxc7ypj/House-1.png" alt="Back to Home"></a>
+        </div>
+    <h1> Final Project</h1>
+    <img src="https://i.postimg.cc/7hBsP2D9/Screenshot-2025-12-03-212454.png" alt="Final Project" style="width: 800px; height: auto; display: block; margin: 0 auto 30px auto;">
+    <h2> About the Project</h2>
+    <div>
+        <p>Cafe For You is a cozy website designed for cozy people to have something in the background for study sessions, practicing hobbies, yoga, sleep, or ambience in any occasion they want. Set in a cafe, users can choose what background cafe, food item, drink item, music, and sound effects they want. All assets are hand drawn and given a storybook, cozy feel. Though customization is limited due to time management, I have put quality into the designs to assure simple, cute aesthetics. It also includes sound loops and overlapping audios so users can enjoy music and ambience however they want to.</p>
+        
+        <p>To add a physical element to make my website more engaging, I was inspired by prints that independent artists make of their artwork. I had an idea that I make custom and more unique designs, sounds, and music that people can't get on the main site. People can buy the physical artwork print and the back includes a link to the secret cafe. If I were to do more secret cafes, I would make them blind prints so that way, customers wouldn't know which cafe they get and it makes it cute and exciting while enjoying both worlds.</p>
+        
+        <p>The main inspiration for this final project were YouTube videos to fall asleep, study, or have in the background. I love these videos but sometimes, I feel like I can't find the perfect one or I want a different version of the one I got used to. I would waste my time scrolling for the perfect video because it didn't have visuals or sound I wanted. For my project, I wanted to create a website where users can customize their visuals and sounds to fall asleep, study, or have in the background. Ever since I was a kid, I wanted to make a cute, drawn game or website as I learned basic coding. I was also always inspired by food and cozy environments. Now, I finally made my cozy, interactive website that I am proud of.</p>
+    </div>
+    </div>
+    
+    <script>
+        // Color/Grayscale Toggle Functionality
+        const colorToggle = document.getElementById('colorToggle');
+        const body = document.body;
+        
+        // Check localStorage for saved preference
+        const isGrayscale = localStorage.getItem('grayscaleMode') === 'true';
+        
+        function toggleGrayscale() {
+            const grayscaleButton = document.getElementById('grayscaleButton');
+            const colorButton = document.getElementById('colorButton');
+            
+            if (body.classList.contains('grayscale-mode')) {
+                body.classList.remove('grayscale-mode');
+                grayscaleButton.style.display = 'block';
+                colorButton.style.display = 'none';
+                localStorage.setItem('grayscaleMode', 'false');
+            } else {
+                body.classList.add('grayscale-mode');
+                grayscaleButton.style.display = 'none';
+                colorButton.style.display = 'block';
+                localStorage.setItem('grayscaleMode', 'true');
+            }
+            
+            // Force re-render on mobile devices
+            if (window.innerWidth <= 768) {
+                const images = document.querySelectorAll('img');
+                images.forEach(img => {
+                    img.style.display = 'none';
+                    img.offsetHeight; // Trigger reflow
+                    img.style.display = '';
+                });
+            }
+        }
+        
+        // Apply saved preference on page load
+        if (isGrayscale) {
+            body.classList.add('grayscale-mode');
+            const grayscaleButton = document.getElementById('grayscaleButton');
+            const colorButton = document.getElementById('colorButton');
+            if (grayscaleButton && colorButton) {
+                grayscaleButton.style.display = 'none';
+                colorButton.style.display = 'block';
+            }
+        }
+        
+        if (colorToggle) {
+            colorToggle.addEventListener('click', toggleGrayscale);
+        }
+    </script>
+</body>
+</html>
+

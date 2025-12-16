@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fun With Websockets! - Isabella Ballesteros Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="art74-page page16">
+    <div id="buttonContainer" style="position: fixed; bottom: 20px; left: 20px; z-index: 999999; width: 350px; height: 80px; pointer-events: none;">
+        <button id="colorToggle" class="color-toggle" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: auto; background: none; border: none; padding: 0;">
+            <img id="grayscaleButton" src="https://i.postimg.cc/XvMfptDB/grayscale.png" alt="Grayscale Mode" class="toggle-button-image" style="display: block;">
+            <img id="colorButton" src="https://i.postimg.cc/R0r7N2bW/colormode.png" alt="Color Mode" class="toggle-button-image" style="display: none;">
+        </button>
+    </div>
+    <div class="container">
+        <div class="house-link">
+            <a href="page1.html#art101"><img src="https://i.postimg.cc/3Jxc7ypj/House-1.png" alt="Back to Home"></a>
+        </div>
+    <h1> Fun With Websockets!</h1>
+    <img src="https://i.postimg.cc/QCPzkTzP/Screenshot-2025-11-13-141337.png" alt="Fun With Websockets!" style="width: 600px; height: auto; display: block; margin: 0 auto 30px auto;">
+    <h2> About the Project</h2>
+    <div>
+        <p>Goofy Little me is a multi-user website that allows users to socialize by drawing and messaging. Users draw their own unique, goofy-looking avatars and interests and they have an opportunity to view other avatars in a community gallery. Users can become friends, message, and draw each other gifts on this website. While words are a great way to communicate, drawing is the first step to expressing yourself and to get a better understanding of the personalities of users. Because in order to message, users have to draw their avatar first then explore drawn avatars and interests before making a decision to be friends. Why tell your interests when you can show them? Drawing is a great way to communicate without words and to show creativity, passion, and the fun side of people. By drawing interests and themselves, they have full creative freedom to be who they are and find kindred users.</p>
+    </div>
+    </div>
+    
+    <script>
+        // Color/Grayscale Toggle Functionality
+        const colorToggle = document.getElementById('colorToggle');
+        const body = document.body;
+        
+        // Check localStorage for saved preference
+        const isGrayscale = localStorage.getItem('grayscaleMode') === 'true';
+        
+        function toggleGrayscale() {
+            const grayscaleButton = document.getElementById('grayscaleButton');
+            const colorButton = document.getElementById('colorButton');
+            
+            if (body.classList.contains('grayscale-mode')) {
+                body.classList.remove('grayscale-mode');
+                grayscaleButton.style.display = 'block';
+                colorButton.style.display = 'none';
+                localStorage.setItem('grayscaleMode', 'false');
+            } else {
+                body.classList.add('grayscale-mode');
+                grayscaleButton.style.display = 'none';
+                colorButton.style.display = 'block';
+                localStorage.setItem('grayscaleMode', 'true');
+            }
+            
+            // Force re-render on mobile devices
+            if (window.innerWidth <= 768) {
+                const images = document.querySelectorAll('img');
+                images.forEach(img => {
+                    img.style.display = 'none';
+                    img.offsetHeight; // Trigger reflow
+                    img.style.display = '';
+                });
+            }
+        }
+        
+        // Apply saved preference on page load
+        if (isGrayscale) {
+            body.classList.add('grayscale-mode');
+            const grayscaleButton = document.getElementById('grayscaleButton');
+            const colorButton = document.getElementById('colorButton');
+            if (grayscaleButton && colorButton) {
+                grayscaleButton.style.display = 'none';
+                colorButton.style.display = 'block';
+            }
+        }
+        
+        if (colorToggle) {
+            colorToggle.addEventListener('click', toggleGrayscale);
+        }
+    </script>
+</body>
+</html>
+
