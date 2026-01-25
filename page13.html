@@ -12,19 +12,74 @@
             <a href="page1.html#collaborative"><img src="https://i.postimg.cc/3Jxc7ypj/House-1.png" alt="Back to Home"></a>
         </div>
     <h1> Sunrise in Japan</h1>
-    
-    <div class="project-grid">
-        <div class="project-item">
-        </div>
+    <img width=1000px src="https://i.postimg.cc/k4KJPTLT/japansunrise.jpg">
+    <div class="small-images">
+        <img width=250px src="https://i.postimg.cc/RhmMScz7/thumbnail1.png">
+        <img width=250px src="https://i.postimg.cc/9MZmHLsg/thumbnail2.png">
+        <img width=250px src="https://i.postimg.cc/nrxHFvtv/thumbnail3.png">
+        <img width=250px src="https://i.postimg.cc/RFKSxg2s/thumbnail4.png">
+        <img width=250px src="https://i.postimg.cc/kGCnJxdw/thumbnail5.png">
+        <img width=250px src="https://i.postimg.cc/RhGq2Pn1/Concept.png">
     </div>
-
     <h2> About the Project</h2>
-    <div class="credits-text">
-        <p>Coming soon...</p>
+    <div>
+        <p>This is a recent personal project among plans for many collaborative projects that me and my partner, Nathan, are currently working on casually. When we have time, we make art that is a blend of 2D and 3D. Nathan specializes in 3D modeling in Blender while I specialize in 2D design and illustration. For this project, we wanted to capture the tranquilness of a sunrise set in Japan.
+
+        <p>Looking at reference pictures online, Nathan modeled and rendered the 3D house and some of the furniture. While Nathan was doing this, I created 2D assets using Procreate like the sleeping dog, tea set, painting, background, and more. Our process is slow, constant collaboration as we showed progress on our end through Discord call. We would ask for feedback and suggestions the more we progressed, which resulted in a lot of revisions. For example, the designs of the doors that Nathan made were the result of the house feeling too simple. The doors he made before were plain, almost jail-like so we did further research on what a Japanese door design looks. For myself, we initially wanted to have cats instead of dogs as you can see in the concept art image (the last thumbnail image) I drew before starting on the piece. The fix came when we simply realized that we only owned dogs and not cats, and it would be better fitting to have a dog that originated in Japan to be the animal. I also had to scrap many assets that were supposed to be outside.</p>
+            
+        <p>The thumbnail images include closeups of certain assets and inside the house that cannot be clearly seen in the final photo. I designed the wooden sculpture and painting on the wall which Nathan translated into 3D. As you can see, the assets are 2D placed in the 3D environment from the thumbnail photos, but blend with the final image because of the camera angle.</p>
+            
+        <p>This project deserves its own category in my portfolio because it shows my ability to collaborate with another artist by using 2 different kinds of digital mediums. Collaboration is key to making some of the best art. It also shows digital work I do outside of school and the themes I am passionate about doing. Nathan also deserves his spotlight since he is an aspiring Blender artist that is unfortunately not majoring in Digital Media Art. This piece is also one of many that we plan to do. However, results are slow as we have other work and school to do first.
+            </p>
     </div>
+    </div>
+    
+    <!-- Image Modal -->
+    <div id="imageModal" class="image-modal">
+        <span class="modal-close">&times;</span>
+        <img class="modal-content" id="modalImage">
     </div>
     
     <script>
+        // Image Modal Functionality
+        const modal = document.getElementById('imageModal');
+        const modalImg = document.getElementById('modalImage');
+        const closeBtn = document.querySelector('.modal-close');
+        
+        // Get all thumbnail images
+        const thumbnailImages = document.querySelectorAll('.small-images img');
+        
+        // Add click event to each thumbnail
+        thumbnailImages.forEach(img => {
+            img.addEventListener('click', function() {
+                modal.classList.add('active');
+                modalImg.src = this.src;
+                document.body.style.overflow = 'hidden'; // Prevent background scrolling
+            });
+        });
+        
+        // Close modal when clicking the X
+        closeBtn.addEventListener('click', function() {
+            modal.classList.remove('active');
+            document.body.style.overflow = ''; // Restore scrolling
+        });
+        
+        // Close modal when clicking outside the image
+        modal.addEventListener('click', function(e) {
+            if (e.target === modal) {
+                modal.classList.remove('active');
+                document.body.style.overflow = ''; // Restore scrolling
+            }
+        });
+        
+        // Close modal with Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && modal.classList.contains('active')) {
+                modal.classList.remove('active');
+                document.body.style.overflow = ''; // Restore scrolling
+            }
+        });
+        
         // Color/Grayscale Toggle Functionality
         const colorToggle = document.getElementById('colorToggle');
         const body = document.body;
