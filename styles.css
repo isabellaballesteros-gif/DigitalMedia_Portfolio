@@ -663,7 +663,7 @@ h3:not(#art74):not(#art75):not(#art101):not(#collaborative):not(:first-of-type) 
 h1 {
     margin-top: 0;
     margin-bottom: 15px;
-    font-family: 'Press Start 2P', cursive;
+    font-family: 'Bookman Old Style',Bookman,'URW Bookman L',serif;
     font-size: 50px;
     color: #1f0640;
 }
