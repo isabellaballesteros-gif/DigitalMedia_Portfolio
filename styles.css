@@ -709,7 +709,7 @@ p {
 
 p1{
     font-family: 'Lucida Console', 'Monaco', 'monospace';
-    font-size: 20px;
+    font-size: 18px;
     margin-bottom: 15px;
 }
 
@@ -1219,8 +1219,8 @@ body.grayscale-mode .cycle-image {
     h1 { font-size: 36px; font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; }
     h2, h3 { font-size: 28px; font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; }
     h4 { font-size: 32px; font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; }
-    p { font-size: 20px; }
-    p1, p3, li { font-size: 18px; }
+    p { font-size: 16px; }
+    p1, p3, li { font-size: 16px; }
 
 
     /* Mobile index page - structured layout */
@@ -1811,58 +1811,12 @@ body.grayscale-mode .cycle-image {
     }
 }
 
-/* Spotify Section Styles */
-.spotify-section {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 15px;
-    margin: 20px auto;
-    text-align: center;
-}
 
 /* Move About Me section higher */
 .about-page h1 {
     margin-top: 0;
 }
 
-.spotify-text {
-    font-size: 32px;
-    font-family: 'Arial Black', Gadget, sans-serif;
-    color: #006400;
-    margin: 0;
-    flex-shrink: 0;
-}
-
-.spotify-image {
-    width: 200px;
-    height: 200px;
-    cursor: pointer;
-    animation: shaky 3s ease-in-out infinite;
-    transition: transform 0.3s ease;
-}
-
-.spotify-image:hover {
-    transform: scale(1.05);
-    animation: none;
-}
-
-/* Mobile responsive for Spotify section */
-@media (max-width: 768px) {
-    .spotify-section {
-        flex-direction: column;
-        gap: 10px;
-        margin: 15px auto;
-    }
-    
-    .spotify-text {
-        font-size: 24px;
-    }
-    
-    .spotify-image {
-        width: 150px;
-        height: 150px;
-    }
 }
 
 /* Landscape Mobile */
