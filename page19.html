@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dumpling Cat</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="art75-page">
+    <div class="container">
+        <div class="house-link">
+            <a href="index.html#art74"><img src="https://i.postimg.cc/PqVcDRhn/Housebutton.png" alt="Back to Home"></a>
+        </div>
+        <h1>Dumpling Cat</h1>
+    <img width="1000"src="https://i.postimg.cc/8CLkqcyf/image.png">
+    <h3> About the Project</h3>
+        <p> <a href="https://youtu.be/gt8P0btaUSc">CLICK HERE</a> to view the video. This is a Blender tutorial I completed in January 2026. It features a cartoon, dumpling looking cat being carried by a pair of chopsticks with camera rotation. However, I decided to put my own style onto the cat and only did the 3D modeling portion of the tutorial, not the animation. This tutorial gave me a recap on what I know about basic modeling, but it also taught me a new skill that I love. I used the grease pencil to give the cat the outlined, cartoon look and used the drawing feature to draw the facial expressions. Because I am a very cartoon-loving person when it comes to digital art, I will definitely use thes tools to create future artworks and models. I alos used the same camera to object view to pan down the model.
+        </p>
+    </div>
+    
+    <script>
+        // Color/Grayscale Toggle Functionality
+        const colorToggle = document.getElementById('colorToggle');
+        const body = document.body;
+        
+        // Check localStorage for saved preference
+        const isGrayscale = localStorage.getItem('grayscaleMode') === 'true';
+        
+        function toggleGrayscale() {
+            if (body.classList.contains('grayscale-mode')) {
+                body.classList.remove('grayscale-mode');
+                colorToggle.textContent = '🎨 Color Mode';
+                colorToggle.classList.remove('grayscale-active');
+                localStorage.setItem('grayscaleMode', 'false');
+            } else {
+                body.classList.add('grayscale-mode');
+                colorToggle.textContent = '⚫ Grayscale Mode';
+                colorToggle.classList.add('grayscale-active');
+                localStorage.setItem('grayscaleMode', 'true');
+            }
+        }
+        
+        // Apply saved preference on page load
+        if (isGrayscale) {
+            body.classList.add('grayscale-mode');
+            colorToggle.textContent = '⚫ Grayscale Mode';
+            colorToggle.classList.add('grayscale-active');
+        }
+        
+        colorToggle.addEventListener('click', toggleGrayscale);
+    </script>
+</body>
+</html>
