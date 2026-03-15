@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Baby Steps</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="art74-page page16">
+    <div id="buttonContainer" style="position: fixed; bottom: 20px; left: 20px; z-index: 999999; width: 350px; height: 80px; pointer-events: none;">
+        <button id="colorToggle" class="color-toggle" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: auto; background: none; border: none; padding: 0;">
+            <img id="grayscaleButton" src="https://i.postimg.cc/XvMfptDB/grayscale.png" alt="Grayscale Mode" class="toggle-button-image" style="display: block;">
+            <img id="colorButton" src="https://i.postimg.cc/R0r7N2bW/colormode.png" alt="Color Mode" class="toggle-button-image" style="display: none;">
+        </button>
+    </div>
+    <div class="container">
+        <div class="house-link">
+            <a href="index.html#art74"><img src="https://i.postimg.cc/PqVcDRhn/Housebutton.png" alt="Back to Home"></a>
+        </div>
+    <h1>Baby Steps</h1>
+    <img src="https://i.postimg.cc/XvFLFvk5/Screenshot-14-3-2026-181056-studio-youtube-com.jpg" alt="" style="width: 600px; height: auto; display: block; margin: 0 auto 30px auto;">
+    <h2> About the Project</h2>
+    <div>
+        <p> <a href="https://youtu.be/RguvHDMqxHk">CLICK HERE</a> to view the video. This is one of my first times using Blender. This was a short project we did in Art 74 and the goal was to experiment with making simple shape models and adding key frames to rotate or move the shapes from point A to B. I wanted to include this video, even though it is extremely basic, to show that this is the very beginning of my 3D modeling experience. Furthermore, I did this by myself with only a demo from the professor. This assignment helped me grasp the basics of key framing and making videos from our Blender projects. This led to key framing the other Blender Projects by myself.
+        </p>
+    </div>
+    </div>
+    
+    <script>
+        // Color/Grayscale Toggle Functionality
+        const colorToggle = document.getElementById('colorToggle');
+        const body = document.body;
+        
+        // Check localStorage for saved preference
+        const isGrayscale = localStorage.getItem('grayscaleMode') === 'true';
+        
+        function toggleGrayscale() {
+            const grayscaleButton = document.getElementById('grayscaleButton');
+            const colorButton = document.getElementById('colorButton');
+            
+            if (body.classList.contains('grayscale-mode')) {
+                body.classList.remove('grayscale-mode');
+                grayscaleButton.style.display = 'block';
+                colorButton.style.display = 'none';
+                localStorage.setItem('grayscaleMode', 'false');
+            } else {
+                body.classList.add('grayscale-mode');
+                grayscaleButton.style.display = 'none';
+                colorButton.style.display = 'block';
+                localStorage.setItem('grayscaleMode', 'true');
+            }
+            
+            // Force re-render on mobile devices
+            if (window.innerWidth <= 768) {
+                const images = document.querySelectorAll('img');
+                images.forEach(img => {
+                    img.style.display = 'none';
+                    img.offsetHeight; // Trigger reflow
+                    img.style.display = '';
+                });
+            }
+        }
+        
+        // Apply saved preference on page load
+        if (isGrayscale) {
+            body.classList.add('grayscale-mode');
+            const grayscaleButton = document.getElementById('grayscaleButton');
+            const colorButton = document.getElementById('colorButton');
+            if (grayscaleButton && colorButton) {
+                grayscaleButton.style.display = 'none';
+                colorButton.style.display = 'block';
+            }
+        }
+        
+        if (colorToggle) {
+            colorToggle.addEventListener('click', toggleGrayscale);
+        }
+    </script>
+</body>
+</html>
