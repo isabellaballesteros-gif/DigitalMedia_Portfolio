@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brainrot</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="art75-page">
+    <div class="container">
+        <div class="house-link">
+            <a href="index.html#art74"><img src="https://i.postimg.cc/PqVcDRhn/Housebutton.png" alt="Back to Home"></a>
+        </div>
+        <h1>Brainrot</h1>
+    <img width="1000"src="https://i.postimg.cc/65P546Qz/Screenshot-2026-03-14-185210.pngg">
+    <h3> About the Project</h3>
+        <p> <a href="https://youtube.com/shorts/xHjF52t8xio">CLICK HERE</a> to view the video. This video was made in Art 75 using Adobe Premiere pro video and audio editing. Brainrot is the response to an article we were assigned to read that explained the impact of digital media on our minds. It shows a video of myself closing a door on my dog and a bright hallway to be isolated in my dark room. I immediately start doom-scrolling and shopping for things I didn't need online, quickly spiraling into brain rot as the audio becomes more distorted. This video is not only a response to the article, but a critique on how media consumes us and isolates us from the real world and everyone we love. It does depend on how you use social media and shopping apps, but they are also designed to keep us in a constant state of brainrot to gain profit.
+        </p>
+    </div>
+    
+    <script>
+        // Color/Grayscale Toggle Functionality
+        const colorToggle = document.getElementById('colorToggle');
+        const body = document.body;
+        
+        // Check localStorage for saved preference
+        const isGrayscale = localStorage.getItem('grayscaleMode') === 'true';
+        
+        function toggleGrayscale() {
+            if (body.classList.contains('grayscale-mode')) {
+                body.classList.remove('grayscale-mode');
+                colorToggle.textContent = '🎨 Color Mode';
+                colorToggle.classList.remove('grayscale-active');
+                localStorage.setItem('grayscaleMode', 'false');
+            } else {
+                body.classList.add('grayscale-mode');
+                colorToggle.textContent = '⚫ Grayscale Mode';
+                colorToggle.classList.add('grayscale-active');
+                localStorage.setItem('grayscaleMode', 'true');
+            }
+        }
+        
+        // Apply saved preference on page load
+        if (isGrayscale) {
+            body.classList.add('grayscale-mode');
+            colorToggle.textContent = '⚫ Grayscale Mode';
+            colorToggle.classList.add('grayscale-active');
+        }
+        
+        colorToggle.addEventListener('click', toggleGrayscale);
+    </script>
+</body>
+</html>
