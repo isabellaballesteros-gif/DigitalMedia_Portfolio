@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wolf in the Woods - Isabella Ballesteros Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="art75-page page10">
+    <div class="container">
+        <div class="house-link">
+            <a href="index.html#art75"><img src="https://i.postimg.cc/PqVcDRhn/Housebutton.png" alt="Back to Home"></a>
+        </div>
+    <h1>Wolf in the Woods</h1>
+    <img width="1000"src="https://i.postimg.cc/d3q3NGsH/Screenshot-2026-03-17-165527.png">
+    <h3> About the Project</h3>
+        <p> <a href="https://youtu.be/PUH_yZdVZgw">CLICK HERE</a> to access the video. If the video is taken down, go to this <a href="https://drive.google.com/file/d/1M_wr8AQst189-I7waLtkaQC5kByC3Hwu/view?usp=sharing">google drive link</a> or direct message me for the video and I can send it! This project was to help us gain more practice using Adobe Premiere Pro, specifically, sound design. We were split into groups to share our favorite song then we were take one person's song and apply it to a clip of our choice with background sounds. I chose <em>Meet Me in the Woods</em> by Lord Huron and I immediately thought of a specific scene in the movie Wolf Children where a wolf-man revealed his true self in the woods to his love. I also chose this scene because there was a lot to work with for the background. I added wind, leaves, cloth, and even my own voice to the sound design. I adjusted the volumes to be in timing with sudden wind gusts, cloth movement, and character movement. Though I believe it's not my best work because it was a quick assignment we had to do, I enjoyed it a lot and I beleive I can do better with sound design today.
+    </div>
+    
+    <script>
+        // Color/Grayscale Toggle Functionality
+        const colorToggle = document.getElementById('colorToggle');
+        const body = document.body;
+        
+        // Check localStorage for saved preference
+        const isGrayscale = localStorage.getItem('grayscaleMode') === 'true';
+        
+        function toggleGrayscale() {
+            if (body.classList.contains('grayscale-mode')) {
+                body.classList.remove('grayscale-mode');
+                colorToggle.textContent = '🎨 Color Mode';
+                colorToggle.classList.remove('grayscale-active');
+                localStorage.setItem('grayscaleMode', 'false');
+            } else {
+                body.classList.add('grayscale-mode');
+                colorToggle.textContent = '⚫ Grayscale Mode';
+                colorToggle.classList.add('grayscale-active');
+                localStorage.setItem('grayscaleMode', 'true');
+            }
+        }
+        
+        // Apply saved preference on page load
+        if (isGrayscale) {
+            body.classList.add('grayscale-mode');
+            colorToggle.textContent = '⚫ Grayscale Mode';
+            colorToggle.classList.add('grayscale-active');
+        }
+        
+        colorToggle.addEventListener('click', toggleGrayscale);
+    </script>
+</body>
+</html>
