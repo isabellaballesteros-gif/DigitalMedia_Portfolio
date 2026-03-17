@@ -1042,8 +1042,6 @@ body.about-page h1 {
 .cycle-image:nth-child(5) { animation: cycleImages 27s infinite 12s; }
 .cycle-image:nth-child(6) { animation: cycleImages 27s infinite 15s; }
 .cycle-image:nth-child(7) { animation: cycleImages 27s infinite 18s; }
-.cycle-image:nth-child(8) { animation: cycleImages 27s infinite 21s; }
-.cycle-image:nth-child(9) { animation: cycleImages 27s infinite 24s; }
 
 /* Accessibility: visible focus outlines */
 a:focus-visible,
