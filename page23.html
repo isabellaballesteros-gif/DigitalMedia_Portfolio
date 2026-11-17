@@ -1,1 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juan Tamad - Isabella Ballesteros Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="art74-page page4">
+    <div class="container">
+    <div class="house-link">
+        <a href="index.html#art74"><img src="https://i.postimg.cc/PqVcDRhn/Housebutton.png" alt="Back to Home"></a>
+    </div>
+    <h1>Juan Tamad</h1>
+    <img width=1000px src="https://i.postimg.cc/DwfgdhSk/Screenshot-2026-10-26-155517.png">
+    <div class="small-images">
+        <img width=250px src="https://i.postimg.cc/MKStHVx8/Screenshot-2026-10-26-135231.png">
+       <img width=250px src="https://i.postimg.cc/QdPT9Z5p/installationtamad.png">
+       <img width=250px src="https://i.postimg.cc/13Tqn16j/installationtamadpeople.png">
+    </div>
+  <h2> About the Project</h2>
+ <p> I made this project in Fall 2026 for my Art 3 class. The overall theme was to make an artwork of our choice under the Seven Deadly Sins. I chose to make a piece about Sloth based on Filipino Folklore.Tamad means lazy in Tagalog, so his name was literally Lazy Juan. Juan was the perfect example of sloth of the seven vices. In Filipino Folklore, he was a boy that ruined every single task with his laziness. In the most popular story, Juan saw a ripe guava hanging from a tree. Instead of simply reaching up to pick it, he had a “better idea”. He laid down under the fruit with his mouth wide open so that it would fall into his mouth. He waited in glee, believing that his method was the easiest. But seconds turned into minutes, then into hours. Juan became tired and slept overnight. When he woke up, the fruit bats had gotten the guava before him. Sad and still hungry, he went back home.
 
+I made this video art about Juan Tamad. The video would loop around as a GIF but the file is too large to put it in a slidedeck. The style is cartoonish because it is an old children’s story.. In many aspects of the composition, you will notice Filipino tribal patterns to remain cultural. The texture of the overall piece is meant to imitate a tapestry as many cultures depict stories through tapestry.
+
+ I made this piece by importing my Procreate layers into Adobe After Effects then applied key motion frames to certain layers.I chose digital media art, specifically video art, because I think it’s the best way for me to do storytelling art. I believe that people are more drawn to moving visuals to better understand the story. When I knew about this theme, I was immediately drawn to making a piece about Filipino folklore. I also think a modern retelling of an old story is necessary as the only visuals I saw in my research about this story was AI.
+
+I made a mockup of my installation using a mockup template and Adobe Photoshop. I would install my art piece as a booth at the Berryessa Garden at the Flea during FAHM Jam. FAHM Jam is an annual event with lots of Filipino artists, vendors, performances, and more that is free and happens every October. I have been to this and there is an area where artists can set up booths. I would have my GIF up on a big screen with the story of Juan Tamad next to it. Ambience would be played such as nature sounds, snoring, and Tagalog gossip about Juan to be more immersive and comical.
+
+I made this piece to be closer to Filipino culture while working under the theme of the seven vices. I feel like a lot of stories are being lost in time due to the westernization of the new Filipino generations. While Juan Tamad can be seen as a stereotype, he teaches everyone that you cannot gain anything by taking the “easy route”. It may seem like the best solution, when in actuality, you lose time and productivity which leads you to be in the same spot as you were when you started. Thank you.
+
+    </div>
+    
+    <!-- Image Modal -->
+    <div id="imageModal" class="image-modal">
+        <span class="modal-close">&times;</span>
+        <img class="modal-content" id="modalImage">
+    </div>
+    
+    <script>
+        // Image Modal Functionality
+        const modal = document.getElementById('imageModal');
+        const modalImg = document.getElementById('modalImage');
+        const closeBtn = document.querySelector('.modal-close');
+        
+        // Get all thumbnail images
+        const thumbnailImages = document.querySelectorAll('.small-images img');
+        
+        // Add click event to each thumbnail
+        thumbnailImages.forEach(img => {
+            img.addEventListener('click', function() {
+                modal.classList.add('active');
+                modalImg.src = this.src;
+                document.body.style.overflow = 'hidden'; // Prevent background scrolling
+            });
+        });
+        
+        // Close modal when clicking the X
+        closeBtn.addEventListener('click', function() {
+            modal.classList.remove('active');
+            document.body.style.overflow = ''; // Restore scrolling
+        });
+        
+        // Close modal when clicking outside the image
+        modal.addEventListener('click', function(e) {
+            if (e.target === modal) {
+                modal.classList.remove('active');
+                document.body.style.overflow = ''; // Restore scrolling
+            }
+        });
+        
+        // Close modal with Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && modal.classList.contains('active')) {
+                modal.classList.remove('active');
+                document.body.style.overflow = ''; // Restore scrolling
+            }
+        });
+        
+        // Color/Grayscale Toggle Functionality
+        const colorToggle = document.getElementById('colorToggle');
+        const body = document.body;
+        
+        // Check localStorage for saved preference
+        const isGrayscale = localStorage.getItem('grayscaleMode') === 'true';
+        
+        function toggleGrayscale() {
+            if (body.classList.contains('grayscale-mode')) {
+                body.classList.remove('grayscale-mode');
+                colorToggle.textContent = '🎨 Color Mode';
+                colorToggle.classList.remove('grayscale-active');
+                localStorage.setItem('grayscaleMode', 'false');
+            } else {
+                body.classList.add('grayscale-mode');
+                colorToggle.textContent = '⚫ Grayscale Mode';
+                colorToggle.classList.add('grayscale-active');
+                localStorage.setItem('grayscaleMode', 'true');
+            }
+        }
+        
+        // Apply saved preference on page load
+        if (isGrayscale) {
+            body.classList.add('grayscale-mode');
+            colorToggle.textContent = '⚫ Grayscale Mode';
+            colorToggle.classList.add('grayscale-active');
+        }
+        
+        colorToggle.addEventListener('click', toggleGrayscale);
+    </script>
+</body>
+</html>
