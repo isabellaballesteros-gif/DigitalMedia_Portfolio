@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ading Video - Isabella Ballesteros Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="art75-page">
+    <div class="container">
+        <div class="house-link">
+            <a href="index.html#art75"><img src="https://i.postimg.cc/PqVcDRhn/Housebutton.png" alt="Back to Home"></a>
+        </div>
+       <div> <h1>Ading Video</h1>
+    <img width="1000"src="https://i.postimg.cc/yYW9Vyrd/Screenshot-17-11-2026-145211-drive-google-com.jpg">
+    <h3> About the Project</h3>
+        <p> <a href="https://drive.google.com/file/d/1mQLelNFMaCqWAXjaBml2Tmibl8Cmrknk/view?usp=sharing">CLICK HERE</a> to view the video. I am currently an active member of Akbayan SJSU in Alaya Fam. For the KAAMP program, members of the club can pick newcomers to be a little sibling within the fam. I participated in this program in Fall 2026. We also have the freedom to create videos to mess with our adings (little sibling) because they do not know who we are yet. For the reveal day, I made this video because our theme was the videogame, Minecraft. All animation sequences I give credit to Element Animation! All sound effects are free to use in YouTube. I made this video in Adobe Premiere Pro.</p> 
+        </div>
+    
+    <script>
+        // Color/Grayscale Toggle Functionality
+        const colorToggle = document.getElementById('colorToggle');
+        const body = document.body;
+        
+        // Check localStorage for saved preference
+        const isGrayscale = localStorage.getItem('grayscaleMode') === 'true';
+        
+        function toggleGrayscale() {
+            if (body.classList.contains('grayscale-mode')) {
+                body.classList.remove('grayscale-mode');
+                colorToggle.textContent = '🎨 Color Mode';
+                colorToggle.classList.remove('grayscale-active');
+                localStorage.setItem('grayscaleMode', 'false');
+            } else {
+                body.classList.add('grayscale-mode');
+                colorToggle.textContent = '⚫ Grayscale Mode';
+                colorToggle.classList.add('grayscale-active');
+                localStorage.setItem('grayscaleMode', 'true');
+            }
+        }
+        
+        // Apply saved preference on page load
+        if (isGrayscale) {
+            body.classList.add('grayscale-mode');
+            colorToggle.textContent = '⚫ Grayscale Mode';
+            colorToggle.classList.add('grayscale-active');
+        }
+        
+        colorToggle.addEventListener('click', toggleGrayscale);
+    </script>
+</body>
+</html>
